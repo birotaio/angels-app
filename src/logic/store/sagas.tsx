@@ -1,3 +1,4 @@
 import authSaga from './auth/saga';
+import mapSaga from './map/saga';
 
-export default [authSaga];
+export default [authSaga, mapSaga];

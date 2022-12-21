@@ -1,40 +1,33 @@
-import MapboxGL, {
-  OnPressEvent,
-  SymbolLayerProps,
-} from '@react-native-mapbox-gl/maps';
-import {Station, StationStatusInformation} from '@utils/api/gbfsTypes';
+import images from '@assets/images';
+import {StationFeatureCollection} from '@logic/store/map/types';
+import MapboxGL, {SymbolLayerProps} from '@react-native-mapbox-gl/maps';
 import React from 'react';
 
 const MapStationLayer = ({
-  onMarkerPress,
   stations,
   ...props
 }: SymbolLayerProps & {
-  onMarkerPress: (s: StationStatusInformation) => void;
-  style: object;
-  stations: Station[];
+  style?: object;
+  stations: StationFeatureCollection;
 }) => {
-  const _onMarkerPress = ({features}: OnPressEvent) => {
-    const pressId = features?.[0]?.properties?.station_id;
-    if (pressId) {
-      let station_selected = stations.filter(
-        _s => _s.properties.station_id === pressId,
-      )?.[0];
-      onMarkerPress?.(station_selected?.properties);
-    }
-  };
+  // const _onMarkerPress = ({features}: OnPressEvent) => {
+  //   const pressId = features?.[0]?.properties?.station_id;
+  //   if (pressId) {
+  //     let station_selected = stations.filter(
+  //       _s => _s.properties.station_id === pressId,
+  //     )?.[0];
+  //     onMarkerPress?.(station_selected?.properties);
+  //   }
+  // };
 
   return (
     <MapboxGL.ShapeSource
       id="stationInformation"
       cluster={false}
-      shape={{
-        type: 'FeatureCollection',
-        // features: hasStationActive ? [stations[indexStationActive]] : stations,
-        features: stations,
-      }}
+      shape={stations}
       hitbox={{width: 20, height: 20}}
-      onPress={_onMarkerPress}>
+      // onPress={_onMarkerPress}
+    >
       <MapboxGL.SymbolLayer
         {...props}
         style={{
@@ -48,6 +41,7 @@ const MapStationLayer = ({
 
 const styles = {
   symbolLayer: {
+    iconImage: images.location,
     iconAllowOverlap: true,
     iconIgnorePlacement: true,
     textAllowOverlap: true,

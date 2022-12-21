@@ -32,6 +32,7 @@ const callAPI = async (
     headers: {
       ...headers,
       'X-Zoov-ClientId': constants.API_CLIENT_ID,
+      'X-ApiKey': constants.API_KEY,
       Cookie: await getToken(),
     },
     withCredentials: false,
