@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  AppName
+
+  Created by Sylvain Levy on 02/06/2022.
+  
+*/
+NSLocationWhenInUseUsageDescription = "We will help you locate the nearest available bike share station.";
+NSLocationAlwaysUsageDescription = "We will help you locate the nearest available bike share station.";
+NSLocationAlwaysAndWhenInUseUsageDescription = "We will help you locate the nearest available bike share station.";

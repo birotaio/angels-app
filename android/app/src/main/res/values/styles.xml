@@ -1,0 +1,11 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="primary_dark">#000000</color>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:editTextBackground">@drawable/rn_edit_text_material</item>
+        <item name="android:forceDarkAllowed" tools:targetApi="q">false</item>
+       <!-- <item name="android:windowBackground">@drawable/splash_background</item>-->
+    </style>
+
+</resources>

@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "93080870284",
+    "project_id": "fifteen-angels-beta",
+    "storage_bucket": "fifteen-angels-beta.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:93080870284:android:687e7dd15d133b61628aa9",
+        "android_client_info": {
+          "package_name": "com.fifteen.angels.beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "93080870284-bvati0l10a4cu07p1h9r06369l47qjmp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxFqhTRXz4uY61qBsYzaECOEZwRay-RKI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "93080870284-bvati0l10a4cu07p1h9r06369l47qjmp.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "93080870284-steltusqs9mo7lena3j5dsqmfp5ngk8v.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.fifteen.angels.beta"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

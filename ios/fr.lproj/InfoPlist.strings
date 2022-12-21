@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  AppName
+
+  Created by Sylvain Levy on 02/06/2022.
+  
+*/
+NSLocationWhenInUseUsageDescription = "Nous vous aiderons à localiser la station de vélo en libre-service la plus proche de vous.";
+NSLocationAlwaysUsageDescription = "Nous vous aiderons à localiser la station de vélo en libre-service la plus proche de vous.";
+NSLocationAlwaysAndWhenInUseUsageDescription = "Nous vous aiderons à localiser la station de vélo en libre-service la plus proche de vous.";

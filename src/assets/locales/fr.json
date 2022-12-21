@@ -1,0 +1,9 @@
+{
+  "login": "Se connecter",
+  "login_ok": "Bienvenue",
+  "login_ko": "Echec de la connexion",
+  "email": "Adresse email",
+  "email_required": "Adresse email requise",
+  "password": "Mot de passe",
+  "password_required": "Mot de passe requis"
+}

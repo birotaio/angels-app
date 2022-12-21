@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en</string>
+	<key>CFBundleDisplayName</key>
+	<string>Fifteen Angels (B)</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIconName</key>
+	<string>AppIcon</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>$(MARKETING_VERSION)</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>CodePushDeploymentKey</key>
+	<string>Yd3LG1Km0JR74hIM2wDvC5H9ktmbREZaNzT5O</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>localhost</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>We will help you locate the nearest available bike share station.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>We will help you locate the nearest available bike share station.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>We will help you locate the nearest available bike share station.</string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>AntDesign.ttf</string>
+		<string>Entypo.ttf</string>
+		<string>EvilIcons.ttf</string>
+		<string>Feather.ttf</string>
+		<string>FontAwesome.ttf</string>
+		<string>FontAwesome5_Brands.ttf</string>
+		<string>FontAwesome5_Regular.ttf</string>
+		<string>FontAwesome5_Solid.ttf</string>
+		<string>Fontisto.ttf</string>
+		<string>Foundation.ttf</string>
+		<string>Ionicons.ttf</string>
+		<string>MaterialCommunityIcons.ttf</string>
+		<string>MaterialIcons.ttf</string>
+		<string>Octicons.ttf</string>
+		<string>SimpleLineIcons.ttf</string>
+		<string>Zocial.ttf</string>
+		<string>SF Pro Text Black.otf</string>
+		<string>SF Pro Text Bold.otf</string>
+		<string>SF Pro Text Heavy.otf</string>
+		<string>SF Pro Text Light.otf</string>
+		<string>SF Pro Text Medium.otf</string>
+		<string>SF Pro Text Regular.otf</string>
+		<string>SF Pro Text Semibold.otf</string>
+		<string>SF Pro Text Thin.otf</string>
+		<string>SF Pro Text Ultralight.otf</string>
+		<string>SF Pro Text Black Italic.otf</string>
+		<string>SF Pro Text Bold Italic.otf</string>
+		<string>SF Pro Text Heavy Italic.otf</string>
+		<string>SF Pro Text Light Italic.otf</string>
+		<string>SF Pro Text Medium Italic.otf</string>
+		<string>SF Pro Text Regular Italic.otf</string>
+		<string>SF Pro Text Semibold Italic.otf</string>
+		<string>SF Pro Text Thin Italic.otf</string>
+		<string>SF Pro Text Ultralight Italic.otf</string>
+		<string>Gotham-Black.ttf</string>
+		<string>Gotham-Bold.ttf</string>
+		<string>Gotham-BoldItalic.ttf</string>
+		<string>Gotham-Book.ttf</string>
+		<string>Gotham-BookItalic.ttf</string>
+		<string>Gotham-Light.ttf</string>
+		<string>Gotham-LightItalic.ttf</string>
+		<string>Gotham-Medium.ttf</string>
+		<string>Gotham-MediumItalic.ttf</string>
+		<string>Gotham-Thin.ttf</string>
+		<string>Gotham-ThinItalic.ttf</string>
+		<string>SF Pro Rounded Regular.ttf</string>
+	</array>
+	<key>UILaunchStoryboardName</key>
+	<string>LaunchScreen</string>
+	<key>UIRequiredDeviceCapabilities</key>
+	<array>
+		<string>armv7</string>
+	</array>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<false/>
+</dict>
+</plist>

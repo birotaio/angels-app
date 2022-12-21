@@ -1,0 +1,986 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 54;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00E356F31AD99517003FC87E /* AppNameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* AppNameTests.m */; };
+		010B40213299450B8E633776 /* Gotham-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BA11594470544E7AC01B837 /* Gotham-Medium.ttf */; };
+		03050F0CC2874DAFAE1F5CDF /* Gotham-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D590890492414583AD166B05 /* Gotham-LightItalic.ttf */; };
+		032FF56C8DD34618AC7BB6F1 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7820CA2471974254B5328837 /* Ionicons.ttf */; };
+		093CDB6AC4824B36B13905E6 /* SF Pro Text Black Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 20BD1362A7D4406395BF72DA /* SF Pro Text Black Italic.otf */; };
+		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
+		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		16D3F04A35AF4D4FA123BB25 /* SF Pro Rounded Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4488B8FBE228491B9F1852B7 /* SF Pro Rounded Regular.ttf */; };
+		1932DA7C3DFE493EB30001DA /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9A4682FB6A54B2D9B463D28 /* Zocial.ttf */; };
+		1B5C3315726941BABAFBEC4E /* SF Pro Text Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 010282307F844F5CBF67BFB3 /* SF Pro Text Regular.otf */; };
+		1B607AC543EA4CCDBAED8625 /* SF Pro Text Bold Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 582051AA990847FF8E2FECD3 /* SF Pro Text Bold Italic.otf */; };
+		2B8405C2806048E8B9D03E80 /* Gotham-BookItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80FDB881A1094162879E5A9E /* Gotham-BookItalic.ttf */; };
+		32BF7F085548431ABE56F67B /* SF Pro Text Semibold Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = D3EB5955FD324243B3692556 /* SF Pro Text Semibold Italic.otf */; };
+		3539B10623404D5AAC99DF6A /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63FC957071C6434FAF8CFCAE /* FontAwesome.ttf */; };
+		36D43C6AA6F64649AB8243D7 /* Gotham-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DBC09D0E9A54935A4A9213A /* Gotham-MediumItalic.ttf */; };
+		37F10B345C3E4DCD8889EBD7 /* Gotham-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A10A571BE7A455E9D10AB4B /* Gotham-ThinItalic.ttf */; };
+		3F3AF888FE6841ECB20F5091 /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C11460C5D09044CBB6BA15C0 /* FontAwesome5_Brands.ttf */; };
+		58E729BE80AD4AEABF6C0ED8 /* Gotham-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8FDDC185EDD240C486FEC41A /* Gotham-Bold.ttf */; };
+		5B21DDFCF9524166A4239630 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 149E5351920C490AAAE3E29F /* Feather.ttf */; };
+		5C027CD7FBA64B10842E76FC /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05301A63DEC74974A6A00441 /* EvilIcons.ttf */; };
+		5FE389DAF0B0475D85A2606D /* SF Pro Text Light Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 90ED21DDBEB843B7BFD5ABA9 /* SF Pro Text Light Italic.otf */; };
+		6172F2D35A4C3AA820D92908 /* libPods-AppName.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6423831EA8574132BED9D8CC /* libPods-AppName.a */; };
+		71613148F15943D9A046E291 /* Gotham-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F291B6DC9E1E495AA30BF79D /* Gotham-Book.ttf */; };
+		7A3BA62528495C7B00E13BD1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7A3BA62728495C7B00E13BD1 /* InfoPlist.strings */; };
+		7A3BA62A28495C9B00E13BD1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7A3BA62C28495C9B00E13BD1 /* InfoPlist.strings */; };
+		7A3BA62F28495EBE00E13BD1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7A3BA63128495EBE00E13BD1 /* InfoPlist.strings */; };
+		7A8D145629522F1E00F7A107 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A8D145529522F1E00F7A107 /* GoogleService-Info.plist */; };
+		7A8D145729522F1E00F7A107 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A8D145529522F1E00F7A107 /* GoogleService-Info.plist */; };
+		7AB2CCC627E9BFB300EE6E02 /* AppCenter-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AB2CCC527E9BFB300EE6E02 /* AppCenter-Config.plist */; };
+		7EF68E3733C33B6898317E18 /* libPods-AppName-AppNameTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABFE59519B596E51CEFDCCC0 /* libPods-AppName-AppNameTests.a */; };
+		7F5ACE0B65C84D3F8624DD18 /* SF Pro Text Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 59AECACDE6604E06863B6BF4 /* SF Pro Text Ultralight.otf */; };
+		7FD1E89461F4409F82CB85ED /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 62636F70D064425193B1B883 /* MaterialCommunityIcons.ttf */; };
+		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		8797EE0633F540428AF05C14 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCFB00A9279E400F908DCB54 /* Octicons.ttf */; };
+		8B86ACD89C254797A522363E /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7BDD3A496C1401080898843 /* AntDesign.ttf */; };
+		8BC438526D99482188455A76 /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D124F52CD2314FEB931D32E1 /* FontAwesome5_Regular.ttf */; };
+		932B25A6CC804F42AE45369E /* Gotham-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB6BD8A03B6E4179819D2D34 /* Gotham-Thin.ttf */; };
+		964AF82167284ED2BB608C52 /* SF Pro Text Regular Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B37CD0FB7D4549F192509906 /* SF Pro Text Regular Italic.otf */; };
+		9AC924E4381446F6954B04A8 /* SF Pro Text Ultralight Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = E6FDEC67FA7149118ECAC01F /* SF Pro Text Ultralight Italic.otf */; };
+		9DBFD8BE015643F4862FCD8A /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6BC2ACA29944DC887344F28 /* SimpleLineIcons.ttf */; };
+		A0A5A11323FC49E4A8360CFC /* SF Pro Text Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 13CF593B0B9A4EAB90D59033 /* SF Pro Text Thin.otf */; };
+		AA09C7F0FFC14EAD94FC8E7D /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB5B5255DD16490283345279 /* MaterialIcons.ttf */; };
+		B041684880984D149DE0730D /* SF Pro Text Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A368468A56C84158813E8CD8 /* SF Pro Text Semibold.otf */; };
+		B27BA69030A344E0A17FDF9B /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F3E7CF2F15624A1DB3807D02 /* Foundation.ttf */; };
+		B5C31222C19544B5A2253D38 /* SF Pro Text Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E93A05E7BDC44E31A27CDB3D /* SF Pro Text Bold.otf */; };
+		B5DE1760E6A84955BB80E1A6 /* SF Pro Text Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 13747349EFE141F880A745B9 /* SF Pro Text Black.otf */; };
+		B7CB59DABB28476DBAABBC1A /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D924178BC19148B2A92DD644 /* FontAwesome5_Solid.ttf */; };
+		C10624873C1B45BFB451B3E8 /* SF Pro Text Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2F03553BF7C047818E648048 /* SF Pro Text Heavy.otf */; };
+		C561DA5237A94F13BEAAB7DC /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 30C4BF8D83844EDB8B7521FF /* Fontisto.ttf */; };
+		CD02F65BB6794A5CAA6573E9 /* SF Pro Text Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6B64C8B88BB14B419BA83629 /* SF Pro Text Light.otf */; };
+		CE6C6BBE74594BF0A42362C5 /* SF Pro Text Medium Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A9072862FD3A430B81F24D6E /* SF Pro Text Medium Italic.otf */; };
+		D91CA50DD14B405CBB7C4A3C /* Gotham-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B805985460C54FC5A56D8D25 /* Gotham-Black.ttf */; };
+		DE157410B00B425FA160544B /* Gotham-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C1361F38081488FB5AAD6CD /* Gotham-Light.ttf */; };
+		EE270F547C7E4DC38384D804 /* SF Pro Text Thin Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0606E56FBFAE4826926B372C /* SF Pro Text Thin Italic.otf */; };
+		F31271F86F8B46F39510418D /* SF Pro Text Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07C0CD1C94074270B1DDF7D9 /* SF Pro Text Medium.otf */; };
+		F369928A2A1744CCA2978C28 /* Gotham-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 41885534BA3C464B8A26D91B /* Gotham-BoldItalic.ttf */; };
+		F5E462F0E70C482E93F03DBA /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 34ABED0184B34F5C94DDA275 /* Entypo.ttf */; };
+		F6C0A7C7A433412AAC138331 /* SF Pro Text Heavy Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 92C8D204B93D4FE5847BFF78 /* SF Pro Text Heavy Italic.otf */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		00E356F41AD99517003FC87E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
+			remoteInfo = AppName;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00E356EE1AD99517003FC87E /* AppNameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppNameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* AppNameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppNameTests.m; sourceTree = "<group>"; };
+		010282307F844F5CBF67BFB3 /* SF Pro Text Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF Pro Text Regular.otf"; path = "../src/assets/fonts/SF Pro Text Regular.otf"; sourceTree = "<group>"; };
+		05301A63DEC74974A6A00441 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
+		0606E56FBFAE4826926B372C /* SF Pro Text Thin Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF Pro Text Thin Italic.otf"; path = "../src/assets/fonts/SF Pro Text Thin Italic.otf"; sourceTree = "<group>"; };
+		07C0CD1C94074270B1DDF7D9 /* SF Pro Text Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF Pro Text Medium.otf"; path = "../src/assets/fonts/SF Pro Text Medium.otf"; sourceTree = "<group>"; };
+		13747349EFE141F880A745B9 /* SF Pro Text Black.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF Pro Text Black.otf"; path = "../src/assets/fonts/SF Pro Text Black.otf"; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* AppName.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppName.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = AppName/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = AppName/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = AppName/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = AppName/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = AppName/main.m; sourceTree = "<group>"; };
+		13CF593B0B9A4EAB90D59033 /* SF Pro Text Thin.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF Pro Text Thin.otf"; path = "../src/assets/fonts/SF Pro Text Thin.otf"; sourceTree = "<group>"; };
+		149E5351920C490AAAE3E29F /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
+		1D0AE47A65C8663E3B452821 /* Pods-AppName-AppNameTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppName-AppNameTests.release.xcconfig"; path = "Target Support Files/Pods-AppName-AppNameTests/Pods-AppName-AppNameTests.release.xcconfig"; sourceTree = "<group>"; };
+		20BD1362A7D4406395BF72DA /* SF Pro Text Black Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF Pro Text Black Italic.otf"; path = "../src/assets/fonts/SF Pro Text Black Italic.otf"; sourceTree = "<group>"; };
+		2F03553BF7C047818E648048 /* SF Pro Text Heavy.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF Pro Text Heavy.otf"; path = "../src/assets/fonts/SF Pro Text Heavy.otf"; sourceTree = "<group>"; };
+		30C4BF8D83844EDB8B7521FF /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
+		34ABED0184B34F5C94DDA275 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
+		3BA11594470544E7AC01B837 /* Gotham-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-Medium.ttf"; path = "../src/assets/fonts/Gotham-Medium.ttf"; sourceTree = "<group>"; };
+		41885534BA3C464B8A26D91B /* Gotham-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-BoldItalic.ttf"; path = "../src/assets/fonts/Gotham-BoldItalic.ttf"; sourceTree = "<group>"; };
+		4488B8FBE228491B9F1852B7 /* SF Pro Rounded Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF Pro Rounded Regular.ttf"; path = "../src/assets/fonts/SF Pro Rounded Regular.ttf"; sourceTree = "<group>"; };
+		4A10A571BE7A455E9D10AB4B /* Gotham-ThinItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-ThinItalic.ttf"; path = "../src/assets/fonts/Gotham-ThinItalic.ttf"; sourceTree = "<group>"; };
+		582051AA990847FF8E2FECD3 /* SF Pro Text Bold Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF Pro Text Bold Italic.otf"; path = "../src/assets/fonts/SF Pro Text Bold Italic.otf"; sourceTree = "<group>"; };
+		59AECACDE6604E06863B6BF4 /* SF Pro Text Ultralight.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF Pro Text Ultralight.otf"; path = "../src/assets/fonts/SF Pro Text Ultralight.otf"; sourceTree = "<group>"; };
+		62636F70D064425193B1B883 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
+		63FC957071C6434FAF8CFCAE /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		6423831EA8574132BED9D8CC /* libPods-AppName.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppName.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B64C8B88BB14B419BA83629 /* SF Pro Text Light.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF Pro Text Light.otf"; path = "../src/assets/fonts/SF Pro Text Light.otf"; sourceTree = "<group>"; };
+		6C1361F38081488FB5AAD6CD /* Gotham-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-Light.ttf"; path = "../src/assets/fonts/Gotham-Light.ttf"; sourceTree = "<group>"; };
+		6C97AB639B58BBB4B15BBE30 /* Pods-AppName-AppNameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppName-AppNameTests.debug.xcconfig"; path = "Target Support Files/Pods-AppName-AppNameTests/Pods-AppName-AppNameTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7820CA2471974254B5328837 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		7A3BA62628495C7B00E13BD1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7A3BA62B28495C9B00E13BD1 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7A3BA63028495EBE00E13BD1 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7A8D145529522F1E00F7A107 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "AppName/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7AB2CCC527E9BFB300EE6E02 /* AppCenter-Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AppCenter-Config.plist"; sourceTree = "<group>"; };
+		80FDB881A1094162879E5A9E /* Gotham-BookItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-BookItalic.ttf"; path = "../src/assets/fonts/Gotham-BookItalic.ttf"; sourceTree = "<group>"; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = AppName/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8FDDC185EDD240C486FEC41A /* Gotham-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-Bold.ttf"; path = "../src/assets/fonts/Gotham-Bold.ttf"; sourceTree = "<group>"; };
+		90ED21DDBEB843B7BFD5ABA9 /* SF Pro Text Light Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF Pro Text Light Italic.otf"; path = "../src/assets/fonts/SF Pro Text Light Italic.otf"; sourceTree = "<group>"; };
+		92C8D204B93D4FE5847BFF78 /* SF Pro Text Heavy Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF Pro Text Heavy Italic.otf"; path = "../src/assets/fonts/SF Pro Text Heavy Italic.otf"; sourceTree = "<group>"; };
+		9DBC09D0E9A54935A4A9213A /* Gotham-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-MediumItalic.ttf"; path = "../src/assets/fonts/Gotham-MediumItalic.ttf"; sourceTree = "<group>"; };
+		A368468A56C84158813E8CD8 /* SF Pro Text Semibold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF Pro Text Semibold.otf"; path = "../src/assets/fonts/SF Pro Text Semibold.otf"; sourceTree = "<group>"; };
+		A6BC2ACA29944DC887344F28 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
+		A9072862FD3A430B81F24D6E /* SF Pro Text Medium Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF Pro Text Medium Italic.otf"; path = "../src/assets/fonts/SF Pro Text Medium Italic.otf"; sourceTree = "<group>"; };
+		AB5B5255DD16490283345279 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
+		ABFE59519B596E51CEFDCCC0 /* libPods-AppName-AppNameTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppName-AppNameTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B37CD0FB7D4549F192509906 /* SF Pro Text Regular Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF Pro Text Regular Italic.otf"; path = "../src/assets/fonts/SF Pro Text Regular Italic.otf"; sourceTree = "<group>"; };
+		B805985460C54FC5A56D8D25 /* Gotham-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-Black.ttf"; path = "../src/assets/fonts/Gotham-Black.ttf"; sourceTree = "<group>"; };
+		C0A881CF5CF3F2B244570E2A /* Pods-AppName.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppName.debug.xcconfig"; path = "Target Support Files/Pods-AppName/Pods-AppName.debug.xcconfig"; sourceTree = "<group>"; };
+		C11460C5D09044CBB6BA15C0 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
+		CB6BD8A03B6E4179819D2D34 /* Gotham-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-Thin.ttf"; path = "../src/assets/fonts/Gotham-Thin.ttf"; sourceTree = "<group>"; };
+		D00AAFFCFCFDA5787532823F /* Pods-AppName.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppName.release.xcconfig"; path = "Target Support Files/Pods-AppName/Pods-AppName.release.xcconfig"; sourceTree = "<group>"; };
+		D124F52CD2314FEB931D32E1 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
+		D3EB5955FD324243B3692556 /* SF Pro Text Semibold Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF Pro Text Semibold Italic.otf"; path = "../src/assets/fonts/SF Pro Text Semibold Italic.otf"; sourceTree = "<group>"; };
+		D590890492414583AD166B05 /* Gotham-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-LightItalic.ttf"; path = "../src/assets/fonts/Gotham-LightItalic.ttf"; sourceTree = "<group>"; };
+		D924178BC19148B2A92DD644 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
+		DCFB00A9279E400F908DCB54 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
+		E6FDEC67FA7149118ECAC01F /* SF Pro Text Ultralight Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF Pro Text Ultralight Italic.otf"; path = "../src/assets/fonts/SF Pro Text Ultralight Italic.otf"; sourceTree = "<group>"; };
+		E7BDD3A496C1401080898843 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
+		E93A05E7BDC44E31A27CDB3D /* SF Pro Text Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF Pro Text Bold.otf"; path = "../src/assets/fonts/SF Pro Text Bold.otf"; sourceTree = "<group>"; };
+		E9A4682FB6A54B2D9B463D28 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
+		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F291B6DC9E1E495AA30BF79D /* Gotham-Book.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-Book.ttf"; path = "../src/assets/fonts/Gotham-Book.ttf"; sourceTree = "<group>"; };
+		F3E7CF2F15624A1DB3807D02 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		00E356EB1AD99517003FC87E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7EF68E3733C33B6898317E18 /* libPods-AppName-AppNameTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13B07F8C1A680F5B00A75B9A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6172F2D35A4C3AA820D92908 /* libPods-AppName.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		00E356EF1AD99517003FC87E /* AppNameTests */ = {
+			isa = PBXGroup;
+			children = (
+				00E356F21AD99517003FC87E /* AppNameTests.m */,
+				00E356F01AD99517003FC87E /* Supporting Files */,
+			);
+			path = AppNameTests;
+			sourceTree = "<group>";
+		};
+		00E356F01AD99517003FC87E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				00E356F11AD99517003FC87E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		13B07FAE1A68108700A75B9A /* AppName */ = {
+			isa = PBXGroup;
+			children = (
+				7A8D145529522F1E00F7A107 /* GoogleService-Info.plist */,
+				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
+				13B07FB01A68108700A75B9A /* AppDelegate.m */,
+				13B07FB51A68108700A75B9A /* Images.xcassets */,
+				13B07FB61A68108700A75B9A /* Info.plist */,
+				7A3BA62C28495C9B00E13BD1 /* InfoPlist.strings */,
+				7A3BA63128495EBE00E13BD1 /* InfoPlist.strings */,
+				7A3BA62728495C7B00E13BD1 /* InfoPlist.strings */,
+				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
+				13B07FB71A68108700A75B9A /* main.m */,
+				7AB2CCC527E9BFB300EE6E02 /* AppCenter-Config.plist */,
+			);
+			name = AppName;
+			sourceTree = "<group>";
+		};
+		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
+				6423831EA8574132BED9D8CC /* libPods-AppName.a */,
+				ABFE59519B596E51CEFDCCC0 /* libPods-AppName-AppNameTests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		53418A86B3A843BDA9020CDD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				13747349EFE141F880A745B9 /* SF Pro Text Black.otf */,
+				E93A05E7BDC44E31A27CDB3D /* SF Pro Text Bold.otf */,
+				2F03553BF7C047818E648048 /* SF Pro Text Heavy.otf */,
+				6B64C8B88BB14B419BA83629 /* SF Pro Text Light.otf */,
+				07C0CD1C94074270B1DDF7D9 /* SF Pro Text Medium.otf */,
+				010282307F844F5CBF67BFB3 /* SF Pro Text Regular.otf */,
+				A368468A56C84158813E8CD8 /* SF Pro Text Semibold.otf */,
+				13CF593B0B9A4EAB90D59033 /* SF Pro Text Thin.otf */,
+				59AECACDE6604E06863B6BF4 /* SF Pro Text Ultralight.otf */,
+				E7BDD3A496C1401080898843 /* AntDesign.ttf */,
+				34ABED0184B34F5C94DDA275 /* Entypo.ttf */,
+				05301A63DEC74974A6A00441 /* EvilIcons.ttf */,
+				149E5351920C490AAAE3E29F /* Feather.ttf */,
+				63FC957071C6434FAF8CFCAE /* FontAwesome.ttf */,
+				C11460C5D09044CBB6BA15C0 /* FontAwesome5_Brands.ttf */,
+				D124F52CD2314FEB931D32E1 /* FontAwesome5_Regular.ttf */,
+				D924178BC19148B2A92DD644 /* FontAwesome5_Solid.ttf */,
+				30C4BF8D83844EDB8B7521FF /* Fontisto.ttf */,
+				F3E7CF2F15624A1DB3807D02 /* Foundation.ttf */,
+				7820CA2471974254B5328837 /* Ionicons.ttf */,
+				62636F70D064425193B1B883 /* MaterialCommunityIcons.ttf */,
+				AB5B5255DD16490283345279 /* MaterialIcons.ttf */,
+				DCFB00A9279E400F908DCB54 /* Octicons.ttf */,
+				A6BC2ACA29944DC887344F28 /* SimpleLineIcons.ttf */,
+				E9A4682FB6A54B2D9B463D28 /* Zocial.ttf */,
+				20BD1362A7D4406395BF72DA /* SF Pro Text Black Italic.otf */,
+				582051AA990847FF8E2FECD3 /* SF Pro Text Bold Italic.otf */,
+				92C8D204B93D4FE5847BFF78 /* SF Pro Text Heavy Italic.otf */,
+				90ED21DDBEB843B7BFD5ABA9 /* SF Pro Text Light Italic.otf */,
+				A9072862FD3A430B81F24D6E /* SF Pro Text Medium Italic.otf */,
+				B37CD0FB7D4549F192509906 /* SF Pro Text Regular Italic.otf */,
+				D3EB5955FD324243B3692556 /* SF Pro Text Semibold Italic.otf */,
+				0606E56FBFAE4826926B372C /* SF Pro Text Thin Italic.otf */,
+				E6FDEC67FA7149118ECAC01F /* SF Pro Text Ultralight Italic.otf */,
+				B805985460C54FC5A56D8D25 /* Gotham-Black.ttf */,
+				8FDDC185EDD240C486FEC41A /* Gotham-Bold.ttf */,
+				41885534BA3C464B8A26D91B /* Gotham-BoldItalic.ttf */,
+				F291B6DC9E1E495AA30BF79D /* Gotham-Book.ttf */,
+				80FDB881A1094162879E5A9E /* Gotham-BookItalic.ttf */,
+				6C1361F38081488FB5AAD6CD /* Gotham-Light.ttf */,
+				D590890492414583AD166B05 /* Gotham-LightItalic.ttf */,
+				3BA11594470544E7AC01B837 /* Gotham-Medium.ttf */,
+				9DBC09D0E9A54935A4A9213A /* Gotham-MediumItalic.ttf */,
+				CB6BD8A03B6E4179819D2D34 /* Gotham-Thin.ttf */,
+				4A10A571BE7A455E9D10AB4B /* Gotham-ThinItalic.ttf */,
+				4488B8FBE228491B9F1852B7 /* SF Pro Rounded Regular.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		83CBB9F61A601CBA00E9B192 = {
+			isa = PBXGroup;
+			children = (
+				13B07FAE1A68108700A75B9A /* AppName */,
+				832341AE1AAA6A7D00B99B32 /* Libraries */,
+				00E356EF1AD99517003FC87E /* AppNameTests */,
+				83CBBA001A601CBA00E9B192 /* Products */,
+				2D16E6871FA4F8E400B85C8A /* Frameworks */,
+				E233CBF5F47BEE60B243DCF8 /* Pods */,
+				53418A86B3A843BDA9020CDD /* Resources */,
+			);
+			indentWidth = 2;
+			sourceTree = "<group>";
+			tabWidth = 2;
+			usesTabs = 0;
+		};
+		83CBBA001A601CBA00E9B192 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				13B07F961A680F5B00A75B9A /* AppName.app */,
+				00E356EE1AD99517003FC87E /* AppNameTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E233CBF5F47BEE60B243DCF8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C0A881CF5CF3F2B244570E2A /* Pods-AppName.debug.xcconfig */,
+				D00AAFFCFCFDA5787532823F /* Pods-AppName.release.xcconfig */,
+				6C97AB639B58BBB4B15BBE30 /* Pods-AppName-AppNameTests.debug.xcconfig */,
+				1D0AE47A65C8663E3B452821 /* Pods-AppName-AppNameTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		00E356ED1AD99517003FC87E /* AppNameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "AppNameTests" */;
+			buildPhases = (
+				A130D646172E58E1D159D8F2 /* [CP] Check Pods Manifest.lock */,
+				00E356EA1AD99517003FC87E /* Sources */,
+				00E356EB1AD99517003FC87E /* Frameworks */,
+				00E356EC1AD99517003FC87E /* Resources */,
+				077E01280D4B4AD18B2E1770 /* [CP] Embed Pods Frameworks */,
+				4E62BDF20514810D028A5FBF /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				00E356F51AD99517003FC87E /* PBXTargetDependency */,
+			);
+			name = AppNameTests;
+			productName = AppNameTests;
+			productReference = 00E356EE1AD99517003FC87E /* AppNameTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		13B07F861A680F5B00A75B9A /* AppName */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "AppName" */;
+			buildPhases = (
+				3E482C27206C4DEF2FE45063 /* [CP] Check Pods Manifest.lock */,
+				FD10A7F022414F080027D42C /* Start Packager */,
+				13B07F871A680F5B00A75B9A /* Sources */,
+				13B07F8C1A680F5B00A75B9A /* Frameworks */,
+				13B07F8E1A680F5B00A75B9A /* Resources */,
+				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
+				C8AC78B0264D0F9F6F6D630E /* [CP] Embed Pods Frameworks */,
+				ADC9DDC32298B72B3CF5DC8E /* [CP] Copy Pods Resources */,
+				A36E02E3F0B5B130EF7B515C /* [CP-User] [RNFB] Core Configuration */,
+				4879C1932136E54FCC6F4E4D /* [CP-User] [RNFB] Crashlytics Configuration */,
+				7AD2520E280DC832004BE662 /* FirebaseCrashlytics symbols uploader */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AppName;
+			productName = AppName;
+			productReference = 13B07F961A680F5B00A75B9A /* AppName.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		83CBB9F71A601CBA00E9B192 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1320;
+				TargetAttributes = {
+					00E356ED1AD99517003FC87E = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = 13B07F861A680F5B00A75B9A;
+					};
+					13B07F861A680F5B00A75B9A = {
+						LastSwiftMigration = 1120;
+					};
+				};
+			};
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "AppName" */;
+			compatibilityVersion = "Xcode 12.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				fr,
+				es,
+				Base,
+			);
+			mainGroup = 83CBB9F61A601CBA00E9B192;
+			productRefGroup = 83CBBA001A601CBA00E9B192 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				13B07F861A680F5B00A75B9A /* AppName */,
+				00E356ED1AD99517003FC87E /* AppNameTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		00E356EC1AD99517003FC87E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A8D145729522F1E00F7A107 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13B07F8E1A680F5B00A75B9A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
+				7AB2CCC627E9BFB300EE6E02 /* AppCenter-Config.plist in Resources */,
+				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				B5DE1760E6A84955BB80E1A6 /* SF Pro Text Black.otf in Resources */,
+				B5C31222C19544B5A2253D38 /* SF Pro Text Bold.otf in Resources */,
+				C10624873C1B45BFB451B3E8 /* SF Pro Text Heavy.otf in Resources */,
+				CD02F65BB6794A5CAA6573E9 /* SF Pro Text Light.otf in Resources */,
+				F31271F86F8B46F39510418D /* SF Pro Text Medium.otf in Resources */,
+				1B5C3315726941BABAFBEC4E /* SF Pro Text Regular.otf in Resources */,
+				B041684880984D149DE0730D /* SF Pro Text Semibold.otf in Resources */,
+				A0A5A11323FC49E4A8360CFC /* SF Pro Text Thin.otf in Resources */,
+				7A8D145629522F1E00F7A107 /* GoogleService-Info.plist in Resources */,
+				7F5ACE0B65C84D3F8624DD18 /* SF Pro Text Ultralight.otf in Resources */,
+				8B86ACD89C254797A522363E /* AntDesign.ttf in Resources */,
+				F5E462F0E70C482E93F03DBA /* Entypo.ttf in Resources */,
+				5C027CD7FBA64B10842E76FC /* EvilIcons.ttf in Resources */,
+				5B21DDFCF9524166A4239630 /* Feather.ttf in Resources */,
+				3539B10623404D5AAC99DF6A /* FontAwesome.ttf in Resources */,
+				3F3AF888FE6841ECB20F5091 /* FontAwesome5_Brands.ttf in Resources */,
+				8BC438526D99482188455A76 /* FontAwesome5_Regular.ttf in Resources */,
+				B7CB59DABB28476DBAABBC1A /* FontAwesome5_Solid.ttf in Resources */,
+				C561DA5237A94F13BEAAB7DC /* Fontisto.ttf in Resources */,
+				B27BA69030A344E0A17FDF9B /* Foundation.ttf in Resources */,
+				7A3BA62528495C7B00E13BD1 /* InfoPlist.strings in Resources */,
+				032FF56C8DD34618AC7BB6F1 /* Ionicons.ttf in Resources */,
+				7FD1E89461F4409F82CB85ED /* MaterialCommunityIcons.ttf in Resources */,
+				AA09C7F0FFC14EAD94FC8E7D /* MaterialIcons.ttf in Resources */,
+				8797EE0633F540428AF05C14 /* Octicons.ttf in Resources */,
+				9DBFD8BE015643F4862FCD8A /* SimpleLineIcons.ttf in Resources */,
+				7A3BA62A28495C9B00E13BD1 /* InfoPlist.strings in Resources */,
+				7A3BA62F28495EBE00E13BD1 /* InfoPlist.strings in Resources */,
+				1932DA7C3DFE493EB30001DA /* Zocial.ttf in Resources */,
+				093CDB6AC4824B36B13905E6 /* SF Pro Text Black Italic.otf in Resources */,
+				1B607AC543EA4CCDBAED8625 /* SF Pro Text Bold Italic.otf in Resources */,
+				F6C0A7C7A433412AAC138331 /* SF Pro Text Heavy Italic.otf in Resources */,
+				5FE389DAF0B0475D85A2606D /* SF Pro Text Light Italic.otf in Resources */,
+				CE6C6BBE74594BF0A42362C5 /* SF Pro Text Medium Italic.otf in Resources */,
+				964AF82167284ED2BB608C52 /* SF Pro Text Regular Italic.otf in Resources */,
+				32BF7F085548431ABE56F67B /* SF Pro Text Semibold Italic.otf in Resources */,
+				EE270F547C7E4DC38384D804 /* SF Pro Text Thin Italic.otf in Resources */,
+				9AC924E4381446F6954B04A8 /* SF Pro Text Ultralight Italic.otf in Resources */,
+				D91CA50DD14B405CBB7C4A3C /* Gotham-Black.ttf in Resources */,
+				58E729BE80AD4AEABF6C0ED8 /* Gotham-Bold.ttf in Resources */,
+				F369928A2A1744CCA2978C28 /* Gotham-BoldItalic.ttf in Resources */,
+				71613148F15943D9A046E291 /* Gotham-Book.ttf in Resources */,
+				2B8405C2806048E8B9D03E80 /* Gotham-BookItalic.ttf in Resources */,
+				DE157410B00B425FA160544B /* Gotham-Light.ttf in Resources */,
+				03050F0CC2874DAFAE1F5CDF /* Gotham-LightItalic.ttf in Resources */,
+				010B40213299450B8E633776 /* Gotham-Medium.ttf in Resources */,
+				36D43C6AA6F64649AB8243D7 /* Gotham-MediumItalic.ttf in Resources */,
+				932B25A6CC804F42AE45369E /* Gotham-Thin.ttf in Resources */,
+				37F10B345C3E4DCD8889EBD7 /* Gotham-ThinItalic.ttf in Resources */,
+				16D3F04A35AF4D4FA123BB25 /* SF Pro Rounded Regular.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Bundle React Native code and images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
+		};
+		077E01280D4B4AD18B2E1770 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AppName-AppNameTests/Pods-AppName-AppNameTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AppName-AppNameTests/Pods-AppName-AppNameTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AppName-AppNameTests/Pods-AppName-AppNameTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3E482C27206C4DEF2FE45063 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AppName-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4879C1932136E54FCC6F4E4D /* [CP-User] [RNFB] Crashlytics Configuration */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}",
+				"$(SRCROOT)/$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			name = "[CP-User] [RNFB] Crashlytics Configuration";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/usr/bin/env bash\n#\n# Copyright (c) 2016-present Invertase Limited & Contributors\n#\n# Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this library except in compliance with the License.\n# You may obtain a copy of the License at\n#\n#   http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License.\n#\nset -e\n\nif [[ ${PODS_ROOT} ]]; then\n  echo \"info: Exec FirebaseCrashlytics Run from Pods\"\n  \"${PODS_ROOT}/FirebaseCrashlytics/run\"\nelse\n  echo \"info: Exec FirebaseCrashlytics Run from framework\"\n  \"${PROJECT_DIR}/FirebaseCrashlytics.framework/run\"\nfi\n";
+		};
+		4E62BDF20514810D028A5FBF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AppName-AppNameTests/Pods-AppName-AppNameTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AppName-AppNameTests/Pods-AppName-AppNameTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AppName-AppNameTests/Pods-AppName-AppNameTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7AD2520E280DC832004BE662 /* FirebaseCrashlytics symbols uploader */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "FirebaseCrashlytics symbols uploader";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"Symbols Directory\"\necho \"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}\"\n#Firebase\n\"${PODS_ROOT}/FirebaseCrashlytics/upload-symbols\" -gsp \"${PROJECT_DIR}/AppName/GoogleService-Info.plist\" -p ios \"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}\"\n";
+		};
+		A130D646172E58E1D159D8F2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AppName-AppNameTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A36E02E3F0B5B130EF7B515C /* [CP-User] [RNFB] Core Configuration */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			);
+			name = "[CP-User] [RNFB] Core Configuration";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/usr/bin/env bash\n#\n# Copyright (c) 2016-present Invertase Limited & Contributors\n#\n# Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this library except in compliance with the License.\n# You may obtain a copy of the License at\n#\n#   http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License.\n#\nset -e\n\n_MAX_LOOKUPS=2;\n_SEARCH_RESULT=''\n_RN_ROOT_EXISTS=''\n_CURRENT_LOOKUPS=1\n_JSON_ROOT=\"'react-native'\"\n_JSON_FILE_NAME='firebase.json'\n_JSON_OUTPUT_BASE64='e30=' # { }\n_CURRENT_SEARCH_DIR=${PROJECT_DIR}\n_PLIST_BUDDY=/usr/libexec/PlistBuddy\n_TARGET_PLIST=\"${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH}\"\n_DSYM_PLIST=\"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist\"\n\n# plist arrays\n_PLIST_ENTRY_KEYS=()\n_PLIST_ENTRY_TYPES=()\n_PLIST_ENTRY_VALUES=()\n\nfunction setPlistValue {\n  echo \"info:      setting plist entry '$1' of type '$2' in file '$4'\"\n  ${_PLIST_BUDDY} -c \"Add :$1 $2 '$3'\" $4 || echo \"info:      '$1' already exists\"\n}\n\nfunction getFirebaseJsonKeyValue () {\n  if [[ ${_RN_ROOT_EXISTS} ]]; then\n    ruby -e \"require 'rubygems';require 'json'; output=JSON.parse('$1'); puts output[$_JSON_ROOT]['$2']\"\n  else\n    echo \"\"\n  fi;\n}\n\nfunction jsonBoolToYesNo () {\n  if [[ $1 == \"false\" ]]; then\n    echo \"NO\"\n  elif [[ $1 == \"true\" ]]; then\n    echo \"YES\"\n  else echo \"NO\"\n  fi\n}\n\necho \"info: -> RNFB build script started\"\necho \"info: 1) Locating ${_JSON_FILE_NAME} file:\"\n\nif [[ -z ${_CURRENT_SEARCH_DIR} ]]; then\n  _CURRENT_SEARCH_DIR=$(pwd)\nfi;\n\nwhile true; do\n  _CURRENT_SEARCH_DIR=$(dirname \"$_CURRENT_SEARCH_DIR\")\n  if [[ \"$_CURRENT_SEARCH_DIR\" == \"/\" ]] || [[ ${_CURRENT_LOOKUPS} -gt ${_MAX_LOOKUPS} ]]; then break; fi;\n  echo \"info:      ($_CURRENT_LOOKUPS of $_MAX_LOOKUPS) Searching in '$_CURRENT_SEARCH_DIR' for a ${_JSON_FILE_NAME} file.\"\n  _SEARCH_RESULT=$(find \"$_CURRENT_SEARCH_DIR\" -maxdepth 2 -name ${_JSON_FILE_NAME} -print | /usr/bin/head -n 1)\n  if [[ ${_SEARCH_RESULT} ]]; then\n    echo \"info:      ${_JSON_FILE_NAME} found at $_SEARCH_RESULT\"\n    break;\n  fi;\n  _CURRENT_LOOKUPS=$((_CURRENT_LOOKUPS+1))\ndone\n\nif [[ ${_SEARCH_RESULT} ]]; then\n  _JSON_OUTPUT_RAW=$(cat \"${_SEARCH_RESULT}\")\n  _RN_ROOT_EXISTS=$(ruby -e \"require 'rubygems';require 'json'; output=JSON.parse('$_JSON_OUTPUT_RAW'); puts output[$_JSON_ROOT]\" || echo '')\n\n  if [[ ${_RN_ROOT_EXISTS} ]]; then\n    if ! python3 --version >/dev/null 2>&1; then echo \"python3 not found, firebase.json file processing error.\" && exit 1; fi\n    _JSON_OUTPUT_BASE64=$(python3 -c 'import json,sys,base64;print(base64.b64encode(bytes(json.dumps(json.loads(open('\"'${_SEARCH_RESULT}'\"', '\"'rb'\"').read())['${_JSON_ROOT}']), '\"'utf-8'\"')).decode())' || echo \"e30=\")\n  fi\n\n  _PLIST_ENTRY_KEYS+=(\"firebase_json_raw\")\n  _PLIST_ENTRY_TYPES+=(\"string\")\n  _PLIST_ENTRY_VALUES+=(\"$_JSON_OUTPUT_BASE64\")\n\n  # config.app_data_collection_default_enabled\n  _APP_DATA_COLLECTION_ENABLED=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"app_data_collection_default_enabled\")\n  if [[ $_APP_DATA_COLLECTION_ENABLED ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseDataCollectionDefaultEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_APP_DATA_COLLECTION_ENABLED\")\")\n  fi\n\n  # config.analytics_auto_collection_enabled\n  _ANALYTICS_AUTO_COLLECTION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_auto_collection_enabled\")\n  if [[ $_ANALYTICS_AUTO_COLLECTION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FIREBASE_ANALYTICS_COLLECTION_ENABLED\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_AUTO_COLLECTION\")\")\n  fi\n\n  # config.analytics_collection_deactivated\n  _ANALYTICS_DEACTIVATED=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_collection_deactivated\")\n  if [[ $_ANALYTICS_DEACTIVATED ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FIREBASE_ANALYTICS_COLLECTION_DEACTIVATED\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_DEACTIVATED\")\")\n  fi\n\n  # config.analytics_idfv_collection_enabled\n  _ANALYTICS_IDFV_COLLECTION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_idfv_collection_enabled\")\n  if [[ $_ANALYTICS_IDFV_COLLECTION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GOOGLE_ANALYTICS_IDFV_COLLECTION_ENABLED\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_IDFV_COLLECTION\")\")\n  fi\n\n  # config.analytics_default_allow_ad_personalization_signals\n  _ANALYTICS_PERSONALIZATION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_default_allow_ad_personalization_signals\")\n  if [[ $_ANALYTICS_PERSONALIZATION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_PERSONALIZATION_SIGNALS\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_PERSONALIZATION\")\")\n  fi\n\n  # config.google_analytics_automatic_screen_reporting_enabled\n  _ANALYTICS_AUTO_SCREEN_REPORTING=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"google_analytics_automatic_screen_reporting_enabled\")\n  if [[ $_ANALYTICS_AUTO_SCREEN_REPORTING ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseAutomaticScreenReportingEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_AUTO_SCREEN_REPORTING\")\")\n  fi\n\n  # config.perf_auto_collection_enabled\n  _PERF_AUTO_COLLECTION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"perf_auto_collection_enabled\")\n  if [[ $_PERF_AUTO_COLLECTION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"firebase_performance_collection_enabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_PERF_AUTO_COLLECTION\")\")\n  fi\n\n  # config.perf_collection_deactivated\n  _PERF_DEACTIVATED=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"perf_collection_deactivated\")\n  if [[ $_PERF_DEACTIVATED ]]; then\n    _PLIST_ENTRY_KEYS+=(\"firebase_performance_collection_deactivated\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_PERF_DEACTIVATED\")\")\n  fi\n\n  # config.messaging_auto_init_enabled\n  _MESSAGING_AUTO_INIT=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"messaging_auto_init_enabled\")\n  if [[ $_MESSAGING_AUTO_INIT ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseMessagingAutoInitEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_MESSAGING_AUTO_INIT\")\")\n  fi\n\n  # config.in_app_messaging_auto_colllection_enabled\n  _FIAM_AUTO_INIT=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"in_app_messaging_auto_collection_enabled\")\n  if [[ $_FIAM_AUTO_INIT ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseInAppMessagingAutomaticDataCollectionEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_FIAM_AUTO_INIT\")\")\n  fi\n\n  # config.app_check_token_auto_refresh\n  _APP_CHECK_TOKEN_AUTO_REFRESH=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"app_check_token_auto_refresh\")\n  if [[ $_APP_CHECK_TOKEN_AUTO_REFRESH ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseAppCheckTokenAutoRefreshEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_APP_CHECK_TOKEN_AUTO_REFRESH\")\")\n  fi\n\n  # config.crashlytics_disable_auto_disabler - undocumented for now - mainly for debugging, document if becomes useful\n  _CRASHLYTICS_AUTO_DISABLE_ENABLED=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"crashlytics_disable_auto_disabler\")\n  if [[ $_CRASHLYTICS_AUTO_DISABLE_ENABLED == \"true\" ]]; then\n    echo \"Disabled Crashlytics auto disabler.\" # do nothing\n  else\n    _PLIST_ENTRY_KEYS+=(\"FirebaseCrashlyticsCollectionEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"NO\")\n  fi\nelse\n  _PLIST_ENTRY_KEYS+=(\"firebase_json_raw\")\n  _PLIST_ENTRY_TYPES+=(\"string\")\n  _PLIST_ENTRY_VALUES+=(\"$_JSON_OUTPUT_BASE64\")\n  echo \"warning:   A firebase.json file was not found, whilst this file is optional it is recommended to include it to configure firebase services in React Native Firebase.\"\nfi;\n\necho \"info: 2) Injecting Info.plist entries: \"\n\n# Log out the keys we're adding\nfor i in \"${!_PLIST_ENTRY_KEYS[@]}\"; do\n  echo \"    ->  $i) ${_PLIST_ENTRY_KEYS[$i]}\" \"${_PLIST_ENTRY_TYPES[$i]}\" \"${_PLIST_ENTRY_VALUES[$i]}\"\ndone\n\nfor plist in \"${_TARGET_PLIST}\" \"${_DSYM_PLIST}\" ; do\n  if [[ -f \"${plist}\" ]]; then\n\n    # paths with spaces break the call to setPlistValue. temporarily modify\n    # the shell internal field separator variable (IFS), which normally\n    # includes spaces, to consist only of line breaks\n    oldifs=$IFS\n    IFS=\"\n\"\n\n    for i in \"${!_PLIST_ENTRY_KEYS[@]}\"; do\n      setPlistValue \"${_PLIST_ENTRY_KEYS[$i]}\" \"${_PLIST_ENTRY_TYPES[$i]}\" \"${_PLIST_ENTRY_VALUES[$i]}\" \"${plist}\"\n    done\n\n    # restore the original internal field separator value\n    IFS=$oldifs\n  else\n    echo \"warning:   A Info.plist build output file was not found (${plist})\"\n  fi\ndone\n\necho \"info: <- RNFB build script finished\"\n";
+		};
+		ADC9DDC32298B72B3CF5DC8E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AppName/Pods-AppName-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AppName/Pods-AppName-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AppName/Pods-AppName-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8AC78B0264D0F9F6F6D630E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AppName/Pods-AppName-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AppName/Pods-AppName-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AppName/Pods-AppName-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FD10A7F022414F080027D42C /* Start Packager */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Start Packager";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		00E356EA1AD99517003FC87E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				00E356F31AD99517003FC87E /* AppNameTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		13B07F871A680F5B00A75B9A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
+				13B07FC11A68108700A75B9A /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 13B07F861A680F5B00A75B9A /* AppName */;
+			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		7A3BA62728495C7B00E13BD1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7A3BA62628495C7B00E13BD1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7A3BA62C28495C9B00E13BD1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7A3BA62B28495C9B00E13BD1 /* fr */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7A3BA63128495EBE00E13BD1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7A3BA63028495EBE00E13BD1 /* es */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		00E356F61AD99517003FC87E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6C97AB639B58BBB4B15BBE30 /* Pods-AppName-AppNameTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AppNameTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AppName.app/AppName";
+			};
+			name = Debug;
+		};
+		00E356F71AD99517003FC87E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D0AE47A65C8663E3B452821 /* Pods-AppName-AppNameTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COPY_PHASE_STRIP = NO;
+				INFOPLIST_FILE = AppNameTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-lc++",
+					"$(inherited)",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AppName.app/AppName";
+			};
+			name = Release;
+		};
+		13B07F941A680F5B00A75B9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0A881CF5CF3F2B244570E2A /* Pods-AppName.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = AppName/AppName.entitlements;
+				CURRENT_PROJECT_VERSION = 11;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 47RKCYMP58;
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = AppName/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.11;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fifteen.angels.beta;
+				PRODUCT_NAME = AppName;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		13B07F951A680F5B00A75B9A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D00AAFFCFCFDA5787532823F /* Pods-AppName.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = AppName/AppName.entitlements;
+				CURRENT_PROJECT_VERSION = 11;
+				DEVELOPMENT_TEAM = 47RKCYMP58;
+				INFOPLIST_FILE = AppName/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.11;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fifteen.angels.beta;
+				PRODUCT_NAME = AppName;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		83CBBA201A601CBA00E9B192 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					/usr/lib/swift,
+					"$(inherited)",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(SDKROOT)/usr/lib/swift\"",
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
+					"\"$(inherited)\"",
+				);
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		83CBBA211A601CBA00E9B192 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = i386;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					/usr/lib/swift,
+					"$(inherited)",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"\"$(SDKROOT)/usr/lib/swift\"",
+					"\"$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)\"",
+					"\"$(inherited)\"",
+				);
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "AppNameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				00E356F61AD99517003FC87E /* Debug */,
+				00E356F71AD99517003FC87E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "AppName" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				13B07F941A680F5B00A75B9A /* Debug */,
+				13B07F951A680F5B00A75B9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "AppName" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				83CBBA201A601CBA00E9B192 /* Debug */,
+				83CBBA211A601CBA00E9B192 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 83CBB9F71A601CBA00E9B192 /* Project object */;
+}

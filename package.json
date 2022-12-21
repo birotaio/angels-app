@@ -1,0 +1,124 @@
+{
+  "name": "appname",
+  "version": "1.0.1",
+  "private": true,
+  "scripts": {
+    "android": "npx react-native run-android",
+    "ios": "npx react-native run-ios --simulator='iPhone 8'",
+    "pod": "npx pod-install ios",
+    "start": "react-native start",
+    "test": "jest",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "precommit": "lint-staged",
+    "prepare": "husky install",
+    "ota-a": "appcenter codepush release-react -a fifteen/Fenix-Android -d Staging -t \"1.11\"",
+    "ota-i": "appcenter codepush release-react -a fifteen/Fenix-iOS -d Staging -t \"1.11\"",
+    "ota": "yarn ota-a && yarn ota-i",
+    "setVersion": "node ./scripts/setVersion && prettier --write ./package.json",
+    "patch": "npx patch-package",
+    "postinstall": "yarn patch"
+  },
+  "lint-staged": {
+    "src/**/*.{js,ts,tsx}": [
+      "eslint . --ext .js,.jsx,.ts,.tsx --fix"
+    ],
+    "./src/**": [
+      "prettier --list-different --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "dependencies": {
+    "@react-native-async-storage/async-storage": "^1.17.2",
+    "@react-native-firebase/analytics": "^14.5.1",
+    "@react-native-firebase/app": "^14.5.1",
+    "@react-native-firebase/crashlytics": "^14.5.1",
+    "@react-native-firebase/in-app-messaging": "^14.7.0",
+    "@react-native-firebase/messaging": "^14.5.1",
+    "@react-native-firebase/perf": "^14.5.1",
+    "@react-native-firebase/remote-config": "^14.5.1",
+    "@react-native-mapbox-gl/maps": "^8.6.0-beta.0",
+    "@react-native-picker/picker": "^2.4.0",
+    "@react-navigation/native": "^6.0.8",
+    "@react-navigation/native-stack": "^6.5.0",
+    "@reduxjs/toolkit": "^1.8.0",
+    "@turf/distance": "^6.5.0",
+    "@types/lodash": "^4.14.182",
+    "@types/react-native-vector-icons": "^6.4.12",
+    "appcenter": "4.4.3",
+    "appcenter-analytics": "4.4.3",
+    "appcenter-crashes": "4.4.3",
+    "axios": "^0.26.1",
+    "i18n-js": "^3.8.0",
+    "lodash": "^4.17.21",
+    "lottie-ios": "3.4.1",
+    "lottie-react-native": "^5.1.4",
+    "moment": "^2.29.2",
+    "react": "17.0.2",
+    "react-hook-form": "^7.28.0",
+    "react-native": "0.67.3",
+    "react-native-autocomplete-dropdown": "^2.0.6",
+    "react-native-code-push": "^7.0.4",
+    "react-native-confirmation-code-field": "^7.3.0",
+    "react-native-country-picker-modal": "^2.0.0",
+    "react-native-device-info": "^9.0.2",
+    "react-native-dotenv": "^3.3.1",
+    "react-native-flash-message": "^0.2.1",
+    "react-native-flipper": "^0.151.0",
+    "react-native-geolocation-service": "^5.3.0-beta.4",
+    "react-native-iphone-x-helper": "^1.3.1",
+    "react-native-keyboard-aware-scroll-view": "^0.9.5",
+    "react-native-localize": "^2.2.2",
+    "react-native-paper": "^4.11.2",
+    "react-native-phone-input": "^1.3.3",
+    "react-native-safe-area-context": "^4.1.2",
+    "react-native-screens": "^3.13.1",
+    "react-native-splash-screen": "^3.3.0",
+    "react-native-svg": "^12.3.0",
+    "react-native-vector-icons": "^9.1.0",
+    "react-native-webview": "^11.22.2",
+    "react-redux": "^7.2.6",
+    "redux-flipper": "^2.0.1",
+    "redux-saga": "^1.1.3",
+    "rn-swipeable-panel": "^1.2.7"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.9",
+    "@babel/runtime": "^7.12.5",
+    "@react-native-community/eslint-config": "^2.0.0",
+    "@types/jest": "^26.0.23",
+    "@types/react-native": "^0.66.15",
+    "@types/react-test-renderer": "^17.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.7.0",
+    "@typescript-eslint/parser": "^5.7.0",
+    "babel-jest": "^26.6.3",
+    "eslint": "^7.14.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
+    "jest": "^26.6.3",
+    "lint-staged": "^12.3.5",
+    "metro-react-native-babel-preset": "^0.66.2",
+    "prettier": "^2.5.1",
+    "react-native-svg-transformer": "^1.0.0",
+    "react-test-renderer": "17.0.2",
+    "typescript": "^4.4.4"
+  },
+  "resolutions": {
+    "@types/react": "^17"
+  },
+  "jest": {
+    "preset": "react-native",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
+  "versionCode": "5"
+}

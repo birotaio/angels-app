@@ -1,0 +1,12 @@
+diff --git a/node_modules/react-native-autocomplete-dropdown/src/index.js b/node_modules/react-native-autocomplete-dropdown/src/index.js
+index d054fc0..0bf75eb 100644
+--- a/node_modules/react-native-autocomplete-dropdown/src/index.js
++++ b/node_modules/react-native-autocomplete-dropdown/src/index.js
+@@ -218,6 +218,7 @@ export const AutocompleteDropdown = memo(
+     }, [])
+ 
+     const onChevronPress = useCallback(() => {
++      clear()
+       toggle()
+       Keyboard.dismiss()
+ 
