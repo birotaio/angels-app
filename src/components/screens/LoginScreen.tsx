@@ -13,8 +13,6 @@ import React from 'react';
 import {View} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import {ScreenProps} from '.';
-import Lottie from 'lottie-react-native';
-import lottie from '@assets/lottie';
 
 const LoginScreen: ScreenProps = () => {
   const dispatch = useDispatch();

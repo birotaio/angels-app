@@ -1,1 +1,1 @@
-export type TranslateKeyProps = 'login';
+export type TranslateKeyProps = 'login' | 'menu';

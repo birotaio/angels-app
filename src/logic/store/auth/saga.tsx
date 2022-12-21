@@ -5,6 +5,7 @@ import message from '@utils/message';
 import {getToken, setToken} from '@utils/api';
 import {LoginApiInputType, LoginApiResponseType} from '@utils/api/types';
 import i18n from '@assets/locales';
+import navigator from '@navigation/navigator';
 
 export const AUTH_ACTIONS_SAGA_CHECK_LOGIN = 'AUTH_ACTIONS_SAGA_CHECK_LOGIN';
 export const AUTH_ACTIONS_SAGA_LOGIN = 'AUTH_ACTIONS_SAGA_LOGIN';
@@ -27,6 +28,7 @@ export function* _login(payload: LoginApiInputType) {
       yield setToken(data.token);
       yield put(setAuthState({isLogged: true, isLoading: false}));
       message.show(`${i18n.t('login_ok')} : ${email}`, 'success', false);
+      navigator.navigate('MapScreen');
     } else {
       yield put(setAuthState({isLoading: false}));
       message.show('login_ko', 'danger');

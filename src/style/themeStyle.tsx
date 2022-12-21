@@ -8,7 +8,7 @@ const themeStyle = {
   errorColor: colors.NEUTRAL_LIGHT_03,
   accentPrimary: colors.PRIMARY,
   accentSecondary: colors.SECONDARY,
-  background: colors.BLACK,
+  background: colors.WHITE,
 };
 
 export default themeStyle;

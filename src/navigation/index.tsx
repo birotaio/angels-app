@@ -7,7 +7,7 @@ import Header from './Header';
 import * as screens from '../components/screens';
 import {useDispatch} from 'react-redux';
 import {AUTH_ACTIONS_SAGA_CHECK_LOGIN} from '@logic/store/auth/saga';
-import {LoginScreen} from '../components/screens';
+import {LoginScreen, MapScreen} from '../components/screens';
 
 const Stack = createNativeStackNavigator();
 const screenKeys = Object.keys(screens);
@@ -16,7 +16,7 @@ function MainRouter() {
   dispatch({type: AUTH_ACTIONS_SAGA_CHECK_LOGIN});
   return (
     <Stack.Navigator
-      initialRouteName={LoginScreen.navigationName}
+      initialRouteName={MapScreen.navigationName}
       screenOptions={{
         header: Header,
         animation: 'fade_from_bottom',

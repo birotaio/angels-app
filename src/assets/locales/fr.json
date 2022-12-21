@@ -5,5 +5,7 @@
   "email": "Adresse email",
   "email_required": "Adresse email requise",
   "password": "Mot de passe",
-  "password_required": "Mot de passe requis"
+  "password_required": "Mot de passe requis",
+
+  "menu": "Menu"
 }

@@ -27,4 +27,9 @@ export default StyleSheet.create({
     backgroundColor: themeStyle.placeholderTextColor,
     color: themeStyle.textColor,
   },
+  // Map
+  mapFab: {
+    borderRadius: 24,
+    backgroundColor: themeStyle.background,
+  },
 });

@@ -94,17 +94,11 @@ const MyText: React.FC<MyTextProps & TextProps> = ({
     _caption_thin && textStyle._caption_thin,
     _button_label_giant && textStyle._button_label_giant,
   ];
-  const _color = _color_grey
-    ? themeStyle.grey
-    : _color_text_primary
-    ? themeStyle.textColorPrimary
-    : _color_text_secondary
-    ? themeStyle.textColorSecondary
-    : _color_primary
+  const _color = _color_primary
     ? themeStyle.accentPrimary
     : _color_secondary
     ? themeStyle.accentSecondary
-    : color || themeStyle.textColorPrimary;
+    : color || themeStyle.textColor;
 
   return icon ? (
     <View style={layoutStyle.rowCenter}>

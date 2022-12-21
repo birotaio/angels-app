@@ -7,3 +7,4 @@ export type ScreenProps = {
 
 export * from './SplashScreen';
 export * from './LoginScreen';
+export * from './MapScreen';

@@ -35,13 +35,13 @@ const MyIcon: React.FC<MyIconProps> = ({
     <MaterialIcon
       name={icon}
       size={size || 28}
-      color={color || themeStyle.textColorPrimary}
+      color={color || themeStyle.textColor}
     />
   ) : (
     <MaterialCommunityIcons
       name={icon}
       size={size || 28}
-      color={color || themeStyle.textColorPrimary}
+      color={color || themeStyle.textColor}
     />
   );
 
