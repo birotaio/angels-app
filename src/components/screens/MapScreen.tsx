@@ -1,11 +1,14 @@
 import Map from '@components/map/Map';
 import {MapActions} from '@components/map/MapActions';
 import {MAP_ACTIONS_SAGA_GET_STATIONS} from '@logic/store/map/saga';
+import navigator from '@navigation/navigator';
 import useTracking from '@navigation/useTracking';
 import layoutStyle from '@style/layoutStyle';
 import React from 'react';
 import {useDispatch} from 'react-redux';
 import {ScreenProps} from '.';
+
+import {ScanScreen} from '@components/screens';
 
 const MapScreen: ScreenProps = () => {
   const dispatch = useDispatch();
@@ -17,7 +20,7 @@ const MapScreen: ScreenProps = () => {
       <MapActions
         onGeolocationPress={() => console.log('geolocation')}
         onMapSearchPress={() => console.log('mapSearch')}
-        onScanQrCodePress={() => console.log('toScanPage')}
+        onScanQrCodePress={() => navigator.navigate(ScanScreen.navigationName)}
       />
     </Map>
   );
