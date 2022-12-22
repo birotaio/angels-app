@@ -7,6 +7,7 @@ const themeStyle = {
   borderLineColor: colors.NEUTRAL_DARK_03,
   errorColor: colors.NEUTRAL_LIGHT_03,
   accentPrimary: colors.PRIMARY,
+  accentPrimaryDark: colors.PRIMARY_DARK,
   accentSecondary: colors.SECONDARY,
   background: colors.WHITE,
 };

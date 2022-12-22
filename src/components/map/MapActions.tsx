@@ -14,8 +14,9 @@ export const MapActions = ({
   onGeolocationPress: () => void;
   onMapSearchPress: () => void;
 }) => (
-  <View style={layoutStyle.absFill} pointerEvents="none">
+  <View style={layoutStyle.absFill} pointerEvents="box-none">
     <FAB
+      pointerEvents="box-only"
       color={themeStyle.accentPrimary.toString()}
       icon="crosshairs-gps"
       style={[componentStyle.mapFab, styles.geoloc]}
