@@ -2,6 +2,7 @@
   "login": "Se connecter",
   "login_ok": "Bienvenue",
   "login_ko": "Echec de la connexion",
+  "retry_your_action": "Réessayer votre action",
   "email": "Adresse email",
   "email_required": "Adresse email requise",
   "password": "Mot de passe",

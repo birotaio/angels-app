@@ -3,18 +3,40 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import {LOG_LEVEL} from '@utils/config/log';
 import constants from '@utils/constants';
 import message from '@utils/message';
-import {AxiosInstance} from 'axios';
+import axios, {AxiosInstance} from 'axios';
+import {authAPI} from './calls/authAPI';
 
-const axios = require('axios').default;
+const KEY_CID = '@keycid';
+const KEY_TKN = '@keytokn';
+const KEY_RFH_TKN = '@keyRefreshtokn';
+const REFRESH_TOKEN_CODE = 3003;
+
 export const REQUEST_HEADERS = {
   xwwwformurlencoded: {
     'Content-Type': 'application/x-www-form-urlencoded',
   },
 };
-export const getToken = async (): Promise<string | null> => {
-  return await AsyncStorage.getItem(KEY_TKN);
+export const getCliendId = async (): Promise<string> => {
+  return (await AsyncStorage.getItem(KEY_CID)) ?? '';
 };
-export const setToken = async (token: string): Promise<void> => {
+export const getToken = async (): Promise<string> => {
+  return (await AsyncStorage.getItem(KEY_TKN)) ?? '';
+};
+export const getRefreshToken = async (): Promise<string> => {
+  return (await AsyncStorage.getItem(KEY_RFH_TKN)) ?? '';
+};
+export const setLoginData = async (
+  token: string,
+  email?: string,
+  refreshToken?: string,
+): Promise<void> => {
+  if (email) {
+    await AsyncStorage.setItem(KEY_CID, email);
+  }
+  if (refreshToken) {
+    await AsyncStorage.setItem(KEY_RFH_TKN, refreshToken);
+  }
+
   return await AsyncStorage.setItem(KEY_TKN, token);
 };
 
@@ -36,10 +58,13 @@ const callAPI = async (
       Cookie: await getToken(),
     },
     withCredentials: false,
-    validateStatus: function (status: number) {
+    validateStatus: (status: number) => {
+      if (LOG_LEVEL.API) {
+        console.log('API CALL STATUS', status);
+      }
       return (status >= 200 && status < 300) || status === 409; // default
     },
-    transformResponse: (response: any) => {
+    transformResponse: response => {
       if (typeof response === 'string') {
         try {
           response = JSON.parse(response);
@@ -54,11 +79,14 @@ const callAPI = async (
         message.show(response?.error);
       }
 
+      // Add interceptor for REFRESH_TOKEN_CODE case
+      if (response?.code === REFRESH_TOKEN_CODE) {
+        authAPI.refreshToken();
+      }
+
       return response;
     },
   });
 };
-
-const KEY_TKN = '@keytokn';
 
 export default callAPI;

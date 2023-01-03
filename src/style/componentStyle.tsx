@@ -6,7 +6,6 @@ export default StyleSheet.create({
     fontSize: 16,
     fontFamily: 'SF Pro Text Regular',
     fontWeight: '400',
-    lineHeight: 48,
     height: 48,
     marginTop: 6,
     marginBottom: 4,

@@ -6,13 +6,14 @@ import MyScreen from '@components/generic/MyScreen';
 import MyView from '@components/generic/MyView';
 import {AUTH_ACTIONS_SAGA_LOGIN} from '@logic/store/auth/saga';
 import {AuthSelector} from '@logic/store/auth/selector';
+import navigator from '@navigation/navigator';
 import useTracking from '@navigation/useTracking';
 import layoutStyle from '@style/layoutStyle';
 import {emailFormat} from '@utils/strings/regex';
 import React from 'react';
-import {View} from 'react-native';
+import {TouchableOpacity} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
-import {ScreenProps} from '.';
+import {ScreenProps, MapScreen} from '.';
 
 const LoginScreen: ScreenProps = () => {
   const dispatch = useDispatch();
@@ -22,9 +23,12 @@ const LoginScreen: ScreenProps = () => {
   return (
     <MyScreen>
       <MyKeyboardAvoidingView>
-        <View style={layoutStyle.asc}>
+        {/* TODO remove press */}
+        <TouchableOpacity
+          style={layoutStyle.asc}
+          onPress={() => navigator.navigate(MapScreen.navigationName)}>
           <Logo />
-        </View>
+        </TouchableOpacity>
 
         <MyView flex p5>
           <MyForm
@@ -60,6 +64,9 @@ const LoginScreen: ScreenProps = () => {
                     value: 4,
                     message: i18n.t('password_required'),
                   },
+                },
+                inputProps: {
+                  secureTextEntry: false,
                 },
               },
             ]}

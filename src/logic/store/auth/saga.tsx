@@ -2,10 +2,11 @@ import {takeLatest, put} from 'redux-saga/effects';
 import {authAPI} from '@utils/api/calls/authAPI';
 import {setAuthState} from './reducer';
 import message from '@utils/message';
-import {getToken, setToken} from '@utils/api';
+import {getToken, setLoginData} from '@utils/api';
 import {LoginApiInputType, LoginApiResponseType} from '@utils/api/types';
 import i18n from '@assets/locales';
 import navigator from '@navigation/navigator';
+import {MapScreen} from '@components/screens';
 
 export const AUTH_ACTIONS_SAGA_CHECK_LOGIN = 'AUTH_ACTIONS_SAGA_CHECK_LOGIN';
 export const AUTH_ACTIONS_SAGA_LOGIN = 'AUTH_ACTIONS_SAGA_LOGIN';
@@ -21,14 +22,14 @@ export function* _login(payload: LoginApiInputType) {
   yield put(setAuthState({isLoading: true}));
   try {
     const result: LoginApiResponseType = yield authAPI.login(email, password);
-
     const data = result?.data;
+    console.log(result.data);
 
     if (data?.token) {
-      yield setToken(data.token);
+      yield setLoginData(data.token, email, data.refresh_token);
       yield put(setAuthState({isLogged: true, isLoading: false}));
       message.show(`${i18n.t('login_ok')} : ${email}`, 'success', false);
-      navigator.navigate('MapScreen');
+      navigator.navigate(MapScreen.navigationName);
     } else {
       yield put(setAuthState({isLoading: false}));
       message.show('login_ko', 'danger');
