@@ -95,7 +95,7 @@ const Map = forwardRef(
               // onMarkerPress={props?.onMarkerPress}
             />
           ) : null}
-          {/* {props.showUserLocation && <MapboxGL.UserLocation />} */}
+          {props.showUserLocation && <MapboxGL.UserLocation />}
         </MapboxGL.MapView>
         {props.children}
       </View>
