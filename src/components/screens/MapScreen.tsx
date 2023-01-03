@@ -17,17 +17,17 @@ const MapScreen: ScreenProps = () => {
   useTracking(MapScreen.navigationName);
   dispatch({type: MAP_ACTIONS_SAGA_GET_STATIONS});
 
-  const camera = useRef<MapboxGL.Camera>(null);
+  const map = useRef<MapboxGL.Camera>();
   return (
-    <Map ref={camera} showUserLocation style={layoutStyle.flex}>
+    <Map ref={map} showUserLocation style={layoutStyle.flex}>
       <MapActions
         onGeolocationPress={async () =>
           await geolocation.getCurrentPosition(position => {
-            if (position?.coords?.longitude && camera?.current) {
-              camera.current.flyTo(
-                [position.coords.longitude, position.coords.latitude],
-                200,
-              );
+            if (position?.coords?.longitude) {
+              map.current?.flyTo([
+                position.coords.longitude,
+                position.coords.latitude,
+              ]);
             }
           })
         }
