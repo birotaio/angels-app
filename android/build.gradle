@@ -23,6 +23,11 @@ buildscript {
 }
 
 def REACT_NATIVE_VERSION = new File(['node', '--print',"JSON.parse(require('fs').readFileSync(require.resolve('react-native/package.json'), 'utf-8')).version"].execute(null, rootDir).text.trim())
+def githubProperties = new Properties()
+def githubPropertiesFiles = rootProject.file("github.properties")
+
+if (githubPropertiesFiles.exists())
+    githubProperties.load(new FileInputStream(githubPropertiesFiles))
 
 allprojects {
     configurations.all {
@@ -31,6 +36,16 @@ allprojects {
         }
     }
     repositories {
+        jcenter()
+        // ZoovAndroid BLE SDK
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/birotaio/ZoovAndroid-BLE-SDK")
+            credentials {
+                username = githubProperties['gpr.usr'] ?: System.getenv("GPR_USER")
+                password = githubProperties['gpr.key'] ?: System.getenv("GPR_API_KEY")
+            }
+        }
         maven {
             // All of React Native (JS, Obj-C sources, Android binaries) is installed from npm
             url("$rootDir/../node_modules/react-native/android")
@@ -48,7 +63,7 @@ allprojects {
         }
         google()
         maven { url 'https://www.jitpack.io' }
-         maven {
+        maven {
             url 'https://api.mapbox.com/downloads/v2/releases/maven'
             authentication {
                 basic(BasicAuthentication)
@@ -61,5 +76,6 @@ allprojects {
                 password = project.properties['MAPBOX_DOWNLOADS_TOKEN'] ?: ""
             }
         }
+     
     }
 }
