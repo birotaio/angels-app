@@ -3,7 +3,8 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import {LOG_LEVEL} from '@utils/config/log';
 import constants from '@utils/constants';
 import message from '@utils/message';
-import axios, {AxiosInstance} from 'axios';
+import axios, {AxiosInstance, AxiosRequestConfig} from 'axios';
+import {Platform} from 'react-native';
 import {authAPI} from './calls/authAPI';
 
 const KEY_CID = '@keycid';
@@ -48,13 +49,16 @@ const callAPI = async (
   headers: StringMap = {},
   url?: string,
 ): Promise<AxiosInstance> => {
-  return axios.create({
+  const axiosConfig: AxiosRequestConfig = {
     baseURL: url || constants.API_URL,
     timeout: 7000,
     headers: {
       ...headers,
-      'X-Zoov-ClientId': constants.API_CLIENT_ID,
-      'X-ApiKey': constants.API_KEY,
+      Authorization: `Bearer ${await getToken()}`,
+      'X-Zoov-ClientId':
+        Platform.OS === 'android'
+          ? constants.API_CLIENT_ID_ANDROID
+          : constants.API_CLIENT_ID_IOS,
       Cookie: await getToken(),
     },
     withCredentials: false,
@@ -86,7 +90,8 @@ const callAPI = async (
 
       return response;
     },
-  });
+  };
+  return axios.create(axiosConfig);
 };
 
 export default callAPI;
