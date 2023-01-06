@@ -1,9 +1,8 @@
 import {NativeModules} from 'react-native';
 
 const {BleModule} = NativeModules;
+interface BleInterface {
+  setUp(url: string, token: string, refreshToken: string): void;
+}
 
-const setUp = (url: string, token: string, refreshToken: string) => {
-  BleModule.setUp(url, token, refreshToken);
-};
-
-export default {setUp};
+export default BleModule as BleInterface;

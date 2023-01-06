@@ -11,10 +11,11 @@ target 'AppName' do
     # to enable hermes on iOS, change `false` to `true` and then install pods
     :hermes_enabled => true
   )
-
+  # Private pods
+  pod 'ZoovBLEiOS', :git => 'git@github.com:birotaio/ZoovIOS-BLE-SDK.git', :commit => '3a4ea660999bd96be54ccd826eb07067aef80b70'
+  # Pods for testing
   target 'AppNameTests' do
     inherit! :complete
-    # Pods for testing
   end
 
   # Enables Flipper.
