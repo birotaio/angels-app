@@ -23,7 +23,7 @@ const show = (
     duration: 2500,
     floating: true,
     type: type,
-    position: 'top',
+    position: 'bottom',
   });
 
 const showAlert = ({

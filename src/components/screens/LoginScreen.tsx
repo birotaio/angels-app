@@ -1,3 +1,4 @@
+import images from '@assets/images';
 import i18n from '@assets/locales';
 import {Logo} from '@assets/svg';
 import MyForm from '@components/generic/MyForm';
@@ -21,13 +22,16 @@ const LoginScreen: ScreenProps = () => {
   useTracking(LoginScreen.navigationName);
 
   return (
-    <MyScreen>
+    <MyScreen background={images.login_bg}>
       <MyKeyboardAvoidingView>
         {/* TODO remove press */}
         <TouchableOpacity
           style={layoutStyle.asc}
           onPress={() => navigator.navigate(MapScreen.navigationName)}>
-          <Logo />
+          <Logo
+          // width={layoutStyle.dim.width / 3}
+          // height={layoutStyle.dim.width / 1}
+          />
         </TouchableOpacity>
 
         <MyView flex p5>

@@ -32,9 +32,10 @@ export function* _login(payload: LoginApiInputType) {
       navigator.navigate(MapScreen.navigationName);
     } else {
       yield put(setAuthState({isLoading: false}));
-      message.show('login_ko', 'danger');
+      message.show('something_wrong_happened', 'danger');
     }
   } catch (e: any) {
+    message.show('something_wrong_happened', 'danger');
     yield put(setAuthState({isLoading: false}));
     yield put(setAuthState({isLogged: false, error: e?.message}));
   }
