@@ -10,7 +10,12 @@ import {AUTH_ACTIONS_SAGA_CHECK_LOGIN} from '@logic/store/auth/saga';
 import {LoginScreen} from '../components/screens';
 
 const Stack = createNativeStackNavigator();
-const screenKeys = Object.keys(screens);
+const screenKeys = Object.keys(screens) as (
+  | 'SplashScreen'
+  | 'LoginScreen'
+  | 'MapScreen'
+  | 'ScanScreen'
+)[];
 function MainRouter() {
   const dispatch = useDispatch();
   dispatch({type: AUTH_ACTIONS_SAGA_CHECK_LOGIN});
@@ -21,7 +26,7 @@ function MainRouter() {
         header: Header,
         animation: 'fade_from_bottom',
       }}>
-      {screenKeys.map((screenKey: string) => (
+      {screenKeys.map(screenKey => (
         <Stack.Screen
           key={screenKey}
           name={screens[screenKey].navigationName}

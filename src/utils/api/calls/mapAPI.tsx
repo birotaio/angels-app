@@ -6,7 +6,11 @@ const getStations = async (): Promise<
   AxiosPromise<getStationsApiResponseType>
 > => {
   const api = await callAPI();
-  return api.get('stations/?fields=location%2Clabel', {});
+  return api.get('stations/', {
+    params: {
+      fields: 'location,label',
+    },
+  });
 };
 
 export const mapApi = {getStations};
