@@ -15,6 +15,7 @@
     "ota-i": "appcenter codepush release-react -a fifteen/Fenix-iOS -d Staging -t \"1.11\"",
     "ota": "yarn ota-a && yarn ota-i",
     "setVersion": "node ./scripts/setVersion && prettier --write ./package.json",
+    "updateLocales": "node ./scripts/updateLocales",
     "patch": "npx patch-package",
     "postinstall": "yarn patch"
   },

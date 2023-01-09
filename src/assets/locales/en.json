@@ -1,13 +1,12 @@
 {
-  "login": "Se connecter",
-  "login_ok": "Bienvenue",
-  "login_ko": "Echec de la connexion",
-  "something_wrong_happened": "something_wrong_happened",
-  "retry_your_action": "Réessayer votre action",
-  "email": "Adresse email",
-  "email_required": "Adresse email requise",
-  "password": "Mot de passe",
-  "password_required": "Mot de passe requis",
-
-  "menu": "Menu"
+  "login": "login",
+  "login-ok": "login_ok",
+  "login-ko": "login_ko",
+  "something-wrong-happened": "something_wrong_happened",
+  "retry-your-action": "retry_your_action",
+  "email": "email",
+  "email-required": "email_required",
+  "password": "password",
+  "password-required": "password_required",
+  "menu": "menu"
 }
