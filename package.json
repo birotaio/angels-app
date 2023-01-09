@@ -1,6 +1,6 @@
 {
   "name": "appname",
-  "version": "1.0.1",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "android": "npx react-native run-android",
@@ -80,6 +80,7 @@
     "react-native-splash-screen": "^3.3.0",
     "react-native-svg": "^12.3.0",
     "react-native-vector-icons": "^9.1.0",
+    "react-native-version": "^4.0.0",
     "react-native-vision-camera": "^2.15.2",
     "react-native-webview": "^11.22.2",
     "react-redux": "^7.2.6",
@@ -123,5 +124,5 @@
       "node"
     ]
   },
-  "versionCode": "5"
+  "versionCode": "1"
 }
