@@ -21,17 +21,19 @@ const Header = ({}: HeaderProps): React.ReactElement => {
       <MyStatusBar />
       {/* Menu */}
       <View style={layoutStyle.rowCenter}>
-        <TouchableOpacity
-          style={[layoutStyle.rowCenter, layoutStyle.ml12]}
-          onPress={() => {}}>
-          <MyIcon
-            icon="menu"
-            size={24}
-            color={themeStyle.textColor}
-            setName={IconSetName.MaterialIcon}
-          />
-          <MyText keyText="menu" />
-        </TouchableOpacity>
+        {false && (
+          <TouchableOpacity
+            style={[layoutStyle.rowCenter, layoutStyle.ml12]}
+            onPress={() => {}}>
+            <MyIcon
+              icon="menu"
+              size={24}
+              color={themeStyle.textColor}
+              setName={IconSetName.MaterialIcon}
+            />
+            <MyText keyText="menu" />
+          </TouchableOpacity>
+        )}
         <View style={layoutStyle.flex} />
         {/* Logo  */}
         <LogoRow width={140} height={60} />

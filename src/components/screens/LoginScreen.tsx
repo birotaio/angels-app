@@ -45,11 +45,11 @@ const LoginScreen: ScreenProps = () => {
                 rules: {
                   required: {
                     value: true,
-                    message: i18n.t('email_required'),
+                    message: i18n.t('email-required'),
                   },
                   pattern: {
                     value: emailFormat,
-                    message: i18n.t('email_required'),
+                    message: i18n.t('email-required'),
                   },
                 },
                 inputProps: {
@@ -62,11 +62,11 @@ const LoginScreen: ScreenProps = () => {
                 rules: {
                   required: {
                     value: true,
-                    message: i18n.t('password_required'),
+                    message: i18n.t('password-required'),
                   },
                   minLength: {
                     value: 4,
-                    message: i18n.t('password_required'),
+                    message: i18n.t('password-required'),
                   },
                 },
                 inputProps: {

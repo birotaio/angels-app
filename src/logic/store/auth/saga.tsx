@@ -28,14 +28,14 @@ export function* _login(payload: LoginApiInputType) {
     if (data?.token) {
       yield setLoginData(data.token, email, data.refresh_token);
       yield put(setAuthState({isLogged: true, isLoading: false}));
-      message.show(`${i18n.t('login_ok')} : ${email}`, 'success', false);
+      message.show(`${i18n.t('login-ok')} : ${email}`, 'success', false);
       navigator.navigate(MapScreen.navigationName);
     } else {
       yield put(setAuthState({isLoading: false}));
-      message.show('something_wrong_happened', 'danger');
+      message.show('something-wrong-happened', 'danger');
     }
   } catch (e: any) {
-    message.show('something_wrong_happened', 'danger');
+    message.show('something-wrong-happened', 'danger');
     yield put(setAuthState({isLoading: false}));
     yield put(setAuthState({isLogged: false, error: e?.message}));
   }

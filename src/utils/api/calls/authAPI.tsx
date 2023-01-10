@@ -23,7 +23,7 @@ const refreshToken = async () => {
   const token = response?.data?.token;
   if (token) {
     setLoginData(token);
-    message.show('retry_your_action', 'success');
+    message.show('retry-your-action', 'success');
   }
 };
 
