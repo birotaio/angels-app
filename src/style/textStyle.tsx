@@ -75,37 +75,29 @@ const textstyle: TextStyleProp = StyleSheet.create({
   underlined: {textDecorationLine: 'underline'},
   button: {
     fontSize: 18,
-    fontFamily: 'SF Pro Text Bold',
   },
   buttonDisabled: {},
   header: {
     fontSize: 20,
-    fontFamily: 'SF Pro Text Semibold',
   },
   headerRounded: {
     fontSize: 32,
-    fontFamily: 'SF Pro Text Bold',
   },
   text: {
     fontSize: 16,
     lineHeight: 16,
-    fontFamily: 'SF Pro Text Regular',
   },
   textBold: {
     fontSize: 16,
-    fontFamily: 'SF Pro Text Bold',
   },
   textSemibold: {
     fontSize: 16,
-    fontFamily: 'SF Pro Text Semibold',
   },
   textLight: {
     fontSize: 16,
-    fontFamily: 'SF Pro Text Light',
   },
   textLightItalic: {
     fontSize: 16,
-    fontFamily: 'SF Pro Text Light Italic',
   },
   error: {
     fontSize: 12,
@@ -113,15 +105,11 @@ const textstyle: TextStyleProp = StyleSheet.create({
   },
   title: {
     fontSize: 24,
-    fontFamily: 'SF Pro Text Bold',
     color: themeStyle.accentPrimary,
   },
-
   subInput: {
     fontSize: 14,
-    fontFamily: 'SF Pro Text Thin',
   },
-
   bigLink: {
     fontSize: 18,
     fontWeight: '700',
@@ -131,13 +119,11 @@ const textstyle: TextStyleProp = StyleSheet.create({
   link: {
     fontSize: 16,
     fontWeight: '400',
-    fontFamily: 'SF Pro Text Regular',
     color: themeStyle.accentPrimary,
   },
   infoItalic: {
     fontSize: 14,
     lineHeight: 16.71,
-    fontFamily: 'SF Pro Text Thin Italic',
   },
   codeFieldText: {
     fontSize: 24,
@@ -145,106 +131,90 @@ const textstyle: TextStyleProp = StyleSheet.create({
     color: themeStyle.accentPrimary,
   },
   _title: {
-    fontFamily: 'Gotham-Bold',
     fontStyle: 'normal',
     fontSize: 24,
     lineHeight: 28,
   },
   _subtitle: {
-    fontFamily: 'Gotham-Bold',
     fontStyle: 'normal',
     fontSize: 20,
     lineHeight: 20,
   },
   _subtitle_uppercase: {
-    fontFamily: 'Gotham-Bold',
     fontStyle: 'normal',
     fontSize: 18,
     lineHeight: 20,
     textTransform: 'uppercase',
   },
   _subtitle_underline: {
-    fontFamily: 'Gotham-Bold',
     fontStyle: 'normal',
     fontSize: 20,
     lineHeight: 22,
     textDecorationLine: 'underline',
   },
   _body: {
-    fontFamily: 'SF Pro Text Regular',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: 16,
     lineHeight: 18,
   },
   _numbers_big: {
-    fontFamily: 'Gotham-Bold',
     fontStyle: 'normal',
     fontSize: 36,
     lineHeight: 38,
   },
   _numbers_normal: {
-    fontFamily: 'Gotham-Bold',
     fontStyle: 'normal',
     fontSize: 28,
     lineHeight: 30,
   },
   _numbers_small: {
-    fontFamily: 'Gotham-Bold',
     fontStyle: 'normal',
     fontSize: 18,
     lineHeight: 22,
   },
   _caption: {
-    fontFamily: 'SF Pro Text Regular',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: 14,
     lineHeight: 17,
   },
   _caption_big: {
-    fontFamily: 'SF Pro Text Regular',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: 20,
     lineHeight: 28,
   },
   _caption_big_bold: {
-    fontFamily: 'SF Pro Text Bold',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: 20,
     lineHeight: 28,
   },
   _caption_thin: {
-    fontFamily: 'SF Pro Text Thin',
     fontStyle: 'normal',
     fontWeight: '400',
     fontSize: 14,
     lineHeight: 17,
   },
   _caption_italic: {
-    fontFamily: 'SF Pro Text Thin Italic',
     fontWeight: '300',
     fontSize: 14,
     lineHeight: 17,
   },
   _caption_bold: {
-    fontFamily: 'SF Pro Text Bold',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: 14,
     lineHeight: 17,
   },
   _caption_small: {
-    fontFamily: 'SF Pro Text Thin',
     fontStyle: 'normal',
     fontWeight: '300',
     fontSize: 12,
     lineHeight: 16,
   },
   _button_label_giant: {
-    fontFamily: 'Gotham-Book',
     fontStyle: 'normal',
     fontWeight: '700',
     fontSize: 22,

@@ -8,29 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* AppNameTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* AppNameTests.m */; };
-		010B40213299450B8E633776 /* Gotham-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BA11594470544E7AC01B837 /* Gotham-Medium.ttf */; };
-		03050F0CC2874DAFAE1F5CDF /* Gotham-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D590890492414583AD166B05 /* Gotham-LightItalic.ttf */; };
 		032FF56C8DD34618AC7BB6F1 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7820CA2471974254B5328837 /* Ionicons.ttf */; };
-		093CDB6AC4824B36B13905E6 /* SF Pro Text Black Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 20BD1362A7D4406395BF72DA /* SF Pro Text Black Italic.otf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		16D3F04A35AF4D4FA123BB25 /* SF Pro Rounded Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4488B8FBE228491B9F1852B7 /* SF Pro Rounded Regular.ttf */; };
 		1932DA7C3DFE493EB30001DA /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E9A4682FB6A54B2D9B463D28 /* Zocial.ttf */; };
-		1B5C3315726941BABAFBEC4E /* SF Pro Text Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 010282307F844F5CBF67BFB3 /* SF Pro Text Regular.otf */; };
-		1B607AC543EA4CCDBAED8625 /* SF Pro Text Bold Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 582051AA990847FF8E2FECD3 /* SF Pro Text Bold Italic.otf */; };
-		2B8405C2806048E8B9D03E80 /* Gotham-BookItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 80FDB881A1094162879E5A9E /* Gotham-BookItalic.ttf */; };
-		32BF7F085548431ABE56F67B /* SF Pro Text Semibold Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = D3EB5955FD324243B3692556 /* SF Pro Text Semibold Italic.otf */; };
 		3539B10623404D5AAC99DF6A /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 63FC957071C6434FAF8CFCAE /* FontAwesome.ttf */; };
-		36D43C6AA6F64649AB8243D7 /* Gotham-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9DBC09D0E9A54935A4A9213A /* Gotham-MediumItalic.ttf */; };
-		37F10B345C3E4DCD8889EBD7 /* Gotham-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4A10A571BE7A455E9D10AB4B /* Gotham-ThinItalic.ttf */; };
 		3F3AF888FE6841ECB20F5091 /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C11460C5D09044CBB6BA15C0 /* FontAwesome5_Brands.ttf */; };
-		58E729BE80AD4AEABF6C0ED8 /* Gotham-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8FDDC185EDD240C486FEC41A /* Gotham-Bold.ttf */; };
 		5B21DDFCF9524166A4239630 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 149E5351920C490AAAE3E29F /* Feather.ttf */; };
 		5C027CD7FBA64B10842E76FC /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05301A63DEC74974A6A00441 /* EvilIcons.ttf */; };
-		5FE389DAF0B0475D85A2606D /* SF Pro Text Light Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 90ED21DDBEB843B7BFD5ABA9 /* SF Pro Text Light Italic.otf */; };
 		6172F2D35A4C3AA820D92908 /* libPods-AppName.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6423831EA8574132BED9D8CC /* libPods-AppName.a */; };
-		71613148F15943D9A046E291 /* Gotham-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F291B6DC9E1E495AA30BF79D /* Gotham-Book.ttf */; };
 		7A3BA62528495C7B00E13BD1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7A3BA62728495C7B00E13BD1 /* InfoPlist.strings */; };
 		7A3BA62A28495C9B00E13BD1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7A3BA62C28495C9B00E13BD1 /* InfoPlist.strings */; };
 		7A3BA62F28495EBE00E13BD1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7A3BA63128495EBE00E13BD1 /* InfoPlist.strings */; };
@@ -40,34 +27,25 @@
 		7A8D145729522F1E00F7A107 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A8D145529522F1E00F7A107 /* GoogleService-Info.plist */; };
 		7AB2CCC627E9BFB300EE6E02 /* AppCenter-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AB2CCC527E9BFB300EE6E02 /* AppCenter-Config.plist */; };
 		7EF68E3733C33B6898317E18 /* libPods-AppName-AppNameTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ABFE59519B596E51CEFDCCC0 /* libPods-AppName-AppNameTests.a */; };
-		7F5ACE0B65C84D3F8624DD18 /* SF Pro Text Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 59AECACDE6604E06863B6BF4 /* SF Pro Text Ultralight.otf */; };
 		7FD1E89461F4409F82CB85ED /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 62636F70D064425193B1B883 /* MaterialCommunityIcons.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		8797EE0633F540428AF05C14 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DCFB00A9279E400F908DCB54 /* Octicons.ttf */; };
 		8B86ACD89C254797A522363E /* AntDesign.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E7BDD3A496C1401080898843 /* AntDesign.ttf */; };
 		8BC438526D99482188455A76 /* FontAwesome5_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D124F52CD2314FEB931D32E1 /* FontAwesome5_Regular.ttf */; };
-		932B25A6CC804F42AE45369E /* Gotham-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB6BD8A03B6E4179819D2D34 /* Gotham-Thin.ttf */; };
-		964AF82167284ED2BB608C52 /* SF Pro Text Regular Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B37CD0FB7D4549F192509906 /* SF Pro Text Regular Italic.otf */; };
-		9AC924E4381446F6954B04A8 /* SF Pro Text Ultralight Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = E6FDEC67FA7149118ECAC01F /* SF Pro Text Ultralight Italic.otf */; };
 		9DBFD8BE015643F4862FCD8A /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6BC2ACA29944DC887344F28 /* SimpleLineIcons.ttf */; };
-		A0A5A11323FC49E4A8360CFC /* SF Pro Text Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 13CF593B0B9A4EAB90D59033 /* SF Pro Text Thin.otf */; };
 		AA09C7F0FFC14EAD94FC8E7D /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB5B5255DD16490283345279 /* MaterialIcons.ttf */; };
-		B041684880984D149DE0730D /* SF Pro Text Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = A368468A56C84158813E8CD8 /* SF Pro Text Semibold.otf */; };
 		B27BA69030A344E0A17FDF9B /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F3E7CF2F15624A1DB3807D02 /* Foundation.ttf */; };
-		B5C31222C19544B5A2253D38 /* SF Pro Text Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E93A05E7BDC44E31A27CDB3D /* SF Pro Text Bold.otf */; };
-		B5DE1760E6A84955BB80E1A6 /* SF Pro Text Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 13747349EFE141F880A745B9 /* SF Pro Text Black.otf */; };
 		B7CB59DABB28476DBAABBC1A /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D924178BC19148B2A92DD644 /* FontAwesome5_Solid.ttf */; };
-		C10624873C1B45BFB451B3E8 /* SF Pro Text Heavy.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2F03553BF7C047818E648048 /* SF Pro Text Heavy.otf */; };
 		C561DA5237A94F13BEAAB7DC /* Fontisto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 30C4BF8D83844EDB8B7521FF /* Fontisto.ttf */; };
-		CD02F65BB6794A5CAA6573E9 /* SF Pro Text Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6B64C8B88BB14B419BA83629 /* SF Pro Text Light.otf */; };
-		CE6C6BBE74594BF0A42362C5 /* SF Pro Text Medium Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = A9072862FD3A430B81F24D6E /* SF Pro Text Medium Italic.otf */; };
-		D91CA50DD14B405CBB7C4A3C /* Gotham-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B805985460C54FC5A56D8D25 /* Gotham-Black.ttf */; };
-		DE157410B00B425FA160544B /* Gotham-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6C1361F38081488FB5AAD6CD /* Gotham-Light.ttf */; };
-		EE270F547C7E4DC38384D804 /* SF Pro Text Thin Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0606E56FBFAE4826926B372C /* SF Pro Text Thin Italic.otf */; };
-		F31271F86F8B46F39510418D /* SF Pro Text Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 07C0CD1C94074270B1DDF7D9 /* SF Pro Text Medium.otf */; };
-		F369928A2A1744CCA2978C28 /* Gotham-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 41885534BA3C464B8A26D91B /* Gotham-BoldItalic.ttf */; };
 		F5E462F0E70C482E93F03DBA /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 34ABED0184B34F5C94DDA275 /* Entypo.ttf */; };
-		F6C0A7C7A433412AAC138331 /* SF Pro Text Heavy Italic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 92C8D204B93D4FE5847BFF78 /* SF Pro Text Heavy Italic.otf */; };
+		728C3D9223B04F1EB1A86B86 /* ES Build Bold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7CD577D75CAB404C8DE32C4D /* ES Build Bold Italic.ttf */; };
+		EADCA7C720BA4BB5B916EBDC /* ES Build Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52CCF5DF5CEA4EA98D86D31D /* ES Build Bold.ttf */; };
+		784D0370FF9A4216AC626671 /* ES Build Medium Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15684ADE4CA94D76A70E97ED /* ES Build Medium Italic.ttf */; };
+		D51447E5CED14AB4AB196100 /* ES Build Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06BB7EFD062A48E89D28F78C /* ES Build Medium.ttf */; };
+		0FF755CDC80448DA908E43C3 /* ES Build Regular Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C7460968ABB4899B32F1AFF /* ES Build Regular Italic.ttf */; };
+		D0887712E57E4AB08FACEC03 /* ES Build Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 780878D98B884F67A43D2387 /* ES Build Regular.ttf */; };
+		0920DF6ED9DB4EDAA680F342 /* ES Build Semi Bold Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8F2643F2491A4F39A0BD6E44 /* ES Build Semi Bold Italic.ttf */; };
+		366306DB69A642DE9635CD04 /* ES Build Semi Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 176C97C1C2524B6B86E2BE55 /* ES Build Semi Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +132,14 @@
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		F291B6DC9E1E495AA30BF79D /* Gotham-Book.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-Book.ttf"; path = "../src/assets/fonts/Gotham-Book.ttf"; sourceTree = "<group>"; };
 		F3E7CF2F15624A1DB3807D02 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
+		7CD577D75CAB404C8DE32C4D /* ES Build Bold Italic.ttf */ = {isa = PBXFileReference; name = "ES Build Bold Italic.ttf"; path = "../src/assets/fonts/ES Build Bold Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		52CCF5DF5CEA4EA98D86D31D /* ES Build Bold.ttf */ = {isa = PBXFileReference; name = "ES Build Bold.ttf"; path = "../src/assets/fonts/ES Build Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		15684ADE4CA94D76A70E97ED /* ES Build Medium Italic.ttf */ = {isa = PBXFileReference; name = "ES Build Medium Italic.ttf"; path = "../src/assets/fonts/ES Build Medium Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		06BB7EFD062A48E89D28F78C /* ES Build Medium.ttf */ = {isa = PBXFileReference; name = "ES Build Medium.ttf"; path = "../src/assets/fonts/ES Build Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2C7460968ABB4899B32F1AFF /* ES Build Regular Italic.ttf */ = {isa = PBXFileReference; name = "ES Build Regular Italic.ttf"; path = "../src/assets/fonts/ES Build Regular Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		780878D98B884F67A43D2387 /* ES Build Regular.ttf */ = {isa = PBXFileReference; name = "ES Build Regular.ttf"; path = "../src/assets/fonts/ES Build Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8F2643F2491A4F39A0BD6E44 /* ES Build Semi Bold Italic.ttf */ = {isa = PBXFileReference; name = "ES Build Semi Bold Italic.ttf"; path = "../src/assets/fonts/ES Build Semi Bold Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		176C97C1C2524B6B86E2BE55 /* ES Build Semi Bold.ttf */ = {isa = PBXFileReference; name = "ES Build Semi Bold.ttf"; path = "../src/assets/fonts/ES Build Semi Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +261,14 @@
 				CB6BD8A03B6E4179819D2D34 /* Gotham-Thin.ttf */,
 				4A10A571BE7A455E9D10AB4B /* Gotham-ThinItalic.ttf */,
 				4488B8FBE228491B9F1852B7 /* SF Pro Rounded Regular.ttf */,
+				7CD577D75CAB404C8DE32C4D /* ES Build Bold Italic.ttf */,
+				52CCF5DF5CEA4EA98D86D31D /* ES Build Bold.ttf */,
+				15684ADE4CA94D76A70E97ED /* ES Build Medium Italic.ttf */,
+				06BB7EFD062A48E89D28F78C /* ES Build Medium.ttf */,
+				2C7460968ABB4899B32F1AFF /* ES Build Regular Italic.ttf */,
+				780878D98B884F67A43D2387 /* ES Build Regular.ttf */,
+				8F2643F2491A4F39A0BD6E44 /* ES Build Semi Bold Italic.ttf */,
+				176C97C1C2524B6B86E2BE55 /* ES Build Semi Bold.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -425,16 +419,7 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				7AB2CCC627E9BFB300EE6E02 /* AppCenter-Config.plist in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				B5DE1760E6A84955BB80E1A6 /* SF Pro Text Black.otf in Resources */,
-				B5C31222C19544B5A2253D38 /* SF Pro Text Bold.otf in Resources */,
-				C10624873C1B45BFB451B3E8 /* SF Pro Text Heavy.otf in Resources */,
-				CD02F65BB6794A5CAA6573E9 /* SF Pro Text Light.otf in Resources */,
-				F31271F86F8B46F39510418D /* SF Pro Text Medium.otf in Resources */,
-				1B5C3315726941BABAFBEC4E /* SF Pro Text Regular.otf in Resources */,
-				B041684880984D149DE0730D /* SF Pro Text Semibold.otf in Resources */,
-				A0A5A11323FC49E4A8360CFC /* SF Pro Text Thin.otf in Resources */,
 				7A8D145629522F1E00F7A107 /* GoogleService-Info.plist in Resources */,
-				7F5ACE0B65C84D3F8624DD18 /* SF Pro Text Ultralight.otf in Resources */,
 				8B86ACD89C254797A522363E /* AntDesign.ttf in Resources */,
 				F5E462F0E70C482E93F03DBA /* Entypo.ttf in Resources */,
 				5C027CD7FBA64B10842E76FC /* EvilIcons.ttf in Resources */,
@@ -454,27 +439,14 @@
 				7A3BA62A28495C9B00E13BD1 /* InfoPlist.strings in Resources */,
 				7A3BA62F28495EBE00E13BD1 /* InfoPlist.strings in Resources */,
 				1932DA7C3DFE493EB30001DA /* Zocial.ttf in Resources */,
-				093CDB6AC4824B36B13905E6 /* SF Pro Text Black Italic.otf in Resources */,
-				1B607AC543EA4CCDBAED8625 /* SF Pro Text Bold Italic.otf in Resources */,
-				F6C0A7C7A433412AAC138331 /* SF Pro Text Heavy Italic.otf in Resources */,
-				5FE389DAF0B0475D85A2606D /* SF Pro Text Light Italic.otf in Resources */,
-				CE6C6BBE74594BF0A42362C5 /* SF Pro Text Medium Italic.otf in Resources */,
-				964AF82167284ED2BB608C52 /* SF Pro Text Regular Italic.otf in Resources */,
-				32BF7F085548431ABE56F67B /* SF Pro Text Semibold Italic.otf in Resources */,
-				EE270F547C7E4DC38384D804 /* SF Pro Text Thin Italic.otf in Resources */,
-				9AC924E4381446F6954B04A8 /* SF Pro Text Ultralight Italic.otf in Resources */,
-				D91CA50DD14B405CBB7C4A3C /* Gotham-Black.ttf in Resources */,
-				58E729BE80AD4AEABF6C0ED8 /* Gotham-Bold.ttf in Resources */,
-				F369928A2A1744CCA2978C28 /* Gotham-BoldItalic.ttf in Resources */,
-				71613148F15943D9A046E291 /* Gotham-Book.ttf in Resources */,
-				2B8405C2806048E8B9D03E80 /* Gotham-BookItalic.ttf in Resources */,
-				DE157410B00B425FA160544B /* Gotham-Light.ttf in Resources */,
-				03050F0CC2874DAFAE1F5CDF /* Gotham-LightItalic.ttf in Resources */,
-				010B40213299450B8E633776 /* Gotham-Medium.ttf in Resources */,
-				36D43C6AA6F64649AB8243D7 /* Gotham-MediumItalic.ttf in Resources */,
-				932B25A6CC804F42AE45369E /* Gotham-Thin.ttf in Resources */,
-				37F10B345C3E4DCD8889EBD7 /* Gotham-ThinItalic.ttf in Resources */,
-				16D3F04A35AF4D4FA123BB25 /* SF Pro Rounded Regular.ttf in Resources */,
+				728C3D9223B04F1EB1A86B86 /* ES Build Bold Italic.ttf in Resources */,
+				EADCA7C720BA4BB5B916EBDC /* ES Build Bold.ttf in Resources */,
+				784D0370FF9A4216AC626671 /* ES Build Medium Italic.ttf in Resources */,
+				D51447E5CED14AB4AB196100 /* ES Build Medium.ttf in Resources */,
+				0FF755CDC80448DA908E43C3 /* ES Build Regular Italic.ttf in Resources */,
+				D0887712E57E4AB08FACEC03 /* ES Build Regular.ttf in Resources */,
+				0920DF6ED9DB4EDAA680F342 /* ES Build Semi Bold Italic.ttf in Resources */,
+				366306DB69A642DE9635CD04 /* ES Build Semi Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
