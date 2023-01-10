@@ -19,10 +19,17 @@ import i18n from '@assets/locales';
 import messaging from '@utils/firebase/messaging';
 const theme: ReactNativePaper.Theme = {
   ...DefaultTheme,
-  roundness: 24,
+  roundness: 32,
+  fonts: {
+    regular: {fontFamily: 'ES Build Regular'},
+    thin: {fontFamily: 'ES Build Regular'},
+    light: {fontFamily: 'ES Build Regular'},
+    medium: {fontFamily: 'ES Build Medium'},
+  },
   colors: {
     ...DefaultTheme.colors,
     primary: themeStyle.accentPrimary.toString(),
+    text: themeStyle.textColorInput,
   },
 };
 

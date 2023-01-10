@@ -98,10 +98,12 @@ const MyButton: React.FC<MyButtonProps & TouchableOpacityProps> = ({
       ) : (
         <MyText
           keyTextString={keyTextString}
-          _subtitle
+          _button_label_giant
           style={[
             disabled && {color: componentStyle.MyButtonDisabled.color},
-            {color: color || componentStyle.MyButton.color},
+            {
+              color: color || componentStyle.MyButton.color,
+            },
           ]}
           keyText={keyText}
           text={text}

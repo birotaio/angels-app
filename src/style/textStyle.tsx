@@ -215,8 +215,7 @@ const textstyle: TextStyleProp = StyleSheet.create({
     lineHeight: 16,
   },
   _button_label_giant: {
-    fontStyle: 'normal',
-    fontWeight: '700',
+    fontFamily: 'ES Build Bold',
     fontSize: 22,
     lineHeight: 28,
   },

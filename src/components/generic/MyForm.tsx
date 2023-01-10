@@ -90,7 +90,7 @@ const MyForm: React.FC<MyFormProps> = ({
             ) : (
               <MyTextInput
                 error={errors[field.label]?.message}
-                label={field.name}
+                placeholder={field.name}
                 value={value}
                 onBlur={onBlur}
                 onChangeText={(v: string) => onChange(v)}

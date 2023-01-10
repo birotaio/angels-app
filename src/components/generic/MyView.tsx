@@ -34,9 +34,6 @@ export type MyViewProps = {
 const MyView: React.FC<ViewProps & MyViewProps> = ({
   row,
   rowCenter,
-  bg0,
-  bg1,
-  bg2,
   card,
   backgroundAccentPrimary,
   style,
@@ -59,9 +56,6 @@ const MyView: React.FC<ViewProps & MyViewProps> = ({
   return (
     <View
       style={[
-        bg0 && {backgroundColor: themeStyle.bg0},
-        bg1 && {backgroundColor: themeStyle.bg1},
-        bg2 && {backgroundColor: themeStyle.bg2},
         backgroundAccentPrimary && {backgroundColor: themeStyle.accentPrimary},
         row && layoutStyle.row,
         rowCenter && layoutStyle.rowCenter,

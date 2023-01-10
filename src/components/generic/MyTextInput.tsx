@@ -36,7 +36,8 @@ const MyTextInput: React.FC<MyInputTypeProps> = ({
     <View style={layoutStyle.mb4p}>
       <TextInput
         {...props}
-        selectionColor={themeStyle.textColorInput.toString()}
+        caretHidden={false}
+        selectionColor={themeStyle.accentPrimaryDark.toString()}
         dense
         style={[componentStyle.myTextInput, style]}
         placeholderTextColor={themeStyle.placeholderTextColor}
@@ -47,13 +48,11 @@ const MyTextInput: React.FC<MyInputTypeProps> = ({
             ? themeStyle.borderLineColor.toString()
             : themeStyle.errorColor.toString()
         }
-        label={props.label}
         secureTextEntry={!visible}
         right={
           secureTextEntry && (
             <TextInput.Icon
               size={24}
-              style={layoutStyle.mt16p}
               color={themeStyle.textColorInput.toString()}
               name={visible ? 'eye-off' : 'eye'}
               onPress={() => setVisible(!visible)}

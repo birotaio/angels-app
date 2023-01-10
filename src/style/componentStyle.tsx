@@ -4,22 +4,17 @@ import themeStyle from './themeStyle';
 export default StyleSheet.create({
   myTextInput: {
     fontSize: 16,
-    fontFamily: 'SF Pro Text Regular',
-    fontWeight: '400',
-    height: 48,
-    marginTop: 6,
-    marginBottom: 4,
-    paddingHorizontal: '0.5%',
-    marginHorizontal: 0,
+    fontFamily: 'ES Build Regular',
+    paddingVertical: 6,
     color: themeStyle.textColorInput,
   },
   MyButton: {
     paddingHorizontal: 4,
-    paddingVertical: 14,
+    paddingVertical: 12,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: themeStyle.accentSecondary,
-    borderRadius: 24,
+    borderRadius: 72,
     color: themeStyle.textColor,
   },
   MyButtonDisabled: {

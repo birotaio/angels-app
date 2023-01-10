@@ -12,7 +12,7 @@ import useTracking from '@navigation/useTracking';
 import layoutStyle from '@style/layoutStyle';
 import {emailFormat} from '@utils/strings/regex';
 import React from 'react';
-import {TouchableOpacity} from 'react-native';
+import {Image, TouchableOpacity} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import {ScreenProps, MapScreen} from '.';
 
@@ -70,7 +70,7 @@ const LoginScreen: ScreenProps = () => {
                   },
                 },
                 inputProps: {
-                  secureTextEntry: false,
+                  secureTextEntry: true,
                 },
               },
             ]}
