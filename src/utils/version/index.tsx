@@ -23,6 +23,7 @@ const codepushUpdate = async ({
   try {
     update = await checkForUpdate();
   } catch (e) {
+    console.log(e);
     exitHandler?.(false);
   }
 
@@ -32,24 +33,28 @@ const codepushUpdate = async ({
     } catch (e) {
       descriptionHandler?.(null);
     }
-    await codePush.sync(
-      undefined,
-      statusCode => {
-        switch (statusCode) {
-          case UPDATE_INSTALLED:
-            exitHandler?.(true);
-            break;
-          case UNKNOWN_ERROR:
-          case UP_TO_DATE:
-          case UPDATE_IGNORED:
-            exitHandler?.(false);
-            break;
-          default:
-            break;
-        }
-      },
-      progressHandler,
-    );
+    try {
+      await codePush.sync(
+        undefined,
+        statusCode => {
+          switch (statusCode) {
+            case UPDATE_INSTALLED:
+              exitHandler?.(true);
+              break;
+            case UNKNOWN_ERROR:
+            case UP_TO_DATE:
+            case UPDATE_IGNORED:
+              exitHandler?.(false);
+              break;
+            default:
+              break;
+          }
+        },
+        progressHandler,
+      );
+    } catch (e) {
+      console.log(e);
+    }
   } else {
     exitHandler?.(false);
   }
