@@ -8,5 +8,9 @@
   "email-required": "email_required",
   "password": "password",
   "password-required": "password_required",
-  "menu": "Menu"
+  "menu": "Menu",
+  "validate": "Validate",
+
+  "scan-qr-code": "Scan QR code from the bike",
+  "scan-many-bikes": "Scan many bikes"
 }

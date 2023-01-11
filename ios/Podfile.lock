@@ -509,6 +509,8 @@ PODS:
   - React-jsinspector (0.67.3)
   - React-logger (0.67.3):
     - glog
+  - react-native-blur (4.3.0):
+    - React-Core
   - react-native-flipper (0.151.1):
     - React-Core
   - react-native-geolocation-service (5.3.1):
@@ -747,6 +749,7 @@ DEPENDENCIES:
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
+  - "react-native-blur (from `../node_modules/@react-native-community/blur`)"
   - react-native-flipper (from `../node_modules/react-native-flipper`)
   - react-native-geolocation-service (from `../node_modules/react-native-geolocation-service`)
   - "react-native-mapbox-gl (from `../node_modules/@react-native-mapbox-gl/maps`)"
@@ -782,7 +785,7 @@ DEPENDENCIES:
   - vision-camera-code-scanner (from `../node_modules/vision-camera-code-scanner`)
   - VisionCamera (from `../node_modules/react-native-vision-camera`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
-  - "ZoovBLEiOS (from `git@github.com:birotaio/ZoovIOS-BLE-SDK.git`, commit `61804249a633013d9e675036ec3b4c97e5f5c431`)"
+  - "ZoovBLEiOS (from `git@github.com:birotaio/ZoovIOS-BLE-SDK.git`, commit `3a4ea660999bd96be54ccd826eb07067aef80b70`)"
 
 SPEC REPOS:
   trunk:
@@ -890,6 +893,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
   React-logger:
     :path: "../node_modules/react-native/ReactCommon/logger"
+  react-native-blur:
+    :path: "../node_modules/@react-native-community/blur"
   react-native-flipper:
     :path: "../node_modules/react-native-flipper"
   react-native-geolocation-service:
@@ -961,12 +966,12 @@ EXTERNAL SOURCES:
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
   ZoovBLEiOS:
-    :commit: 61804249a633013d9e675036ec3b4c97e5f5c431
+    :commit: 3a4ea660999bd96be54ccd826eb07067aef80b70
     :git: "git@github.com:birotaio/ZoovIOS-BLE-SDK.git"
 
 CHECKOUT OPTIONS:
   ZoovBLEiOS:
-    :commit: 61804249a633013d9e675036ec3b4c97e5f5c431
+    :commit: 3a4ea660999bd96be54ccd826eb07067aef80b70
     :git: "git@github.com:birotaio/ZoovIOS-BLE-SDK.git"
 
 SPEC CHECKSUMS:
@@ -1041,6 +1046,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: 15ea57ead631a11fad57634ff69f78e797113a39
   React-jsinspector: 1e1e03345cf6d47779e2061d679d0a87d9ae73d8
   React-logger: 1e10789cb84f99288479ba5f20822ce43ced6ffe
+  react-native-blur: 50c9feabacbc5f49b61337ebc32192c6be7ec3c3
   react-native-flipper: 8cfe7d710204654eb7289ea05d6596d2d92c9112
   react-native-geolocation-service: 608e1da71a1ac31b4de64d9ef2815f697978c55b
   react-native-mapbox-gl: b92795f61ff130323e6d25693bd68b081e105455
@@ -1085,6 +1091,6 @@ SPEC CHECKSUMS:
   Zip: 8877eede3dda76bcac281225c20e71c25270774c
   ZoovBLEiOS: 05964bff59bd85f444a89d92de8da9cef6426050
 
-PODFILE CHECKSUM: 1855ebf4e3e492f0c7799862842373a7dce5aecb
+PODFILE CHECKSUM: 6e92195e753c5dcdc1163cff32d394416b51d9fa
 
 COCOAPODS: 1.11.2

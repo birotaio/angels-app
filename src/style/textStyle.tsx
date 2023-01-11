@@ -15,7 +15,6 @@ type TextStyleProp = {
   buttonDisabled: TextStyle;
   button: TextStyle;
   header: TextStyle;
-  text: TextStyle;
   textBold: TextStyle;
   textSemibold: TextStyle;
   textLight: TextStyle;
@@ -89,6 +88,7 @@ const textstyle: TextStyleProp = StyleSheet.create({
   },
   textBold: {
     fontSize: 16,
+    fontFamily: 'ES Build Bold',
   },
   textSemibold: {
     fontSize: 16,
@@ -131,9 +131,8 @@ const textstyle: TextStyleProp = StyleSheet.create({
     color: themeStyle.accentPrimary,
   },
   _title: {
-    fontStyle: 'normal',
+    fontFamily: 'ES Build Regular',
     fontSize: 24,
-    lineHeight: 28,
   },
   _subtitle: {
     fontStyle: 'normal',
@@ -153,10 +152,8 @@ const textstyle: TextStyleProp = StyleSheet.create({
     textDecorationLine: 'underline',
   },
   _body: {
-    fontStyle: 'normal',
-    fontWeight: '400',
+    fontFamily: 'ES Build Regular',
     fontSize: 16,
-    lineHeight: 18,
   },
   _numbers_big: {
     fontStyle: 'normal',

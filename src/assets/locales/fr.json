@@ -9,5 +9,9 @@
   "email-required": "email_required",
   "password": "password",
   "password-required": "password_required",
-  "menu": "Menu"
+  "menu": "Menu",
+  "validate": "Valider",
+
+  "scan-qr-code": "Scannez le QR code du vélo",
+  "scan-many-bikes": "Scanner plusieurs vélos"
 }

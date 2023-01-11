@@ -11,6 +11,7 @@ export const HELP: {
 const PREPROD = {
   DEV: true,
   API_URL: 'https://gateway.preprod.zoov.io',
+  BIKE_URL: 'https://thisebike.com/bike_id=',
   API_CLIENT_ID_IOS: 'cegaccqh5m2dmdnihck0',
   API_CLIENT_ID_ANDROID: 'cerde7dureat091q84d0',
   API_KEY: 'OTE0NDg1YzktNWI1My00Nzk0LWE2ODAtNTlkNjkwNTQwYmE2',

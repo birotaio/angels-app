@@ -15,6 +15,8 @@ const screenKeys = Object.keys(screens) as (
   | 'LoginScreen'
   | 'MapScreen'
   | 'ScanScreen'
+  | 'BikeScreen'
+  | 'BikesScreen'
 )[];
 function MainRouter() {
   const dispatch = useDispatch();

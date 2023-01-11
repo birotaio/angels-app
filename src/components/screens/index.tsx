@@ -9,3 +9,5 @@ export * from './SplashScreen';
 export * from './LoginScreen';
 export * from './MapScreen';
 export * from './ScanScreen';
+export * from './BikeScreen';
+export * from './BikesScreen';

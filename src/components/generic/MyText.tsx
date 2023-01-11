@@ -38,6 +38,7 @@ type MyTextProps = {
   _color_primary?: boolean;
   _color_secondary?: boolean;
   _color_grey?: boolean;
+  _style_bold?: boolean;
 };
 
 const MyText: React.FC<MyTextProps & TextProps> = ({
@@ -50,6 +51,7 @@ const MyText: React.FC<MyTextProps & TextProps> = ({
   icon,
   lineHeight,
   onPress,
+  _style_bold,
   _title,
   _subtitle,
   _subtitle_uppercase,
@@ -93,6 +95,7 @@ const MyText: React.FC<MyTextProps & TextProps> = ({
     _caption_small && textStyle._caption_small,
     _caption_thin && textStyle._caption_thin,
     _button_label_giant && textStyle._button_label_giant,
+    _style_bold && textStyle.textBold,
   ];
   const _color = _color_primary
     ? themeStyle.accentPrimary
