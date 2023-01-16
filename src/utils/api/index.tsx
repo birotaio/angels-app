@@ -41,6 +41,12 @@ export const setLoginData = async (
   return await AsyncStorage.setItem(KEY_TKN, token);
 };
 
+export const removeLoginData = async (): Promise<void> => {
+  await AsyncStorage.removeItem(KEY_CID);
+  await AsyncStorage.removeItem(KEY_RFH_TKN);
+  return await AsyncStorage.removeItem(KEY_TKN);
+};
+
 export const removeToken = async (): Promise<void> => {
   return await AsyncStorage.removeItem(KEY_TKN);
 };

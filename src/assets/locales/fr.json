@@ -2,6 +2,7 @@
   "login": "Se connecter",
   "login-ok": "login_ok",
   "login-ko": "login_ko",
+  "login-out-ok": "login-out-ok",
   "something-wrong-happened": "something_wrong_happened",
   "retry-your-action": "retry_your_action",
   "email": "email",

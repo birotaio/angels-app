@@ -7,14 +7,13 @@ import MyScreen from '@components/generic/MyScreen';
 import MyView from '@components/generic/MyView';
 import {AUTH_ACTIONS_SAGA_LOGIN} from '@logic/store/auth/saga';
 import {AuthSelector} from '@logic/store/auth/selector';
-import navigator from '@navigation/navigator';
 import useTracking from '@navigation/useTracking';
 import layoutStyle from '@style/layoutStyle';
 import {emailFormat} from '@utils/strings/regex';
 import React from 'react';
-import {Image, TouchableOpacity} from 'react-native';
+import {View} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
-import {ScreenProps, MapScreen} from '.';
+import {ScreenProps} from '.';
 
 const LoginScreen: ScreenProps = () => {
   const dispatch = useDispatch();
@@ -25,14 +24,9 @@ const LoginScreen: ScreenProps = () => {
     <MyScreen background={images.login_bg}>
       <MyKeyboardAvoidingView>
         {/* TODO remove press */}
-        <TouchableOpacity
-          style={layoutStyle.asc}
-          onPress={() => navigator.navigate(MapScreen.navigationName)}>
-          <Logo
-          // width={layoutStyle.dim.width / 3}
-          // height={layoutStyle.dim.width / 1}
-          />
-        </TouchableOpacity>
+        <View style={layoutStyle.asc}>
+          <Logo />
+        </View>
 
         <MyView flex p5>
           <MyForm
