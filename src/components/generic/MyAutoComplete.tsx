@@ -71,15 +71,16 @@ const MyAutoComplete = ({onChange}: {onChange: (s: string | null) => void}) => {
         keyText="language"
         style={{
           ...layoutStyle.abs,
-          left: 16,
-          top: -6,
-          fontSize: 12,
-          zIndex: 1,
+          ...styles.text,
           color: themeStyle.bg5,
         }}
       />
     </TouchableOpacity>
   );
+};
+
+const styles = {
+  text: {left: 16, top: -6, fontSize: 12, zIndex: 1},
 };
 
 export default MyAutoComplete;

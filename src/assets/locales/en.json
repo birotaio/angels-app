@@ -1,5 +1,5 @@
 {
-  "login": "Login",
+  "login": "Se connecter",
   "login-ok": "login_ok",
   "login-ko": "login_ko",
   "something-wrong-happened": "something_wrong_happened",
@@ -9,8 +9,17 @@
   "password": "password",
   "password-required": "password_required",
   "menu": "Menu",
-  "validate": "Validate",
+  "validate": "Valider",
 
-  "scan-qr-code": "Scan QR code from the bike",
-  "scan-many-bikes": "Scan many bikes"
+  "scan-qr-code": "Scannez un QR code",
+  "scan-many-bikes": "Scanner plusieurs vélos",
+  "scan-multi": "Multi",
+  "scan-flash": "Flash",
+  "scan-auto": "Scanner",
+  "scan-manuel": "Manuel",
+  "scan-manuel-text": "Saisissez le numéro du vélo manuellement",
+  "scan-manuel-sub-text": "Vous le trouverez sur le cadre du vélo, a l'arrière du vélo ou sur le support téléphone",
+  "scan-manuel-placeholder": "ex : 100123",
+
+  "bike-sheet": "Fiche Vélo"
 }

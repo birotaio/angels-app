@@ -13,7 +13,7 @@ export default StyleSheet.create({
     paddingVertical: 12,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: themeStyle.accentSecondary,
+    backgroundColor: themeStyle.accentPrimary,
     borderRadius: 72,
     color: themeStyle.textColor,
   },

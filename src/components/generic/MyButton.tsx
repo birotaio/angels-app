@@ -2,7 +2,6 @@ import {TranslateKeyProps} from '@assets/locales/locale';
 import navigator from '@navigation/navigator';
 import componentStyle from '@style/componentStyle';
 import layoutStyle from '@style/layoutStyle';
-import textstyle from '@style/textStyle';
 import themeStyle from '@style/themeStyle';
 import React, {FunctionComponent} from 'react';
 import {

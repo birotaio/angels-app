@@ -13,9 +13,10 @@ import _ from 'lodash';
 
 type CameraComponentType = {
   onBarcode: (barcode: Barcode) => void;
+  torch: boolean;
 };
 
-const CameraComponent: React.FC<CameraComponentType> = ({onBarcode}) => {
+const CameraComponent: React.FC<CameraComponentType> = ({onBarcode, torch}) => {
   const devices = useCameraDevices();
   const device = devices.back;
 
@@ -39,6 +40,7 @@ const CameraComponent: React.FC<CameraComponentType> = ({onBarcode}) => {
   return device ? (
     <View style={layoutStyle.absFill}>
       <Camera
+        torch={torch ? 'on' : 'off'}
         style={layoutStyle.flex}
         frameProcessor={frameProcessor}
         frameProcessorFps={0.5}

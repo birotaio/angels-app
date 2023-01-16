@@ -14,6 +14,7 @@ import MyPhoneInput from './MyPhoneInput';
 import MyCodeField from './MyCodeField';
 import {useState} from 'react';
 import MyAutoComplete from './MyAutoComplete';
+import themeStyle from '@style/themeStyle';
 
 export type MyFormProps = {
   fields: FieldType[];
@@ -106,6 +107,7 @@ const MyForm: React.FC<MyFormProps> = ({
       ))}
       {bottomFormComponent?.({})}
       <MyButton
+        color={themeStyle.accentSecondary}
         style={{marginTop: buttonSpaceTop || 32}}
         isLoading={isLoading}
         disabled={!(_isValid !== undefined ? _isValid : isValid)}

@@ -26,6 +26,9 @@ export default StyleSheet.create({
   flex: {
     flex: 1,
   },
+  flexWrap: {
+    flexWrap: 'wrap',
+  },
   flexCenter: {
     flex: 1,
     alignItems: 'center',
@@ -41,6 +44,9 @@ export default StyleSheet.create({
   },
   opacity40: {
     opacity: 0.4,
+  },
+  layerWithOpacity: {
+    backgroundColor: '#000000D0',
   },
   // bullet: {fontSize: 40, letterSpacing: -8, marginBottom: 6, marginLeft: -6},
   h5: {
@@ -228,6 +234,7 @@ export default StyleSheet.create({
   absBot: {position: 'absolute', bottom: 0, left: 0, right: 0},
   abs: {position: 'absolute', top: 0, left: 0},
   absTopRight: {position: 'absolute', top: 0, right: 0},
+  absTopLeft: {position: 'absolute', top: 0, left: 0},
   absTopCenter: {position: 'absolute', top: 0, alignSelf: 'center'},
   absBotLeft: {position: 'absolute', bottom: 0, left: 0},
   // Components

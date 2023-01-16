@@ -3,4 +3,5 @@ export type TranslateKeyProps =
   | 'validate'
   | 'menu'
   | 'scan-qr-code'
-  | 'scan-many-bikes';
+  | 'scan-many-bikes'
+  | 'bike-sheet';

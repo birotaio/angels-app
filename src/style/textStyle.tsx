@@ -87,7 +87,6 @@ const textstyle: TextStyleProp = StyleSheet.create({
     lineHeight: 16,
   },
   textBold: {
-    fontSize: 16,
     fontFamily: 'ES Build Bold',
   },
   textSemibold: {
@@ -135,9 +134,8 @@ const textstyle: TextStyleProp = StyleSheet.create({
     fontSize: 24,
   },
   _subtitle: {
-    fontStyle: 'normal',
+    fontFamily: 'ES Build Regular',
     fontSize: 20,
-    lineHeight: 20,
   },
   _subtitle_uppercase: {
     fontStyle: 'normal',

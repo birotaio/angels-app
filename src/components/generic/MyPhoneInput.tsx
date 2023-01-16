@@ -25,10 +25,7 @@ const MyPhoneInput: React.FC<MyPhoneInputOnChange> = ({onChange}) => {
       <PhoneInput
         renderFlag={() => (
           <CountryPicker
-            containerButtonStyle={{
-              borderColor: themeStyle.bg2,
-              borderRightWidth: 1,
-            }}
+            containerButtonStyle={styles.border}
             onSelect={_c => {
               setIso2(_c?.cca2.toLowerCase());
               phoneInput?.current?.focus?.();
@@ -56,6 +53,13 @@ const MyPhoneInput: React.FC<MyPhoneInputOnChange> = ({onChange}) => {
       />
     </View>
   );
+};
+
+const styles = {
+  border: {
+    borderColor: themeStyle.bg2,
+    borderRightWidth: 1,
+  },
 };
 
 export default MyPhoneInput;

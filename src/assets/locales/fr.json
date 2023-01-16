@@ -12,6 +12,15 @@
   "menu": "Menu",
   "validate": "Valider",
 
-  "scan-qr-code": "Scannez le QR code du vélo",
-  "scan-many-bikes": "Scanner plusieurs vélos"
+  "scan-qr-code": "Scannez un QR code",
+  "scan-many-bikes": "Scanner plusieurs vélos",
+  "scan-multi": "Multi",
+  "scan-flash": "Flash",
+  "scan-auto": "Scanner",
+  "scan-manuel": "Manuel",
+  "scan-manuel-text": "Saisissez le numéro du vélo manuellement",
+  "scan-manuel-sub-text": "Vous le trouverez sur le cadre du vélo, a l'arrière du vélo ou sur le support téléphone",
+  "scan-manuel-placeholder": "ex : 100123",
+
+  "bike-sheet": "Fiche Vélo"
 }
