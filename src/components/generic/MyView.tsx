@@ -19,6 +19,8 @@ export type MyViewProps = {
   absTop?: boolean;
   absRightTop?: boolean;
   // Sizes
+  p12?: boolean;
+  p24?: boolean;
   p5?: boolean;
   ph5?: boolean;
   pv5?: boolean;
@@ -46,6 +48,8 @@ const MyView: React.FC<ViewProps & MyViewProps> = ({
   absBot,
   absTop,
   absRightTop,
+  p12,
+  p24,
   p5,
   pt5,
   ph5,
@@ -68,6 +72,8 @@ const MyView: React.FC<ViewProps & MyViewProps> = ({
         absBot && layoutStyle.absBot,
         absTop && layoutStyle.absTop,
         absRightTop && layoutStyle.absTopRight,
+        p12 && layoutStyle.p12,
+        p24 && layoutStyle.p24,
         p5 && layoutStyle.p5,
         ph5 && layoutStyle.ph5,
         pv5 && layoutStyle.pv5,

@@ -76,6 +76,9 @@ export default StyleSheet.create({
   h32p: {
     height: 32,
   },
+  p12: {
+    padding: 12,
+  },
   p24: {
     padding: 24,
   },
@@ -297,8 +300,6 @@ export default StyleSheet.create({
     borderRadius: 12,
     borderColor: themeStyle.background,
     borderWidth: 1,
-    marginTop: 16,
-    // padding: 12,
   },
   screenCardVerticalSeparator: {
     backgroundColor: themeStyle.background,

@@ -9,6 +9,7 @@ import MyIcon, {MyIconProps} from './MyIcon';
 
 type MyTextProps = {
   color?: ColorValue;
+  negColor?: boolean;
   text?: string | ((props: {children: string}) => React.ReactNode);
   keyText?: TranslateKeyProps | false;
   keyTextString?: string;
@@ -44,6 +45,7 @@ type MyTextProps = {
 const MyText: React.FC<MyTextProps & TextProps> = ({
   style,
   color,
+  negColor,
   text,
   keyText,
   keyTextString,
@@ -101,7 +103,9 @@ const MyText: React.FC<MyTextProps & TextProps> = ({
     ? themeStyle.accentPrimary
     : _color_secondary
     ? themeStyle.accentSecondary
-    : color || themeStyle.textColor;
+    : color || negColor
+    ? themeStyle.textColorInput
+    : themeStyle.textColor;
 
   return icon ? (
     <View style={layoutStyle.rowCenter}>

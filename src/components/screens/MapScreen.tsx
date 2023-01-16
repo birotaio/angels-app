@@ -4,7 +4,7 @@ import {MAP_ACTIONS_SAGA_GET_STATIONS} from '@logic/store/map/saga';
 import navigator from '@navigation/navigator';
 import useTracking from '@navigation/useTracking';
 import layoutStyle from '@style/layoutStyle';
-import React, {useRef} from 'react';
+import React, {useEffect, useRef} from 'react';
 import {useDispatch} from 'react-redux';
 import {ScreenProps} from '.';
 
@@ -15,7 +15,10 @@ import MapboxGL from '@react-native-mapbox-gl/maps';
 const MapScreen: ScreenProps = () => {
   const dispatch = useDispatch();
   useTracking(MapScreen.navigationName);
-  dispatch({type: MAP_ACTIONS_SAGA_GET_STATIONS});
+
+  useEffect(() => {
+    dispatch({type: MAP_ACTIONS_SAGA_GET_STATIONS});
+  }, [dispatch]);
 
   const map = useRef<MapboxGL.Camera>();
   return (
