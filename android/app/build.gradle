@@ -2,6 +2,8 @@ apply plugin: "com.android.application"
 apply plugin: 'com.google.gms.google-services' 
 apply plugin: 'com.google.firebase.crashlytics'
 apply plugin: 'com.google.firebase.firebase-perf'
+apply plugin: 'kotlin-android'
+
 import com.android.build.OutputFile
 
 /**
@@ -130,7 +132,9 @@ def nativeArchitectures = project.getProperties().get("reactNativeDebugArchitect
 
 android {
     ndkVersion rootProject.ext.ndkVersion
-
+    kotlinOptions {
+        jvmTarget = '11'
+    }
     compileSdkVersion rootProject.ext.compileSdkVersion
 
     defaultConfig {

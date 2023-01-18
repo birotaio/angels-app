@@ -32,7 +32,7 @@ const BikeScreen: ScreenProps = ({
   useEffect(() => {
     if (dispatch && bikeId) {
       dispatch({type: APP_ACTIONS_SAGA_GET_BIKE_BY_ID, data: {bikeId}});
-      dispatch({type: APP_ACTIONS_SAGA_CONNECT_BIKE});
+      dispatch({type: APP_ACTIONS_SAGA_CONNECT_BIKE, data: {bikeId}});
     }
   }, [dispatch, bikeId]);
   const isLocked = bike?.lock_info?.status === 1;
