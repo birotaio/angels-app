@@ -13,6 +13,14 @@ target 'AppName' do
   )
   # Private pods
   pod 'ZoovBLEiOS', :git => 'git@github.com:birotaio/ZoovIOS-BLE-SDK.git', :commit => '3a4ea660999bd96be54ccd826eb07067aef80b70'
+  # Permissions 
+  permissions_path = '../node_modules/react-native-permissions/ios'
+  pod 'Permission-BluetoothPeripheral', :path => "#{permissions_path}/BluetoothPeripheral"
+  pod 'Permission-Camera', :path => "#{permissions_path}/Camera"
+  pod 'Permission-LocationAccuracy', :path => "#{permissions_path}/LocationAccuracy"
+  pod 'Permission-LocationAlways', :path => "#{permissions_path}/LocationAlways"
+  pod 'Permission-LocationWhenInUse', :path => "#{permissions_path}/LocationWhenInUse"
+  pod 'Permission-Microphone', :path => "#{permissions_path}/Microphone"
   # Pods for testing
   target 'AppNameTests' do
     inherit! :complete

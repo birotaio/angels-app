@@ -11,6 +11,7 @@ import {
   APP_ACTIONS_SAGA_UNLOCK_BATTERY,
   APP_ACTIONS_SAGA_UNLOCK_BIKE,
 } from '@logic/store/app/saga';
+import {checkAndAskBluetoothPermission} from '@permissions/bluetooth';
 
 const TestBleScreen = () => {
   const bikeId = 113919;
@@ -24,6 +25,15 @@ const TestBleScreen = () => {
     <View style={layoutStyle.flexCenter}>
       <Text>TestBleScreen</Text>
       <Text>BikeId : 113919</Text>
+      <Button
+        style={layoutStyle.mt16p}
+        mode="contained"
+        onPress={async () => {
+          const status = await checkAndAskBluetoothPermission(true);
+          console.log('checkAndAskBluetoothPermission', status);
+        }}>
+        Permission
+      </Button>
       <Button
         style={layoutStyle.mt16p}
         mode="contained"

@@ -48,6 +48,7 @@ const LoginScreen: ScreenProps = () => {
                 },
                 inputProps: {
                   keyboardType: 'email-address',
+                  value: 'sylvain.levy@fifteen.eu',
                 },
               },
               {
