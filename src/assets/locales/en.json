@@ -1,13 +1,13 @@
 {
   "login": "Se connecter",
-  "login-ok": "login_ok",
-  "login-ko": "login_ko",
-  "something-wrong-happened": "something_wrong_happened",
-  "retry-your-action": "retry_your_action",
-  "email": "email",
-  "email-required": "email_required",
-  "password": "password",
-  "password-required": "password_required",
+  "login-ok": "Bienvenue",
+  "login-ko": "Echec de la connexion",
+  "login-out-ok": "Déconnexion réussie",
+  "something-wrong-happened": "Une erreur est survenue",
+  "email": "Adresse email",
+  "email-required": "Adresse email requise",
+  "password": "Mot de passe",
+  "password-required": "Mot de passe requis",
   "menu": "Menu",
   "validate": "Valider",
 
@@ -21,5 +21,13 @@
   "scan-manuel-sub-text": "Vous le trouverez sur le cadre du vélo, a l'arrière du vélo ou sur le support téléphone",
   "scan-manuel-placeholder": "ex : 100123",
 
-  "bike-sheet": "Fiche Vélo"
+  "bike-sheet": "Fiche vélo",
+  "bike-station": "En station",
+  "bike-lock": "Verrouillé",
+  "bike-unlock": "Déverrouillé",
+  "bike-action-lock": "Vérouiller le vélo ",
+  "bike-action-unlock": "Déverrouiller le vélo ",
+  "bike-action-change-battery": "Changer la batterie",
+  "bike-action-signal-problem": "Signaler un problème",
+  "bike-action-pickup": "Ramassage"
 }
