@@ -10,7 +10,7 @@ export default StyleSheet.create({
   },
   MyButton: {
     paddingHorizontal: 4,
-    paddingVertical: 12,
+    paddingVertical: 16,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: themeStyle.accentPrimary,

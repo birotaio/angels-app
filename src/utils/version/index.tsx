@@ -3,6 +3,7 @@ import codePush, {
   DownloadProgressCallback,
   RemotePackage,
 } from 'react-native-code-push';
+import DeviceInfo from 'react-native-device-info';
 
 const codepushUpdate = async ({
   descriptionHandler,
@@ -70,4 +71,9 @@ const restart = () => {
   codePush.restartApp();
 };
 
-export {codepushUpdate, getVersion, restart};
+const getAppVersion = () => {
+  //return `${DeviceInfo.getVersion()}.${DeviceInfo.getBuildNumber()}`;
+  return `v${DeviceInfo.getVersion()}`;
+};
+
+export {codepushUpdate, getVersion, restart, getAppVersion};

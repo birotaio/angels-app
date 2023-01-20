@@ -5,7 +5,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
 import Header from './Header';
 import * as screens from '../components/screens';
-import {TestBleScreen} from '../components/screens';
+import {SplashScreen} from '../components/screens';
 
 const Stack = createNativeStackNavigator();
 const screenKeys = Object.keys(screens) as (
@@ -15,11 +15,12 @@ const screenKeys = Object.keys(screens) as (
   | 'ScanScreen'
   | 'BikeScreen'
   | 'BikesScreen'
+  | 'TestBleScreen'
 )[];
 function MainRouter() {
   return (
     <Stack.Navigator
-      initialRouteName={TestBleScreen.navigationName}
+      initialRouteName={SplashScreen.navigationName}
       screenOptions={{
         header: Header,
         animation: 'fade_from_bottom',

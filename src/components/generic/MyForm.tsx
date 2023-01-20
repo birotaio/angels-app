@@ -1,5 +1,5 @@
 import React, {BaseSyntheticEvent} from 'react';
-import {ScrollView} from 'react-native';
+import {ColorValue, ScrollView} from 'react-native';
 import {
   useForm,
   Controller,
@@ -26,6 +26,10 @@ export type MyFormProps = {
   bottomFormComponent?: React.FC;
   isLoading?: boolean;
   buttonSpaceTop?: number;
+  button: {
+    textColor: ColorValue;
+    backgroundColor: ColorValue;
+  };
 };
 
 type FieldType = {
@@ -46,6 +50,7 @@ const MyForm: React.FC<MyFormProps> = ({
   bottomFormComponent,
   isLoading,
   buttonSpaceTop,
+  button,
 }) => {
   const {
     control,
@@ -107,8 +112,11 @@ const MyForm: React.FC<MyFormProps> = ({
       ))}
       {bottomFormComponent?.({})}
       <MyButton
-        color={themeStyle.accentSecondary}
-        style={{marginTop: buttonSpaceTop || 32}}
+        color={button?.textColor || themeStyle.accentSecondary}
+        style={[
+          {marginTop: buttonSpaceTop || 32},
+          button && {backgroundColor: button.backgroundColor},
+        ]}
         isLoading={isLoading}
         disabled={!(_isValid !== undefined ? _isValid : isValid)}
         text={ctaLabel}

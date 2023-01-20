@@ -7,7 +7,6 @@ import images from '@assets/images';
 
 const SplashScreen = () => {
   const dispatch = useDispatch();
-  // const [progress, setProgress] = useState<DownloadProgress | null>(null);
   useEffect(() => {
     dispatch({type: AUTH_ACTIONS_SAGA_CHECK_LOGIN});
   }, [dispatch]);
@@ -18,13 +17,6 @@ const SplashScreen = () => {
         source={images.login_bg}
         resizeMode="cover"
       />
-      {/* {progress && (
-        <ProgressBar
-          style={[layoutStyle.mt5, layoutStyle.w100]}
-          progress={progress.receivedBytes / progress.totalBytes}
-          color={themeStyle.bg0.toString()}
-        />
-      )} */}
     </View>
   );
 };
