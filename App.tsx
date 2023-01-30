@@ -62,7 +62,7 @@ const App = () => {
     });
 
     messaging.inAppMessaging().setMessagesDisplaySuppressed(true);
-
+    // start app
     setTimeout(() => {
       NativeSplashScreen.hide();
       splash = false;

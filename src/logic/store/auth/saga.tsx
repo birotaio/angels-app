@@ -1,9 +1,8 @@
-import {takeLatest, put} from 'redux-saga/effects';
+import {takeLatest, put, call} from 'redux-saga/effects';
 import {authAPI} from '@utils/api/calls/authAPI';
 import {setAuthState} from './reducer';
 import message from '@utils/message';
 import {getToken, setLoginData} from '@utils/api';
-import {LoginApiInputType, LoginApiResponseType} from '@utils/api/types';
 import i18n from '@assets/locales';
 import navigator from '@navigation/navigator';
 import {MapScreen} from '@components/screens';
@@ -16,17 +15,19 @@ export function* _checkLogin() {
   yield put(setAuthState({isLogged: token ? true : false}));
 }
 
-export function* _login(payload: LoginApiInputType) {
+export function* _login(payload: {data: {email: string; password: string}}) {
   const {email, password} = payload?.data;
 
   yield put(setAuthState({isLoading: true}));
   try {
-    const result: LoginApiResponseType = yield authAPI.login(email, password);
-    const data = result?.data;
-    console.log(result.data);
+    const data: {token?: string; refreshToken?: string} = yield authAPI.login(
+      email,
+      password,
+    );
+    console.log(data);
 
     if (data?.token) {
-      yield setLoginData(data.token, email, data.refresh_token);
+      yield setLoginData(data.token, email, data.refreshToken);
       yield put(setAuthState({isLogged: true, isLoading: false}));
       message.show(`${i18n.t('login-ok')} : ${email}`, 'success', false);
       navigator.navigate(MapScreen.navigationName);
