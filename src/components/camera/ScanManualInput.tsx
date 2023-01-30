@@ -14,9 +14,11 @@ import {NativeModules} from 'react-native';
 const {StatusBarManager} = NativeModules;
 
 const ScanManualInput = ({
+  manualOnly,
   onBikeId,
   onClose,
 }: {
+  manualOnly: boolean;
   onBikeId: (bikeId: number) => void;
   onClose: () => void;
 }) => {
@@ -52,12 +54,14 @@ const ScanManualInput = ({
         keyboardType="number-pad"
         returnKeyType="done"
       />
-      <FAB
-        onPress={onClose}
-        color={themeStyle.textColorInput.toString()}
-        icon="close"
-        style={styles.close}
-      />
+      {!manualOnly && (
+        <FAB
+          onPress={onClose}
+          color={themeStyle.textColorInput.toString()}
+          icon="close"
+          style={styles.close}
+        />
+      )}
     </View>
   );
 };

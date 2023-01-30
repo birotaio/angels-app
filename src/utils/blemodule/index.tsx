@@ -1,4 +1,4 @@
-import {NativeModules} from 'react-native';
+import {NativeEventEmitter, NativeModules} from 'react-native';
 
 const {BleModule} = NativeModules;
 
@@ -11,7 +11,11 @@ interface BleInterface {
   lockBike(): Promise<number>;
   unlockBike(lockTimeout: number): Promise<number>;
   unlockBattery(): Promise<number>;
-  // getBikeData(): BikeData; // TODO
+  getBikeData(): any;
+  addEventListener(): void;
+  removeEventListener(): Promise<number>;
 }
+
+export const bikeDataListener = new NativeEventEmitter(BleModule);
 
 export default BleModule as BleInterface;

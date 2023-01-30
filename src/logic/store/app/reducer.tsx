@@ -5,6 +5,7 @@ export const appSlice = createSlice({
   initialState: {
     isLoading: false,
     bike: null,
+    bikeData: null,
   },
   reducers: {
     setAppState: (state, action) => ({

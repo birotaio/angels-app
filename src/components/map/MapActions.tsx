@@ -28,6 +28,7 @@ export const MapActions = ({
       style={[componentStyle.mapFab, styles.search]}
       onPress={onMapSearchPress}
     />
+
     <FAB
       color={themeStyle.accentPrimary.toString()}
       icon="qrcode-scan"

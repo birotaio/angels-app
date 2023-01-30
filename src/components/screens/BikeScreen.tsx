@@ -1,5 +1,5 @@
 import useTracking from '@navigation/useTracking';
-import React, {useEffect} from 'react';
+import React, {useEffect, useLayoutEffect} from 'react';
 import {StyleSheet} from 'react-native';
 import {ScreenProps} from '.';
 
@@ -11,12 +11,15 @@ import {BikeCard} from '@components/bikes/BikeCard';
 import {useDispatch, useSelector} from 'react-redux';
 import {
   APP_ACTIONS_SAGA_CONNECT_BIKE,
+  APP_ACTIONS_SAGA_DISCONNECT,
   APP_ACTIONS_SAGA_GET_BIKE_BY_ID,
+  APP_ACTIONS_SAGA_LOCK_BIKE,
   APP_ACTIONS_SAGA_UNLOCK_BIKE,
 } from '@logic/store/app/saga';
 import {AppSelector} from '@logic/store/app/selector';
 import MyView from '@components/generic/MyView';
 import {BikeButton} from '@components/bikes/BikeButton';
+
 const BikeScreen: ScreenProps = ({
   route: {
     params: {bikeId},
@@ -28,13 +31,24 @@ const BikeScreen: ScreenProps = ({
   const bike = useSelector(AppSelector.getBike);
 
   useTracking(BikeScreen.navigationName);
-  // Get bike Infos
+
+  // Get bike datas from backend + connect to our bike
   useEffect(() => {
     if (dispatch && bikeId) {
       dispatch({type: APP_ACTIONS_SAGA_GET_BIKE_BY_ID, data: {bikeId}});
       dispatch({type: APP_ACTIONS_SAGA_CONNECT_BIKE, data: {bikeId}});
     }
-  }, [dispatch, bikeId]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // Disconnect from the bike when we leave this screen
+  useLayoutEffect(() => {
+    return () => {
+      dispatch({type: APP_ACTIONS_SAGA_DISCONNECT, data: {bikeId}});
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const isLocked = bike?.lock_info?.status === 1;
   return (
     <MyScreen noPadding style={layoutStyle.flex}>
@@ -53,7 +67,20 @@ const BikeScreen: ScreenProps = ({
           <BikeButton
             keyText={isLocked ? 'bike-action-unlock' : 'bike-action-lock'}
             icon={isLocked ? 'Unlock' : 'Lock'}
-            onPress={() => dispatch({type: APP_ACTIONS_SAGA_UNLOCK_BIKE})}
+            onPress={() =>
+              dispatch({
+                type: isLocked
+                  ? APP_ACTIONS_SAGA_UNLOCK_BIKE
+                  : APP_ACTIONS_SAGA_LOCK_BIKE,
+              })
+            }
+          />
+        )}
+        {bike && (
+          <BikeButton
+            keyText={'logout'}
+            icon={'logout'}
+            onPress={() => dispatch({type: APP_ACTIONS_SAGA_DISCONNECT})}
           />
         )}
         {/* <BikeButton

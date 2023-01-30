@@ -2,11 +2,24 @@
 #import <React/RCTConvert.h>
 
 @implementation RCTBleModule
+{
+  bool hasListeners;
+  RCTBleModuleSwift *moduleSwift;
+}
 
-// To export a module named RCTBleModule
-RCT_EXPORT_MODULE();
 - (NSArray<NSString *> *)supportedEvents {
-  return @[@"RCTBleModule"];
+  return @[@"BikeDataEvent"];
+}
+
+- (void) sendEvent {
+    [self sendEventWithName:@"BikeDataEvent" body:@"testEvent"];
+}
+- (void)startObserving{
+  hasListeners = YES;
+}
+
+- (void)stopObserving {
+  hasListeners = NO;
 }
 
 RCT_EXPORT_METHOD(setUp:(nonnull NSString *)url
@@ -22,6 +35,8 @@ RCT_EXPORT_METHOD(connect:(NSInteger)bikeId
 {
   [RCTBleModuleSwift connectWithBikeId:bikeId onSuccess:^{
     resolve(@"12012");
+    [moduleSwift imhereWithMess:@"test"];
+    [self sendEvent];// works
   } onFailure:^(NSError * _Nonnull error) {
     reject(@"BLEModule",@"connectWithBikeId",error);
   }];
@@ -63,5 +78,5 @@ RCT_EXPORT_METHOD(unlockBattery:(RCTPromiseResolveBlock)resolve
   }];
 }
 
-
+RCT_EXPORT_MODULE();// To export a module named RCTBleModule
 @end
