@@ -6,4 +6,18 @@ const getBikeById = async (bikeId: number): Promise<AxiosPromise<any>> => {
   return api.get(`bikes/${bikeId}`);
 };
 
-export const appApi = {getBikeById};
+const setBikeLockById = async (
+  bikeId: number,
+  locked: boolean,
+): Promise<AxiosPromise<any>> => {
+  const api = await callAPI();
+  return api.post(`bikes/${bikeId}/set_bike_info`, {
+    bike_state_meta: {
+      bike_state: {
+        lock_state: locked ? 1 : 2,
+      },
+    },
+  });
+};
+
+export const appApi = {getBikeById, setBikeLockById};

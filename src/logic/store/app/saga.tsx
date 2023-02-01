@@ -1,18 +1,33 @@
-import {takeLatest, put} from 'redux-saga/effects';
+import {takeLatest, put, call, select} from 'redux-saga/effects';
 import {setAppState} from './reducer';
 import axios, {AxiosError} from 'axios';
 import {appApi} from '@utils/api/calls/appApi';
 import {getRefreshToken, getToken} from '@utils/api';
 import BleModule, {BLE_MODULE_UNLOCK_TIMEOUT} from '@utils/blemodule';
 import constants from '@utils/constants';
+import {checkAndAskBluetoothPermission} from '@permissions/bluetooth';
+import message from '@utils/message';
+import navigator from '@navigation/navigator';
+import {ScanScreen} from '@components/screens';
+import {Platform} from 'react-native';
 
 export const APP_ACTIONS_SAGA_GET_BIKE_BY_ID =
   'APP_ACTIONS_SAGA_GET_BIKE_BY_ID';
+export const APP_ACTIONS_SAGA_SET_BIKE_BY_ID =
+  'APP_ACTIONS_SAGA_SET_BIKE_BY_ID';
+export const APP_ACTIONS_SAGA_CHECK_PERMISSIONS_AND_SCAN =
+  'APP_ACTIONS_SAGA_CHECK_PERMISSIONS_AND_SCAN';
 export const APP_ACTIONS_SAGA_SETUP_BLE = 'APP_ACTIONS_SAGA_SETUP_BLE';
 export const APP_ACTIONS_SAGA_CONNECT_BIKE = 'APP_ACTIONS_SAGA_CONNECT_BIKE';
 export const APP_ACTIONS_SAGA_DISCONNECT = 'APP_ACTIONS_SAGA_DISCONNECT';
 export const APP_ACTIONS_SAGA_UNLOCK_BIKE = 'APP_ACTIONS_SAGA_UNLOCK_BIKE';
 export const APP_ACTIONS_SAGA_LOCK_BIKE = 'APP_ACTIONS_SAGA_LOCK_BIKE';
+export const APP_ACTIONS_SAGA_REGISTER_BIKE_DATA =
+  'APP_ACTIONS_SAGA_REGISTER_BIKE_DATA';
+export const APP_ACTIONS_SAGA_UNREGISTER_BIKE_DATA =
+  'APP_ACTIONS_SAGA_UNREGISTER_BIKE_DATA';
+export const APP_ACTIONS_SAGA_GET_BIKE_DATAS =
+  'APP_ACTIONS_SAGA_GET_BIKE_DATAS';
 export const APP_ACTIONS_SAGA_UNLOCK_BATTERY =
   'APP_ACTIONS_SAGA_UNLOCK_BATTERY';
 
@@ -32,10 +47,33 @@ export function* _getBikeById(payload: {data: {bikeId: number}}) {
   } catch (error) {
     if (axios.isAxiosError(error)) {
       const e: AxiosError = error;
-
       setAppState({isLoading: false, error: e.toJSON()});
     } else {
       setAppState({isLoading: false, error: '_getBikeById error'});
+    }
+  }
+}
+
+export function* _setBikeById(payload: {
+  data: {bikeId: number; locked: boolean};
+}) {
+  const {bikeId, locked} = payload?.data;
+  yield put(setAppState({isLoading: true}));
+  try {
+    const result: any = yield appApi.setBikeLockById(bikeId, locked);
+    const data = result?.data;
+    if (data) {
+      yield put(setAppState({bike: data.bike, isLoading: false}));
+    } else {
+      yield put(setAppState({isLoading: false}));
+      setAppState({isLoading: false, error: '_setBikeById error'});
+    }
+  } catch (error) {
+    if (axios.isAxiosError(error)) {
+      const e: AxiosError = error;
+      setAppState({isLoading: false, error: e.toJSON()});
+    } else {
+      setAppState({isLoading: false, error: '_setBikeById error'});
     }
   }
 }
@@ -47,6 +85,17 @@ export function* _setUp() {
   console.log('_initBle data ok ?', token !== null, refreshToken !== null);
   BleModule.setUp(constants.API_URL, token, refreshToken);
   yield put(setAppState({isLoading: false}));
+}
+export function* _checkPermissionAndScan() {
+  // navigator.navigate(ScanScreen.navigationName);
+  const status: boolean = yield call(checkAndAskBluetoothPermission, true);
+  console.log('_setUpAppPermissions', status);
+  // TODO send to manual entry if no permission
+  if (status) {
+    navigator.navigate(ScanScreen.navigationName);
+  } else {
+    message.showError('scan-need-permission');
+  }
 }
 
 export function* _connectBike(payload: {data: {bikeId: number}}) {
@@ -80,7 +129,12 @@ export function* _unlockBike() {
   } catch (e) {
     console.log('_unlockBike', 'failure : ' + e);
   }
-  yield put(setAppState({isLoading: false}));
+  // fetch new bike data
+  const state = yield select();
+  yield put({
+    type: APP_ACTIONS_SAGA_GET_BIKE_BY_ID,
+    data: {bikeId: state.app?.bike?.serial_number},
+  });
 }
 
 export function* _lockBike() {
@@ -92,6 +146,12 @@ export function* _lockBike() {
     console.log('_lockBike', 'failure : ' + e);
   }
   yield put(setAppState({isLoading: false}));
+  // fetch new bike data
+  const state = yield select();
+  yield put({
+    type: APP_ACTIONS_SAGA_GET_BIKE_BY_ID,
+    data: {bikeId: state.app?.bike?.serial_number},
+  });
 }
 
 export function* _unlockBattery() {
@@ -105,12 +165,35 @@ export function* _unlockBattery() {
   yield put(setAppState({isLoading: false}));
 }
 
+export function* _registerBikeDatas() {
+  if (Platform.OS === 'android') {
+    yield put(setAppState({isLoading: true}));
+    yield BleModule.addEventListener();
+    yield put(setAppState({isLoading: false}));
+  }
+}
+
+export function* _unregisterBikeDatas() {
+  if (Platform.OS === 'android') {
+    yield put(setAppState({isLoading: true}));
+    yield BleModule.removeEventListener();
+    yield put(setAppState({isLoading: false}));
+  }
+}
+
 export default function* appSaga() {
   yield takeLatest(APP_ACTIONS_SAGA_GET_BIKE_BY_ID, _getBikeById);
+  yield takeLatest(APP_ACTIONS_SAGA_SET_BIKE_BY_ID, _setBikeById);
+  yield takeLatest(
+    APP_ACTIONS_SAGA_CHECK_PERMISSIONS_AND_SCAN,
+    _checkPermissionAndScan,
+  );
   yield takeLatest(APP_ACTIONS_SAGA_SETUP_BLE, _setUp);
   yield takeLatest(APP_ACTIONS_SAGA_CONNECT_BIKE, _connectBike);
   yield takeLatest(APP_ACTIONS_SAGA_DISCONNECT, _disconnect);
   yield takeLatest(APP_ACTIONS_SAGA_LOCK_BIKE, _lockBike);
   yield takeLatest(APP_ACTIONS_SAGA_UNLOCK_BIKE, _unlockBike);
   yield takeLatest(APP_ACTIONS_SAGA_UNLOCK_BATTERY, _unlockBattery);
+  yield takeLatest(APP_ACTIONS_SAGA_REGISTER_BIKE_DATA, _registerBikeDatas);
+  yield takeLatest(APP_ACTIONS_SAGA_UNREGISTER_BIKE_DATA, _unregisterBikeDatas);
 }

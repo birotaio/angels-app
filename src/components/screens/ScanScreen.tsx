@@ -32,7 +32,11 @@ const CarouselItem = ({item}: {item: string}) => (
   <MyText key={item} _subtitle style={textstyle.center} keyTextString={item} />
 );
 
-const ScanScreen: ScreenProps = () => {
+const ScanScreen: ScreenProps = ({
+  route: {params},
+}: {
+  route: {params: {manualOnly: boolean}};
+}) => {
   const [bikeId, setBikeId] = useState<number | null>(null);
   const [scans, setScans] = useState<number[]>([]);
   const [scanMany, setScanMany] = useState(false);
@@ -91,12 +95,13 @@ const ScanScreen: ScreenProps = () => {
   );
 
   const showManyValidate = scans?.length > 0;
-
+  const showManualOnly = params?.manualOnly || activeMode === 1;
   return (
     <View style={[layoutStyle.flex, layoutStyle.w100]}>
       <MyStatusBar />
       <View style={[layoutStyle.flex, layoutStyle.w100]}>
         <CameraComponent
+          isActive={!showManualOnly}
           torch={scanFlash}
           onBarcode={barcode => {
             const data = barcode.content.data as UrlBookmark;
@@ -153,6 +158,7 @@ const ScanScreen: ScreenProps = () => {
               },
             ].map(button => (
               <TouchableOpacity
+                key={button.icon}
                 style={[
                   styles.selector,
                   button.selected && styles.selectorSelected,
@@ -207,8 +213,9 @@ const ScanScreen: ScreenProps = () => {
           />
         </View>
       </View>
-      {activeMode === 1 && (
+      {(params?.manualOnly || activeMode === 1) && (
         <ScanManualInput
+          manualOnly={showManualOnly}
           onClose={() => {
             carrousel?.current?.snapToItem(0);
           }}

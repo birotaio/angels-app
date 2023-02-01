@@ -24,7 +24,7 @@ export const BikeButton = ({
       _title
     />
 
-    <MyIcon icon={icon} size={40} />
+    <MyIcon icon={icon} size={40} color={themeStyle.borderLineColor} />
   </TouchableOpacity>
 );
 

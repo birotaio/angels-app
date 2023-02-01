@@ -2,11 +2,28 @@
 #import <React/RCTConvert.h>
 
 @implementation RCTBleModule
+{
+  bool hasListeners;
+  RCTBleModuleSwift *moduleSwift;
+}
 
-// To export a module named RCTBleModule
-RCT_EXPORT_MODULE();
+
+
 - (NSArray<NSString *> *)supportedEvents {
-  return @[@"RCTBleModule"];
+  moduleSwift = [[RCTBleModuleSwift alloc] init];
+  __weak typeof(self) weakSelf = self;
+  [moduleSwift setCallBackWithCallback:^(NSString * _Nullable infos) {
+    [weakSelf sendEventWithName:@"BikeDataEvent" body:infos];
+  }];
+  return @[@"BikeDataEvent"];
+}
+
+- (void)startObserving{
+  hasListeners = YES;
+}
+
+- (void)stopObserving {
+  hasListeners = NO;
 }
 
 RCT_EXPORT_METHOD(setUp:(nonnull NSString *)url
@@ -63,5 +80,5 @@ RCT_EXPORT_METHOD(unlockBattery:(RCTPromiseResolveBlock)resolve
   }];
 }
 
-
+RCT_EXPORT_MODULE();// To export a module named RCTBleModule
 @end

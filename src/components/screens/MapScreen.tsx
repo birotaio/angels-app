@@ -1,17 +1,18 @@
 import Map from '@components/map/Map';
 import {MapActions} from '@components/map/MapActions';
 import {MAP_ACTIONS_SAGA_GET_STATIONS} from '@logic/store/map/saga';
-import navigator from '@navigation/navigator';
 import useTracking from '@navigation/useTracking';
 import layoutStyle from '@style/layoutStyle';
 import React, {useEffect, useRef} from 'react';
 import {useDispatch} from 'react-redux';
 import {ScreenProps} from '.';
 
-import {ScanScreen} from '@components/screens';
 import geolocation from '@utils/geolocation';
 import MapboxGL from '@react-native-mapbox-gl/maps';
-import {APP_ACTIONS_SAGA_SETUP_BLE} from '@logic/store/app/saga';
+import {
+  APP_ACTIONS_SAGA_CHECK_PERMISSIONS_AND_SCAN,
+  APP_ACTIONS_SAGA_SETUP_BLE,
+} from '@logic/store/app/saga';
 
 const MapScreen: ScreenProps = () => {
   const dispatch = useDispatch();
@@ -19,6 +20,7 @@ const MapScreen: ScreenProps = () => {
 
   useEffect(() => {
     dispatch({type: MAP_ACTIONS_SAGA_GET_STATIONS});
+
     dispatch({type: APP_ACTIONS_SAGA_SETUP_BLE});
   }, [dispatch]);
 
@@ -37,7 +39,9 @@ const MapScreen: ScreenProps = () => {
           })
         }
         onMapSearchPress={() => console.log('mapSearch')}
-        onScanQrCodePress={() => navigator.navigate(ScanScreen.navigationName)}
+        onScanQrCodePress={() => {
+          dispatch({type: APP_ACTIONS_SAGA_CHECK_PERMISSIONS_AND_SCAN});
+        }}
       />
     </Map>
   );

@@ -1,5 +1,6 @@
 export type TranslateKeyProps =
   | 'login'
+  | 'logout'
   | 'login-ok'
   | 'login-ko'
   | 'login-out-ok'
@@ -19,6 +20,7 @@ export type TranslateKeyProps =
   | 'scan-manuel-text'
   | 'scan-manuel-sub-text'
   | 'scan-manuel-placeholder'
+  | 'scan-need-permission'
   | 'bike-sheet'
   | 'bike-station'
   | 'bike-lock'

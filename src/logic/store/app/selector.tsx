@@ -1,6 +1,6 @@
-const getBike = ({app}) => {
-  return app.bike;
-};
+import {AnyMap} from '@interface/index';
+
+const getBike = ({app}: AnyMap) => app.bike;
 
 export const AppSelector = {
   getBike,
