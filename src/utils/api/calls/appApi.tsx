@@ -8,15 +8,14 @@ const getBikeById = async (bikeId: number): Promise<AxiosPromise<any>> => {
 
 const setBikeLockById = async (
   bikeId: number,
-  locked: boolean,
+  lockState: number,
 ): Promise<AxiosPromise<any>> => {
   const api = await callAPI();
-  return api.post(`bikes/${bikeId}/set_bike_info`, {
-    bike_state_meta: {
-      bike_state: {
-        lock_state: locked ? 1 : 2,
-      },
+  return api.post(`bikes/${bikeId}/set_lock_info`, {
+    lock_info: {
+      status: lockState,
     },
+    sn: bikeId,
   });
 };
 

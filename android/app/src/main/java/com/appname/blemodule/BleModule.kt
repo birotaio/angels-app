@@ -70,11 +70,11 @@ class BleModule(val reactContext: ReactApplicationContext?) : ReactContextBaseJa
                 params.putInt("version_minor", bikeData.firmwareVersion?.minor ?: 0)
                 params.putInt("version_bugfix", bikeData.firmwareVersion?.bugfix ?: 0)
                 params.putBoolean("connected", bikeData.isConnected)
-                params.putBoolean("locked", bikeData.bikeState?.lockStateValue==1)
+                params.putInt("lockState", bikeData.bikeState?.lockStateValue ?: 0)
                 params.putInt("product", bikeData.product?.number ?: 0)
                 params.putInt("serial_number", bikeData.serialNumber)
-                val json = GsonBuilder().create().toJson(bikeData.bikeStateMeta)
-                Log.d(TAG,"addEventListener + ${json}")
+                //val json = GsonBuilder().create().toJson(bikeData)
+                //Log.d(TAG,"addEventListener + ${bikeData.bikeState?.lockStateValue}")
                 sendEvent(reactContext, "BikeDataEvent",params);
             }
         }

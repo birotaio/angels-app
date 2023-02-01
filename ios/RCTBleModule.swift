@@ -63,8 +63,7 @@ import CoreBluetooth
     }
     parametersArray.append( ["connected" : bikeInfoWrapper.isConnected])
     if let lockStatus = bikeInfoWrapper.lockStatus {
-        parametersArray.append( ["locked" : lockStatus])
-
+      parametersArray.append( ["lockState" : lockStatus ? 1 : 2])
     }
     // Convert to json
     if(!parametersArray.isEmpty) {

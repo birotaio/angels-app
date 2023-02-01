@@ -1,5 +1,6 @@
 #import "RCTBleModule.h"
 #import <React/RCTConvert.h>
+#import "AppName-Swift.h"
 
 @implementation RCTBleModule
 {

@@ -10,11 +10,11 @@ import message from '@utils/message';
 import navigator from '@navigation/navigator';
 import {ScanScreen} from '@components/screens';
 import {Platform} from 'react-native';
+import {AppSelector} from './selector';
 
 export const APP_ACTIONS_SAGA_GET_BIKE_BY_ID =
   'APP_ACTIONS_SAGA_GET_BIKE_BY_ID';
-export const APP_ACTIONS_SAGA_SET_BIKE_BY_ID =
-  'APP_ACTIONS_SAGA_SET_BIKE_BY_ID';
+export const APP_ACTIONS_SAGA_USE_BLE_DATA = 'APP_ACTIONS_SAGA_USE_BLE_DATA';
 export const APP_ACTIONS_SAGA_CHECK_PERMISSIONS_AND_SCAN =
   'APP_ACTIONS_SAGA_CHECK_PERMISSIONS_AND_SCAN';
 export const APP_ACTIONS_SAGA_SETUP_BLE = 'APP_ACTIONS_SAGA_SETUP_BLE';
@@ -54,26 +54,30 @@ export function* _getBikeById(payload: {data: {bikeId: number}}) {
   }
 }
 
-export function* _setBikeById(payload: {
-  data: {bikeId: number; locked: boolean};
+export function* _useBleData(payload: {
+  data: {bikeId: number; bleLockState: number};
 }) {
-  const {bikeId, locked} = payload?.data;
-  yield put(setAppState({isLoading: true}));
-  try {
-    const result: any = yield appApi.setBikeLockById(bikeId, locked);
-    const data = result?.data;
-    if (data) {
-      yield put(setAppState({bike: data.bike, isLoading: false}));
-    } else {
-      yield put(setAppState({isLoading: false}));
-      setAppState({isLoading: false, error: '_setBikeById error'});
-    }
-  } catch (error) {
-    if (axios.isAxiosError(error)) {
-      const e: AxiosError = error;
-      setAppState({isLoading: false, error: e.toJSON()});
-    } else {
-      setAppState({isLoading: false, error: '_setBikeById error'});
+  const {bikeId, bleLockState} = payload?.data;
+  const bike = yield select(AppSelector.getBike);
+  if (bike?.lock_info?.status !== bleLockState) {
+    console.log('_useBleData', bike?.lock_info?.status, bleLockState);
+    try {
+      yield put(setAppState({isLoading: true}));
+      console.log('setBikeLockById', bleLockState);
+      const result: any = yield appApi.setBikeLockById(bikeId, bleLockState);
+      if (result.status === 204) {
+        yield put({type: APP_ACTIONS_SAGA_GET_BIKE_BY_ID, data: {bikeId}});
+      } else {
+        yield put(setAppState({isLoading: false}));
+        setAppState({isLoading: false, error: '_setBikeById error'});
+      }
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        const e: AxiosError = error;
+        setAppState({isLoading: false, error: e.toJSON()});
+      } else {
+        setAppState({isLoading: false, error: '_setBikeById error'});
+      }
     }
   }
 }
@@ -183,7 +187,7 @@ export function* _unregisterBikeDatas() {
 
 export default function* appSaga() {
   yield takeLatest(APP_ACTIONS_SAGA_GET_BIKE_BY_ID, _getBikeById);
-  yield takeLatest(APP_ACTIONS_SAGA_SET_BIKE_BY_ID, _setBikeById);
+  yield takeLatest(APP_ACTIONS_SAGA_USE_BLE_DATA, _useBleData);
   yield takeLatest(
     APP_ACTIONS_SAGA_CHECK_PERMISSIONS_AND_SCAN,
     _checkPermissionAndScan,

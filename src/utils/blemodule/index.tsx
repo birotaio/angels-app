@@ -17,7 +17,7 @@ interface BleInterface {
 
 export type BikeBleData = {
   connected: boolean;
-  locked: boolean;
+  lockState: number;
 };
 
 export const bikeDataListener = new NativeEventEmitter(BleModule);
