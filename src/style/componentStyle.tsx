@@ -9,8 +9,7 @@ export default StyleSheet.create({
     color: themeStyle.textColorInput,
   },
   MyButton: {
-    paddingHorizontal: 4,
-    paddingVertical: 16,
+    paddingHorizontal: 12,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: themeStyle.accentPrimary,

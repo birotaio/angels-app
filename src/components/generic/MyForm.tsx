@@ -26,7 +26,7 @@ export type MyFormProps = {
   bottomFormComponent?: React.FC;
   isLoading?: boolean;
   buttonSpaceTop?: number;
-  button: {
+  button?: {
     textColor: ColorValue;
     backgroundColor: ColorValue;
   };

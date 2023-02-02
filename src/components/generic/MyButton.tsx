@@ -1,18 +1,18 @@
 import {TranslateKeyProps} from '@assets/locales/locale';
+import Lottie from 'lottie-react-native';
 import navigator from '@navigation/navigator';
 import componentStyle from '@style/componentStyle';
 import layoutStyle from '@style/layoutStyle';
-import themeStyle from '@style/themeStyle';
 import React, {FunctionComponent} from 'react';
 import {
   ColorValue,
   TouchableOpacity,
   TouchableOpacityProps,
 } from 'react-native';
-import {ActivityIndicator} from 'react-native-paper';
 import {SvgProps} from 'react-native-svg';
 import MyIcon, {MyIconProps} from './MyIcon';
 import MyText from './MyText';
+import lottie from '@assets/lottie';
 
 type MyButtonProps = {
   spaceBottom?: boolean;
@@ -70,7 +70,9 @@ const MyButton: React.FC<MyButtonProps & TouchableOpacityProps> = ({
         outlined && [layoutStyle.outlinedButton, {borderColor: color}],
         square && [layoutStyle.squareButton],
         expand && layoutStyle.w100,
+        !isLoading && layoutStyle.pv16,
         props.style,
+        disabled && componentStyle.MyButtonDisabled,
       ]}
       disabled={disabled}
       onPress={
@@ -83,12 +85,12 @@ const MyButton: React.FC<MyButtonProps & TouchableOpacityProps> = ({
           : undefined
       }>
       {isLoading ? (
-        <ActivityIndicator
-          color={
-            outlined
-              ? themeStyle.accentPrimary.toString()
-              : themeStyle.errorColor.toString()
-          }
+        <Lottie
+          style={styles.loader}
+          autoSize
+          source={lottie.buttonLoader}
+          autoPlay
+          loop
         />
       ) : icon ? (
         <MyIcon {...icon} />
@@ -115,6 +117,7 @@ const MyButton: React.FC<MyButtonProps & TouchableOpacityProps> = ({
 
 const styles = {
   borderMax: {borderRadius: 200},
+  loader: {width: 52, height: 52},
 };
 
 export default MyButton;

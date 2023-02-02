@@ -360,6 +360,9 @@ export default StyleSheet.create({
   pv10: {
     paddingVertical: 10,
   },
+  pv16: {
+    paddingVertical: 16,
+  },
   ph20: {
     paddingHorizontal: 20,
   },
