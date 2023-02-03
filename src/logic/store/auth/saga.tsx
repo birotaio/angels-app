@@ -1,4 +1,5 @@
 import {takeLatest, put} from 'redux-saga/effects';
+
 import {
   authAPI,
   getToken,
@@ -6,6 +7,8 @@ import {
   setLoginData,
 } from '@utils/api/calls/authAPI';
 import {setAuthState} from './reducer';
+import NativeSplashScreen from 'react-native-splash-screen';
+
 import message from '@utils/message';
 import i18n from '@assets/locales';
 import navigator from '@navigation/navigator';
@@ -18,11 +21,13 @@ export const AUTH_ACTIONS_SAGA_LOGOUT = 'AUTH_ACTIONS_SAGA_LOGOUT';
 export function* _checkLogin() {
   const token: string = yield getToken();
   yield put(setAuthState({isLogged: token ? true : false}));
+
   if (token) {
     navigator.reset(MapScreen.navigationName);
   } else {
     navigator.reset(LoginScreen.navigationName);
   }
+  NativeSplashScreen.hide();
 }
 
 export function* _login(payload: {data: {email: string; password: string}}) {

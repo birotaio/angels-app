@@ -1,6 +1,5 @@
 import images from '@assets/images';
 import i18n from '@assets/locales';
-import {Logo} from '@assets/svg';
 import MyForm from '@components/generic/MyForm';
 import MyScreen from '@components/generic/MyScreen';
 import MyText from '@components/generic/MyText';
@@ -25,13 +24,7 @@ const LoginScreen: ScreenProps = () => {
   return (
     <MyScreen background={images.login_bg}>
       {/* TODO remove press */}
-      <View style={layoutStyle.asc}>
-        <Logo
-          width={layoutStyle.dim.height / 3}
-          height={layoutStyle.dim.height / 3}
-        />
-      </View>
-
+      <View style={layoutStyle.flex} />
       <MyView flex p5>
         <MyForm
           button={{

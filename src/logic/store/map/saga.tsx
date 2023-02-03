@@ -11,7 +11,6 @@ export function* _getStations() {
   yield put(setMapState({isLoading: true}));
   try {
     const data: GetStationType = yield mapApi.getStations();
-    console.log(data);
 
     if (data?.stations?.length) {
       const stationsByKey: Record<string, StationFeature> = {};

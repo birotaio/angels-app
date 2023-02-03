@@ -4,7 +4,6 @@ import {NavigationContainer} from '@react-navigation/native';
 import MainRouter from '@navigation/index';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
 import {navigationRef} from '@navigation/navigator';
-import NativeSplashScreen from 'react-native-splash-screen';
 
 import {Provider} from 'react-redux';
 import store from '@logic/store';
@@ -33,40 +32,26 @@ const theme: ReactNativePaper.Theme = {
   },
 };
 
-const UPDATE_TIMEOUT = 2000; // msecs
-let splash = true;
 const App = () => {
   React.useEffect(() => {
     codepushUpdate({
       exitHandler: newVersion => {
         if (newVersion) {
-          if (!splash) {
-            // show alert
-            message.showAlert({
-              title: i18n.t('update'),
-              message: i18n.t('update_text'),
-              onConfirm: () => {
-                codePush.restartApp();
-              },
-              cancelable: false,
-              oneButton: true,
-            });
-          } else {
-            // reboot
-            codePush.restartApp();
-          }
-        } else {
-          NativeSplashScreen.hide();
+          // show alert
+          message.showAlert({
+            title: i18n.t('update'),
+            message: i18n.t('update_text'),
+            onConfirm: () => {
+              codePush.restartApp();
+            },
+            cancelable: false,
+            oneButton: true,
+          });
         }
       },
     });
 
     messaging.inAppMessaging().setMessagesDisplaySuppressed(true);
-
-    setTimeout(() => {
-      NativeSplashScreen.hide();
-      splash = false;
-    }, UPDATE_TIMEOUT);
   }, []);
 
   return (
