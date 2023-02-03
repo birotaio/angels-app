@@ -1,22 +1,31 @@
-import {AxiosPromise} from 'axios';
-import callAPI from '..';
+import {ApiResponse} from '@fifteen/sdk';
+import fifteenSDK from '..';
 
-const getBikeById = async (bikeId: number): Promise<AxiosPromise<any>> => {
-  const api = await callAPI();
-  return api.get(`bikes/${bikeId}`);
-};
-
-const setBikeLockById = async (
-  bikeId: number,
-  lockState: number,
-): Promise<AxiosPromise<any>> => {
-  const api = await callAPI();
-  return api.post(`bikes/${bikeId}/set_lock_info`, {
-    lock_info: {
-      status: lockState,
+export type GetBike = ApiResponse<'get', '/bikes/{SerialNumber}'>['bike'];
+export type GetBikeBySNResponseType = ApiResponse<
+  'get',
+  '/bikes/{SerialNumber}'
+>;
+const getBikeBySN = async (serialNumber: number) => {
+  return (await fifteenSDK()).api.get('/bikes/{SerialNumber}', {
+    pathParameters: {
+      SerialNumber: serialNumber,
     },
-    sn: bikeId,
   });
 };
 
-export const appApi = {getBikeById, setBikeLockById};
+const setBikeLockBySN = async (serialNumber: number, lockStatus: number) => {
+  return (await fifteenSDK()).api.post('/bikes/{SerialNumber}/set_lock_info', {
+    pathParameters: {
+      SerialNumber: serialNumber,
+    },
+    body: {
+      sn: serialNumber,
+      lock_info: {
+        status: lockStatus,
+      },
+    },
+  });
+};
+
+export const appApi = {getBikeBySN, setBikeLockBySN};

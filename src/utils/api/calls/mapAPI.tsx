@@ -1,15 +1,10 @@
-import {AxiosPromise} from 'axios';
-import callAPI from '..';
-import {getStationsApiResponseType} from '../mapTypes';
+import {ApiResponse} from '@fifteen/sdk';
+import fifteenSDK from '..';
 
-const getStations = async (): Promise<
-  AxiosPromise<getStationsApiResponseType>
-> => {
-  const api = await callAPI();
-  return api.get('stations/', {
-    params: {
-      fields: 'location,label',
-    },
+export type GetStationType = ApiResponse<'get', '/stations'>;
+const getStations = async () => {
+  return (await fifteenSDK()).api.get('/stations', {
+    params: {fields: 'location,label'},
   });
 };
 

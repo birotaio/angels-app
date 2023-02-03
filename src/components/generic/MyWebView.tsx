@@ -1,5 +1,5 @@
 import layoutStyle from '@style/layoutStyle';
-import {getToken} from '@utils/api';
+import {getToken} from '@utils/api/calls/authAPI';
 import constants from '@utils/constants';
 import React, {FC, useEffect, useState} from 'react';
 import {View} from 'react-native';

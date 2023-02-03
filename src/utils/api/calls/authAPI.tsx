@@ -1,30 +1,44 @@
-import message from '@utils/message';
-import {AxiosPromise} from 'axios';
-import callAPI, {getCliendId, getRefreshToken, setLoginData} from '..';
-import {LoginApiResponseType} from '../types';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import fifteenSDK from '..';
 
-const login = async (
-  email: string,
-  password: string,
-): Promise<AxiosPromise<LoginApiResponseType>> => {
-  const api = await callAPI();
-  return api.post('auth/login?grant_type=basic', {
-    email,
-    password,
-  });
+const login = async (email: string, password: string) => {
+  return (await fifteenSDK()).login('basic', {email, password});
 };
 
-const refreshToken = async () => {
-  const api = await callAPI();
-  const response: LoginApiResponseType = await api.post('auth/refresh_token', {
-    client_id: await getCliendId(),
-    refresh_token: await getRefreshToken(),
-  });
-  const token = response?.data?.token;
-  if (token) {
-    setLoginData(token);
-    message.show('retry-your-action', 'success');
+// local storage login datas
+const KEY_CID = '@keycid';
+const KEY_TKN = '@keytokn';
+const KEY_RFH_TKN = '@keyRefreshtokn';
+
+export const getCliendId = async (): Promise<string> => {
+  return (await AsyncStorage.getItem(KEY_CID)) ?? '';
+};
+export const getToken = async (): Promise<string> => {
+  return (await AsyncStorage.getItem(KEY_TKN)) ?? '';
+};
+export const getRefreshToken = async (): Promise<string> => {
+  return (await AsyncStorage.getItem(KEY_RFH_TKN)) ?? '';
+};
+
+export const setLoginData = async (
+  token: string,
+  email?: string,
+  refreshToken?: string,
+): Promise<void> => {
+  if (email) {
+    await AsyncStorage.setItem(KEY_CID, email);
   }
+  if (refreshToken) {
+    await AsyncStorage.setItem(KEY_RFH_TKN, refreshToken);
+  }
+
+  return await AsyncStorage.setItem(KEY_TKN, token);
 };
 
-export const authAPI = {login, refreshToken};
+export const removeLoginData = async (): Promise<void> => {
+  await AsyncStorage.removeItem(KEY_CID);
+  await AsyncStorage.removeItem(KEY_RFH_TKN);
+  return await AsyncStorage.removeItem(KEY_TKN);
+};
+
+export const authAPI = {login};

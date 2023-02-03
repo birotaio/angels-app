@@ -1,6 +1,6 @@
 import useTracking from '@navigation/useTracking';
 import React, {useEffect, useState} from 'react';
-import {EmitterSubscription, StyleSheet} from 'react-native';
+import {EmitterSubscription, Platform, StyleSheet} from 'react-native';
 import {ScreenProps} from '.';
 
 import layoutStyle from '@style/layoutStyle';
@@ -51,7 +51,8 @@ const BikeScreen: ScreenProps = ({
       const _listener = bikeDataListener.addListener(
         'BikeDataEvent',
         (bikeBleData: string) => {
-          const data = JSON.parse(bikeBleData);
+          const data =
+            Platform.OS === 'ios' ? JSON.parse(bikeBleData) : bikeBleData;
           console.log(data.lockState);
           dispatch({
             type: APP_ACTIONS_SAGA_USE_BLE_DATA,
@@ -98,28 +99,6 @@ const BikeScreen: ScreenProps = ({
                 type: isLockedFromBack
                   ? APP_ACTIONS_SAGA_UNLOCK_BIKE
                   : APP_ACTIONS_SAGA_LOCK_BIKE,
-              })
-            }
-          />
-        )}
-        {bike && (
-          <BikeButton
-            keyText={'bike-action-lock'}
-            icon={'Lock'}
-            onPress={() =>
-              dispatch({
-                type: APP_ACTIONS_SAGA_LOCK_BIKE,
-              })
-            }
-          />
-        )}
-        {bike && (
-          <BikeButton
-            keyText={'bike-action-unlock'}
-            icon={'Unlock'}
-            onPress={() =>
-              dispatch({
-                type: APP_ACTIONS_SAGA_UNLOCK_BIKE,
               })
             }
           />

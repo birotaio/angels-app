@@ -1,28 +1,26 @@
 import {takeLatest, put} from 'redux-saga/effects';
 import {setMapState} from './reducer';
-import {mapApi} from '@utils/api/calls/mapAPI';
-import {getStationsApiResponseType} from '@utils/api/mapTypes';
+import {GetStationType, mapApi} from '@utils/api/calls/mapAPI';
 import axios, {AxiosError} from 'axios';
-import _ from 'lodash';
 import {convertStationToFeature} from './utils';
+import {StationFeature} from './types';
 
 export const MAP_ACTIONS_SAGA_GET_STATIONS = 'MAP_ACTIONS_SAGA_GET_STATIONS';
 
 export function* _getStations() {
   yield put(setMapState({isLoading: true}));
   try {
-    const result: getStationsApiResponseType = yield mapApi.getStations();
-    const data = result?.data;
+    const data: GetStationType = yield mapApi.getStations();
+    console.log(data);
 
-    if (data) {
-      const stationsByKey = _.reduce(
-        data.stations,
-        (acc, {id, ...params}) => ({
-          ...acc,
-          [id]: convertStationToFeature({id, ...params}),
-        }),
-        {},
-      );
+    if (data?.stations?.length) {
+      const stationsByKey: Record<string, StationFeature> = {};
+      data.stations?.forEach(_s => {
+        if (_s.id && _s.location?.coordinates?.length) {
+          stationsByKey[_s.id] = convertStationToFeature(_s);
+        }
+      });
+      console.log('stationsByKey');
       yield put(setMapState({stations: stationsByKey, isLoading: false}));
     } else {
       yield put(setMapState({isLoading: false}));

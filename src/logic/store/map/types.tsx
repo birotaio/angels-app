@@ -1,4 +1,4 @@
-import {Station} from '@utils/api/mapTypes';
+import {Station} from './utils';
 
 export type StationFeature = {
   type: 'Feature';

@@ -1,8 +1,12 @@
 import {takeLatest, put, call, select} from 'redux-saga/effects';
 import {setAppState} from './reducer';
 import axios, {AxiosError} from 'axios';
-import {appApi} from '@utils/api/calls/appApi';
-import {getRefreshToken, getToken} from '@utils/api';
+import {
+  appApi,
+  GetBike,
+  GetBikeBySNResponseType,
+} from '@utils/api/calls/appApi';
+import {getRefreshToken, getToken} from '@utils/api/calls/authAPI';
 import BleModule, {BLE_MODULE_UNLOCK_TIMEOUT} from '@utils/blemodule';
 import constants from '@utils/constants';
 import {checkAndAskBluetoothPermission} from '@permissions/bluetooth';
@@ -35,11 +39,9 @@ export function* _getBikeById(payload: {data: {bikeId: number}}) {
   const {bikeId} = payload?.data;
   yield put(setAppState({isLoading: true}));
   try {
-    const result: any = yield appApi.getBikeById(bikeId);
-    const data = result?.data;
-
-    if (data) {
-      yield put(setAppState({bike: data.bike, isLoading: false}));
+    const result: GetBikeBySNResponseType = yield appApi.getBikeBySN(bikeId);
+    if (result) {
+      yield put(setAppState({bike: result.bike, isLoading: false}));
     } else {
       yield put(setAppState({isLoading: false}));
       setAppState({isLoading: false, error: '_getBikeById error'});
@@ -58,25 +60,19 @@ export function* _useBleData(payload: {
   data: {bikeId: number; bleLockState: number};
 }) {
   const {bikeId, bleLockState} = payload?.data;
-  const bike = yield select(AppSelector.getBike);
+  const bike: GetBike = yield select(AppSelector.getBike);
   if (bike?.lock_info?.status !== bleLockState) {
     console.log('_useBleData', bike?.lock_info?.status, bleLockState);
     try {
       yield put(setAppState({isLoading: true}));
-      console.log('setBikeLockById', bleLockState);
-      const result: any = yield appApi.setBikeLockById(bikeId, bleLockState);
-      if (result.status === 204) {
-        yield put({type: APP_ACTIONS_SAGA_GET_BIKE_BY_ID, data: {bikeId}});
-      } else {
-        yield put(setAppState({isLoading: false}));
-        setAppState({isLoading: false, error: '_setBikeById error'});
-      }
+      yield appApi.setBikeLockBySN(bikeId, bleLockState);
+      yield put({type: APP_ACTIONS_SAGA_GET_BIKE_BY_ID, data: {bikeId}});
     } catch (error) {
       if (axios.isAxiosError(error)) {
         const e: AxiosError = error;
         setAppState({isLoading: false, error: e.toJSON()});
       } else {
-        setAppState({isLoading: false, error: '_setBikeById error'});
+        setAppState({isLoading: false, error: '_useBleData error'});
       }
     }
   }
