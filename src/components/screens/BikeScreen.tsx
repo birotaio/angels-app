@@ -24,6 +24,9 @@ import MyView from '@components/generic/MyView';
 import {BikeButton} from '@components/bikes/BikeButton';
 import {bikeDataListener} from '@utils/blemodule';
 import navigator from '@navigation/navigator';
+import {AuthSelector} from '@logic/store/auth/selector';
+import {PRIVILEGES_TYPE} from '@logic/store/auth/utils';
+import message from '@utils/message';
 
 const BIKE_LOCKED = 1;
 
@@ -36,9 +39,9 @@ const BikeScreen: ScreenProps = ({
 }) => {
   const dispatch = useDispatch();
   const bike = useSelector(AppSelector.getBike);
+  const privileges = useSelector(AuthSelector.getAngelBikePrivilege); // try selector with params
   const backLockedStatus = bike?.lock_info?.status;
   const [listener, setListener] = useState<EmitterSubscription | null>(null);
-
   useTracking(BikeScreen.navigationName);
 
   // Get bike datas from backend + connect to our bike
@@ -53,7 +56,6 @@ const BikeScreen: ScreenProps = ({
         (bikeBleData: string) => {
           const data =
             Platform.OS === 'ios' ? JSON.parse(bikeBleData) : bikeBleData;
-          console.log(data.lockState);
           dispatch({
             type: APP_ACTIONS_SAGA_USE_BLE_DATA,
             data: {bikeId, bleLockState: data.lockState},
@@ -88,25 +90,35 @@ const BikeScreen: ScreenProps = ({
         />
         <BikeCard bike={bike} />
         <MyView flex />
-        {bike && (
-          <BikeButton
-            keyText={
-              isLockedFromBack ? 'bike-action-unlock' : 'bike-action-lock'
-            }
-            icon={isLockedFromBack ? 'Unlock' : 'Lock'}
-            onPress={() =>
-              dispatch({
-                type: isLockedFromBack
-                  ? APP_ACTIONS_SAGA_UNLOCK_BIKE
-                  : APP_ACTIONS_SAGA_LOCK_BIKE,
-              })
-            }
-          />
-        )}
-        {/* <BikeButton
-          keyText={'bike-action-change-battery'}
-          icon="BatterySmall"
-        />
+        {bike &&
+          privileges.includes(
+            PRIVILEGES_TYPE.ANGELS.privileges.BIKE.permissions.UNLOCK,
+          ) && (
+            <BikeButton
+              keyText={
+                isLockedFromBack ? 'bike-action-unlock' : 'bike-action-lock'
+              }
+              icon={isLockedFromBack ? 'Unlock' : 'Lock'}
+              onPress={() =>
+                dispatch({
+                  type: isLockedFromBack
+                    ? APP_ACTIONS_SAGA_UNLOCK_BIKE
+                    : APP_ACTIONS_SAGA_LOCK_BIKE,
+                })
+              }
+            />
+          )}
+        {bike &&
+          privileges.includes(
+            PRIVILEGES_TYPE.ANGELS.privileges.BIKE.permissions.UNLOCK,
+          ) && (
+            <BikeButton
+              keyText={'bike-action-change-battery'}
+              icon="BatterySmall"
+              onPress={() => message.show('todo')}
+            />
+          )}
+        {/*
         <BikeButton keyText={'bike-action-signal-problem'} icon="Checklist" />
         <BikeButton keyText={'bike-action-pickup'} icon="Pickup" /> */}
       </MyView>

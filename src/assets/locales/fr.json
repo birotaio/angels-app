@@ -11,6 +11,8 @@
   "password-required": "Mot de passe requis",
   "menu": "Menu",
   "validate": "Valider",
+  "update-title": "Mise à jour",
+  "update-text": "Une mise à jour a été effectuée, veuiller relancer l'application pour qu'elle soit effective",
 
   "scan-qr-code": "Scannez un QR code",
   "scan-many-bikes": "Scanner plusieurs vélos",

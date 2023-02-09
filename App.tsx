@@ -39,8 +39,8 @@ const App = () => {
         if (newVersion) {
           // show alert
           message.showAlert({
-            title: i18n.t('update'),
-            message: i18n.t('update_text'),
+            title: i18n.t('update-title'),
+            message: i18n.t('update-text'),
             onConfirm: () => {
               codePush.restartApp();
             },

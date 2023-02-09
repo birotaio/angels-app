@@ -33,7 +33,7 @@
     }
   },
   "dependencies": {
-    "@fifteen/sdk": "1.1.0-beta.5",
+    "@fifteen/sdk": "1.1.0-beta.7",
     "@react-native-async-storage/async-storage": "^1.17.2",
     "@react-native-community/blur": "^4.3.0",
     "@react-native-firebase/analytics": "^14.5.1",

@@ -2,6 +2,7 @@ import {takeLatest, put} from 'redux-saga/effects';
 
 import {
   authAPI,
+  GetPrivilegeType,
   getToken,
   removeLoginData,
   setLoginData,
@@ -15,14 +16,16 @@ import navigator from '@navigation/navigator';
 import {LoginScreen, MapScreen} from '@components/screens';
 
 export const AUTH_ACTIONS_SAGA_CHECK_LOGIN = 'AUTH_ACTIONS_SAGA_CHECK_LOGIN';
+export const AUTH_ACTIONS_SAGA_GET_PRIVILEGE =
+  'AUTH_ACTIONS_SAGA_GET_PRIVILEGE';
 export const AUTH_ACTIONS_SAGA_LOGIN = 'AUTH_ACTIONS_SAGA_LOGIN';
 export const AUTH_ACTIONS_SAGA_LOGOUT = 'AUTH_ACTIONS_SAGA_LOGOUT';
 
 export function* _checkLogin() {
   const token: string = yield getToken();
   yield put(setAuthState({isLogged: token ? true : false}));
-
   if (token) {
+    yield put({type: AUTH_ACTIONS_SAGA_GET_PRIVILEGE});
     navigator.reset(MapScreen.navigationName);
   } else {
     navigator.reset(LoginScreen.navigationName);
@@ -42,30 +45,45 @@ export function* _login(payload: {data: {email: string; password: string}}) {
     console.log(data);
 
     if (data?.token) {
-      yield setLoginData(data.token, email, data.refreshToken);
+      yield setLoginData(data.token, email, data.refreshToken); // save login data in async storage
       yield put(setAuthState({isLogged: true, isLoading: false}));
       message.show(`${i18n.t('login-ok')} : ${email}`, 'success', false);
       navigator.navigate(MapScreen.navigationName);
+      yield put({type: AUTH_ACTIONS_SAGA_GET_PRIVILEGE}); // get privilege from new user
     } else {
       yield put(setAuthState({isLoading: false}));
       message.show('something-wrong-happened', 'danger');
     }
   } catch (e: any) {
-    yield put(setAuthState({isLoading: false}));
-    yield put(setAuthState({isLogged: false, error: e?.message}));
+    yield put(
+      setAuthState({isLoading: false, isLogged: false, error: e?.message}),
+    );
   }
 }
 
 export function* _logout() {
   yield put(setAuthState({isLoading: true}));
   yield removeLoginData();
-  yield put(setAuthState({isLogged: false, isLoading: false}));
+  yield put(setAuthState({isLogged: false, isLoading: false, privilege: []}));
   message.show(`${i18n.t('login-out-ok')} `, 'success', false);
   navigator.reset(LoginScreen.navigationName);
 }
 
+export function* _getPrivilege() {
+  yield put(setAuthState({isLoading: true}));
+  try {
+    const data: GetPrivilegeType = yield authAPI.getPrivileges();
+    yield put(setAuthState({isLoading: false, privileges: data.data}));
+  } catch (e: any) {
+    yield put(
+      setAuthState({isLoading: false, isLogged: false, error: e?.message}),
+    );
+  }
+}
+
 export default function* authSaga() {
   yield takeLatest(AUTH_ACTIONS_SAGA_CHECK_LOGIN, _checkLogin);
+  yield takeLatest(AUTH_ACTIONS_SAGA_GET_PRIVILEGE, _getPrivilege);
   yield takeLatest(AUTH_ACTIONS_SAGA_LOGIN, _login);
   yield takeLatest(AUTH_ACTIONS_SAGA_LOGOUT, _logout);
 }

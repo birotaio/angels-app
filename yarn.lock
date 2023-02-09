@@ -892,10 +892,10 @@
   resolved "https://registry.yarnpkg.com/@expo/sdk-runtime-versions/-/sdk-runtime-versions-1.0.0.tgz#d7ebd21b19f1c6b0395e50d78da4416941c57f7c"
   integrity sha512-Doz2bfiPndXYFPMRwPyGa1k5QaKDVpY806UJj570epIiMzWaYyCtobasyfC++qfIXVb5Ocy7r3tP9d62hAQ7IQ==
 
-"@fifteen/sdk@1.1.0-beta.5":
-  version "1.1.0-beta.5"
-  resolved "https://registry.yarnpkg.com/@fifteen/sdk/-/sdk-1.1.0-beta.5.tgz#d604e097ffb3d672b8087f289ed05e48f5fa53ef"
-  integrity sha512-UqGwVDPeFHdA3CHiC67aAi4AChm4kRXtE4d86U8M1W2Q5yDg1dqYBXo9WOCbZsq5dvKFDrLotPY7F57OApvPsg==
+"@fifteen/sdk@1.1.0-beta.7":
+  version "1.1.0-beta.7"
+  resolved "https://registry.yarnpkg.com/@fifteen/sdk/-/sdk-1.1.0-beta.7.tgz#ea980d2abde3ec5db85e2a9398b34bce23d0bc96"
+  integrity sha512-GA2WDfvtwufFMsw3GSa5NFSE6AEK0oUPYVbcCxZw9OJgBmAYdi+pIUeuoBo+zjj71ctDy2zw+Cbc4rC34IcdXw==
   dependencies:
     consola "^2.15.3"
     hookable "^5.4.2"

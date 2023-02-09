@@ -1,3 +1,4 @@
+import {ApiResponse} from '@fifteen/sdk';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import fifteenSDK from '..';
 
@@ -41,4 +42,10 @@ export const removeLoginData = async (): Promise<void> => {
   return await AsyncStorage.removeItem(KEY_TKN);
 };
 
-export const authAPI = {login};
+// Get privileges
+export type GetPrivilegeType = ApiResponse<'get', '/auth/privileges'>;
+const getPrivileges = async () => {
+  return (await fifteenSDK()).api.get('/auth/privileges');
+};
+
+export const authAPI = {login, getPrivileges};
