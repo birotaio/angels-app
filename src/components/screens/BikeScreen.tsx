@@ -15,6 +15,7 @@ import {
   APP_ACTIONS_SAGA_GET_BIKE_BY_ID,
   APP_ACTIONS_SAGA_LOCK_BIKE,
   APP_ACTIONS_SAGA_REGISTER_BIKE_DATA,
+  APP_ACTIONS_SAGA_UNLOCK_BATTERY,
   APP_ACTIONS_SAGA_UNLOCK_BIKE,
   APP_ACTIONS_SAGA_UNREGISTER_BIKE_DATA,
   APP_ACTIONS_SAGA_USE_BLE_DATA,
@@ -26,7 +27,6 @@ import {bikeDataListener} from '@utils/blemodule';
 import navigator from '@navigation/navigator';
 import {AuthSelector} from '@logic/store/auth/selector';
 import {PRIVILEGES_TYPE} from '@logic/store/auth/utils';
-import message from '@utils/message';
 
 const BIKE_LOCKED = 1;
 
@@ -115,7 +115,7 @@ const BikeScreen: ScreenProps = ({
             <BikeButton
               keyText={'bike-action-change-battery'}
               icon="BatterySmall"
-              onPress={() => message.show('todo')}
+              onPress={() => dispatch({type: APP_ACTIONS_SAGA_UNLOCK_BATTERY})}
             />
           )}
         {/*

@@ -33,5 +33,7 @@
   "bike-action-unlock": "Déverrouiller le vélo ",
   "bike-action-change-battery": "Changer la batterie",
   "bike-action-signal-problem": "Signaler un problème",
-  "bike-action-pickup": "Ramassage"
+  "bike-action-pickup": "Ramassage",
+  "bike-unlock-battery-success": "La batterie a été dévérouillée",
+  "bike-unlock-battery-failure": "Le dévérouillage de la batterie a échoué"
 }

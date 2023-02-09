@@ -39,7 +39,7 @@ const ScanScreen: ScreenProps = ({
 }) => {
   const [bikeId, setBikeId] = useState<number | null>(null);
   const [scans, setScans] = useState<number[]>([]);
-  const [scanMany, setScanMany] = useState(false);
+  const [scanMany] = useState(false);
   const [scanFlash, setScanFlash] = useState(false);
   const [activeMode, setActiveMode] = useState(0);
   const carrousel = useRef<Carousel<string>>(null);
@@ -136,18 +136,18 @@ const ScanScreen: ScreenProps = ({
           />
 
           <View style={layoutStyle.flex} />
-          <View style={layoutStyle.rowCenter}>
+          <View style={[layoutStyle.rowCenter, layoutStyle.mb12]}>
             {[
-              {
-                icon: 'Multi',
-                keyText: 'scan-multi',
-                onPress: () => {
-                  setBikeId(null);
-                  setScans([]);
-                  setScanMany(!scanMany);
-                },
-                selected: scanMany,
-              },
+              // {
+              //   icon: 'Multi',
+              //   keyText: 'scan-multi',
+              //   onPress: () => {
+              //     setBikeId(null);
+              //     setScans([]);
+              //     setScanMany(!scanMany);
+              //   },
+              //   selected: scanMany,
+              // },
               {
                 icon: 'Flash',
                 keyText: 'scan-flash',
@@ -174,30 +174,32 @@ const ScanScreen: ScreenProps = ({
               </TouchableOpacity>
             ))}
           </View>
-          <View
-            style={[
-              layoutStyle.w100,
-              layoutStyle.ph5,
-              layoutStyle.mt24,
-              layoutStyle.mb16,
-              !showManyValidate && layoutStyle.opacity0,
-            ]}>
-            <MyButton
-              disabled={!showManyValidate}
-              onPress={() => {
-                setScanFlash(false);
-                setTimeout(() => {
-                  navigator.pop();
-                  navigator.navigate(BikesScreen.navigationName, {
-                    bikeIds: scans,
-                  });
-                }, 100);
-              }}
-              expand
-              keyText="validate"
-              color={themeStyle.textColor}
-            />
-          </View>
+          {showManyValidate && (
+            <View
+              style={[
+                layoutStyle.w100,
+                layoutStyle.ph5,
+                layoutStyle.mt24,
+                layoutStyle.mb16,
+                !showManyValidate && layoutStyle.opacity0,
+              ]}>
+              <MyButton
+                disabled={!showManyValidate}
+                onPress={() => {
+                  setScanFlash(false);
+                  setTimeout(() => {
+                    navigator.pop();
+                    navigator.navigate(BikesScreen.navigationName, {
+                      bikeIds: scans,
+                    });
+                  }, 100);
+                }}
+                expand
+                keyText="validate"
+                color={themeStyle.textColor}
+              />
+            </View>
+          )}
           <Carousel
             ref={carrousel}
             pagingEnabled

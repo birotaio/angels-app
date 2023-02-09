@@ -20,7 +20,6 @@ const LoginScreen: ScreenProps = () => {
   const dispatch = useDispatch();
 
   useTracking(LoginScreen.navigationName);
-
   return (
     <MyScreen background={images.login_bg}>
       {/* TODO remove press */}

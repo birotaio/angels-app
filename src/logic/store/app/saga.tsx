@@ -157,10 +157,10 @@ export function* _lockBike() {
 export function* _unlockBattery() {
   yield put(setAppState({isLoading: true}));
   try {
-    const _result: number = yield BleModule.unlockBattery();
-    console.log('_unlockBattery', 'success : ' + _result);
+    yield BleModule.unlockBattery();
+    message.show('bike-unlock-battery-success', 'success');
   } catch (e) {
-    console.log('_unlockBattery', 'failure : ' + e);
+    message.show('bike-unlock-battery-failure', 'danger');
   }
   yield put(setAppState({isLoading: false}));
 }

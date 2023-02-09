@@ -11,6 +11,8 @@ export type TranslateKeyProps =
   | 'password-required'
   | 'menu'
   | 'validate'
+  | 'update-title'
+  | 'update-text'
   | 'scan-qr-code'
   | 'scan-many-bikes'
   | 'scan-multi'
@@ -29,4 +31,6 @@ export type TranslateKeyProps =
   | 'bike-action-unlock'
   | 'bike-action-change-battery'
   | 'bike-action-signal-problem'
-  | 'bike-action-pickup';
+  | 'bike-action-pickup'
+  | 'bike-unlock-battery-success'
+  | 'bike-unlock-battery-failure';
