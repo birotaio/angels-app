@@ -9,6 +9,7 @@ import {
 } from './calls/authAPI';
 import message from '@utils/message';
 import CodePush from 'react-native-code-push';
+import BleModule from '@utils/blemodule';
 
 const fifteenSDK = async (): Promise<Sdk> => {
   const token = await getToken();
@@ -35,6 +36,8 @@ const fifteenSDK = async (): Promise<Sdk> => {
   });
   sdk.api.hook('token-refreshed', hookData => {
     setLoginData(hookData.token);
+    // Change ZoovBLE token
+    BleModule.setUp(constants.API_URL, hookData.token, refreshToken);
   });
   sdk.api.hook('refresh-token-error', async () => {
     console.log('refresh-token-error');
