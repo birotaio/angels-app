@@ -27,8 +27,10 @@ import {bikeDataListener} from '@utils/blemodule';
 import navigator from '@navigation/navigator';
 import {AuthSelector} from '@logic/store/auth/selector';
 import {PRIVILEGES_TYPE} from '@logic/store/auth/utils';
+import {BikeModal, BikeModalType} from '@components/bikes/BikeModal';
 
 const BIKE_LOCKED = 1;
+const BIKE_UNLOCKED = 2;
 
 const BikeScreen: ScreenProps = ({
   route: {
@@ -38,11 +40,29 @@ const BikeScreen: ScreenProps = ({
   route: {params: {bikeId: number}};
 }) => {
   const dispatch = useDispatch();
-  const bike = useSelector(AppSelector.getBike);
-  const privileges = useSelector(AuthSelector.getAngelBikePrivilege); // try selector with params
-  const backLockedStatus = bike?.lock_info?.status;
-  const [listener, setListener] = useState<EmitterSubscription | null>(null);
+  const appData = useSelector(AppSelector.getApp);
   useTracking(BikeScreen.navigationName);
+  // Display
+  const privileges = useSelector(AuthSelector.getAngelBikePrivilege); // todo try selector with params
+  const isLockedFromBack = appData?.bike?.lock_info?.status === BIKE_LOCKED;
+  // Modal
+  const [showModal, setShowModal] = useState(false);
+  const [bikeModalData, setBikeModalData] = useState<BikeModalType | null>(
+    null,
+  );
+  // BLE
+  const [listener, setListener] = useState<EmitterSubscription | null>(null);
+  const [lockState, setLockState] = useState(0);
+
+  useEffect(() => {
+    console.log('dispatch', dispatch);
+
+    dispatch({
+      type: APP_ACTIONS_SAGA_USE_BLE_DATA,
+      data: {bikeId, bleLockState: lockState},
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [lockState]);
 
   // Get bike datas from backend + connect to our bike
   useEffect(() => {
@@ -56,10 +76,7 @@ const BikeScreen: ScreenProps = ({
         (bikeBleData: string) => {
           const data =
             Platform.OS === 'ios' ? JSON.parse(bikeBleData) : bikeBleData;
-          dispatch({
-            type: APP_ACTIONS_SAGA_USE_BLE_DATA,
-            data: {bikeId, bleLockState: data.lockState},
-          });
+          setLockState(data?.lockState);
         },
       );
       setListener(_listener);
@@ -73,7 +90,6 @@ const BikeScreen: ScreenProps = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch, bikeId]);
 
-  const isLockedFromBack = backLockedStatus === BIKE_LOCKED;
   return (
     <MyScreen noPadding style={layoutStyle.flex}>
       <MyStatusBar />
@@ -88,9 +104,9 @@ const BikeScreen: ScreenProps = ({
           style={[styles.text, layoutStyle.mb16]}
           keyText={'bike-sheet'}
         />
-        <BikeCard bike={bike} />
+        <BikeCard bike={appData?.bike} />
         <MyView flex />
-        {bike &&
+        {appData?.bike &&
           privileges.includes(
             PRIVILEGES_TYPE.ANGELS.privileges.BIKE.permissions.UNLOCK,
           ) && (
@@ -99,16 +115,39 @@ const BikeScreen: ScreenProps = ({
                 isLockedFromBack ? 'bike-action-unlock' : 'bike-action-lock'
               }
               icon={isLockedFromBack ? 'Unlock' : 'Lock'}
-              onPress={() =>
+              onPress={() => {
+                setBikeModalData({
+                  description: isLockedFromBack
+                    ? 'bike-unlock-description'
+                    : 'bike-lock-description',
+                  title: isLockedFromBack
+                    ? 'bike-action-unlock'
+                    : 'bike-action-lock',
+                  image: 'BatterySmall',
+                  button1: {
+                    text: 'validate',
+                    action: () => {
+                      setShowModal(false);
+                    },
+                  },
+                  isLoadingSelector: AppSelector.getDataProcessed,
+                  successCondition: (data: any) =>
+                    data?.bike?.lock_info?.status ===
+                    (isLockedFromBack ? BIKE_UNLOCKED : BIKE_LOCKED),
+                  failureCondition: (data: any) =>
+                    data?.bike?.lock_info?.status ===
+                    (isLockedFromBack ? BIKE_LOCKED : BIKE_UNLOCKED),
+                });
                 dispatch({
                   type: isLockedFromBack
                     ? APP_ACTIONS_SAGA_UNLOCK_BIKE
                     : APP_ACTIONS_SAGA_LOCK_BIKE,
-                })
-              }
+                });
+                setShowModal(true);
+              }}
             />
           )}
-        {bike &&
+        {appData?.bike &&
           privileges.includes(
             PRIVILEGES_TYPE.ANGELS.privileges.BIKE.permissions.UNLOCK,
           ) && (
@@ -122,6 +161,14 @@ const BikeScreen: ScreenProps = ({
         <BikeButton keyText={'bike-action-signal-problem'} icon="Checklist" />
         <BikeButton keyText={'bike-action-pickup'} icon="Pickup" /> */}
       </MyView>
+      {bikeModalData && (
+        <BikeModal
+          show={showModal}
+          data={appData}
+          bikeModalData={bikeModalData}
+          onClose={() => setShowModal(false)}
+        />
+      )}
     </MyScreen>
   );
 };

@@ -15,17 +15,19 @@ const getBikeBySN = async (serialNumber: number) => {
 };
 
 const setBikeLockBySN = async (serialNumber: number, lockStatus: number) => {
-  return (await fifteenSDK()).api.post('/bikes/{SerialNumber}/set_lock_info', {
-    pathParameters: {
-      SerialNumber: serialNumber,
-    },
-    body: {
-      sn: serialNumber,
-      lock_info: {
-        status: lockStatus,
+  if (serialNumber && lockStatus) {
+    return (await fifteenSDK()).api.post(
+      '/bikes/{SerialNumber}/set_bike_info',
+      {
+        pathParameters: {
+          SerialNumber: serialNumber,
+        },
+        body: {
+          locked: lockStatus === 1,
+        },
       },
-    },
-  });
+    );
+  }
 };
 
 export const appApi = {getBikeBySN, setBikeLockBySN};

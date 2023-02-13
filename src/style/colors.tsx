@@ -9,6 +9,7 @@ const colors = {
   NEUTRAL_LIGHT_03: '#E5EBED',
   DANGER_500: '#E63E2A',
   WHITE: '#FFFFFF',
+  GREY_TR: '#424242D0',
 };
 
 export default colors;

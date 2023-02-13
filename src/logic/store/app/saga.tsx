@@ -37,21 +37,46 @@ export const APP_ACTIONS_SAGA_UNLOCK_BATTERY =
 
 export function* _getBikeById(payload: {data: {bikeId: number}}) {
   const {bikeId} = payload?.data;
-  yield put(setAppState({isLoading: true}));
-  try {
-    const result: GetBikeBySNResponseType = yield appApi.getBikeBySN(bikeId);
-    if (result) {
-      yield put(setAppState({bike: result.bike, isLoading: false}));
-    } else {
-      yield put(setAppState({isLoading: false}));
-      setAppState({isLoading: false, error: '_getBikeById error'});
-    }
-  } catch (error) {
-    if (axios.isAxiosError(error)) {
-      const e: AxiosError = error;
-      setAppState({isLoading: false, error: e.toJSON()});
-    } else {
-      setAppState({isLoading: false, error: '_getBikeById error'});
+  if (bikeId) {
+    yield put(setAppState({isLoading: true}));
+    try {
+      const result: GetBikeBySNResponseType = yield appApi.getBikeBySN(bikeId);
+      if (result) {
+        yield put(
+          setAppState({
+            bike: result.bike,
+            isLoading: false,
+            dataProcessed: true,
+          }),
+        );
+      } else {
+        yield put(
+          setAppState({
+            isLoading: false,
+            error: '_getBikeById error',
+            dataProcessed: true,
+          }),
+        );
+      }
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        const e: AxiosError = error;
+        yield put(
+          setAppState({
+            isLoading: false,
+            error: e.toJSON(),
+            dataProcessed: true,
+          }),
+        );
+      } else {
+        yield put(
+          setAppState({
+            isLoading: false,
+            error: '_getBikeById error',
+            dataProcessed: true,
+          }),
+        );
+      }
     }
   }
 }
@@ -61,18 +86,29 @@ export function* _useBleData(payload: {
 }) {
   const {bikeId, bleLockState} = payload?.data;
   const bike: GetBike = yield select(AppSelector.getBike);
-  if (bike?.lock_info?.status !== bleLockState) {
-    console.log('_useBleData', bike?.lock_info?.status, bleLockState);
+  if (bleLockState !== 0 && bike?.lock_info?.status !== bleLockState) {
+    console.log(bleLockState, bike?.lock_info?.status);
     try {
-      yield put(setAppState({isLoading: true}));
       yield appApi.setBikeLockBySN(bikeId, bleLockState);
       yield put({type: APP_ACTIONS_SAGA_GET_BIKE_BY_ID, data: {bikeId}});
     } catch (error) {
       if (axios.isAxiosError(error)) {
         const e: AxiosError = error;
-        setAppState({isLoading: false, error: e.toJSON()});
+        yield put(
+          setAppState({
+            isLoading: false,
+            error: e.toJSON(),
+            dataProcessed: true,
+          }),
+        );
       } else {
-        setAppState({isLoading: false, error: '_useBleData error'});
+        yield put(
+          setAppState({
+            isLoading: false,
+            error: '_useBleData error',
+            dataProcessed: true,
+          }),
+        );
       }
     }
   }
@@ -120,7 +156,7 @@ export function* _disconnect() {
 }
 
 export function* _unlockBike() {
-  yield put(setAppState({isLoading: true}));
+  yield put(setAppState({isLoading: true, dataProcessed: false}));
   try {
     const _result: number = yield BleModule.unlockBike(
       BLE_MODULE_UNLOCK_TIMEOUT,
@@ -129,40 +165,25 @@ export function* _unlockBike() {
   } catch (e) {
     console.log('_unlockBike', 'failure : ' + e);
   }
-  // fetch new bike data
-  const state = yield select();
-  yield put({
-    type: APP_ACTIONS_SAGA_GET_BIKE_BY_ID,
-    data: {bikeId: state.app?.bike?.serial_number},
-  });
 }
 
 export function* _lockBike() {
-  yield put(setAppState({isLoading: true}));
+  yield put(setAppState({isLoading: true, dataProcessed: false}));
   try {
     const _result: number = yield BleModule.lockBike();
     console.log('_lockBike', 'success : ' + _result);
   } catch (e) {
     console.log('_lockBike', 'failure : ' + e);
   }
-  yield put(setAppState({isLoading: false}));
-  // fetch new bike data
-  const state = yield select();
-  yield put({
-    type: APP_ACTIONS_SAGA_GET_BIKE_BY_ID,
-    data: {bikeId: state.app?.bike?.serial_number},
-  });
 }
 
 export function* _unlockBattery() {
-  yield put(setAppState({isLoading: true}));
   try {
     yield BleModule.unlockBattery();
     message.show('bike-unlock-battery-success', 'success');
   } catch (e) {
     message.show('bike-unlock-battery-failure', 'danger');
   }
-  yield put(setAppState({isLoading: false}));
 }
 
 export function* _registerBikeDatas() {
