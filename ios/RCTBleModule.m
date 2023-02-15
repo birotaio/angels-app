@@ -8,14 +8,7 @@
   RCTBleModuleSwift *moduleSwift;
 }
 
-
-
 - (NSArray<NSString *> *)supportedEvents {
-  moduleSwift = [[RCTBleModuleSwift alloc] init];
-  __weak typeof(self) weakSelf = self;
-  [moduleSwift setCallBackWithCallback:^(NSString * _Nullable infos) {
-    [weakSelf sendEventWithName:@"BikeDataEvent" body:infos];
-  }];
   return @[@"BikeDataEvent"];
 }
 
@@ -32,6 +25,13 @@ RCT_EXPORT_METHOD(setUp:(nonnull NSString *)url
                   refreshToken:(nonnull NSString *)refreshToken)
 {
   [RCTBleModuleSwift setUpWithUrl:url token:token refreshToken:refreshToken];
+  if (moduleSwift == nil) {
+    moduleSwift = [[RCTBleModuleSwift alloc] init];
+    __weak typeof(self) weakSelf = self;
+    [moduleSwift setCallBackWithCallback:^(NSString * _Nullable infos) {
+      [weakSelf sendEventWithName:@"BikeDataEvent" body:infos];
+    }];
+  }
 }
 
 RCT_EXPORT_METHOD(connect:(NSInteger)bikeId

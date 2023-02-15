@@ -16,6 +16,7 @@ import CoreBluetooth
   
   override init() {
     super.init()
+    print("____init")
     ZoovBLE.sharedInstance.delegate = self
   }
   
@@ -23,6 +24,7 @@ import CoreBluetooth
     ZoovBLE.sharedInstance.setUp(url: url, apiKey: nil, token: token,refreshToken: refreshToken)
   }
   @objc public static func connect(bikeId: NSInteger,onSuccess: @escaping() -> Void, onFailure: @escaping(Error) -> Void) {
+    print("____connect")
     ZoovBLE.sharedInstance.connect(bikeId: UInt32(bikeId), onSuccess: onSuccess, onFailure: onFailure)
   }
   
@@ -43,10 +45,12 @@ import CoreBluetooth
   }
   
   @objc public func setCallBack(callback: @escaping(String?) -> Void){
+    print("____setCallBack")
     self.callback = callback
   }
   
   func bikeUpdated(bikeInfoWrapper: BikeInfoWrapper) {
+    print("____bikeUpdated")
     let encoder = JSONEncoder()
     var parametersArray: [[String: Any]] = [[:]]
     encoder.keyEncodingStrategy = .convertToSnakeCase // camel case comes from protobuf convention
