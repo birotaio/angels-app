@@ -55,12 +55,14 @@ const BikeScreen: ScreenProps = ({
   const [lockState, setLockState] = useState(0);
 
   useEffect(() => {
-    console.log('dispatch', dispatch);
-
-    dispatch({
-      type: APP_ACTIONS_SAGA_USE_BLE_DATA,
-      data: {bikeId, bleLockState: lockState},
-    });
+    if (lockState) {
+      // lock state changed
+      console.log('dispatch APP_ACTIONS_SAGA_USE_BLE_DATA');
+      dispatch({
+        type: APP_ACTIONS_SAGA_USE_BLE_DATA,
+        data: {bikeId, bleLockState: lockState ?? 0},
+      });
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lockState]);
 
@@ -74,9 +76,13 @@ const BikeScreen: ScreenProps = ({
       const _listener = bikeDataListener.addListener(
         'BikeDataEvent',
         (bikeBleData: string) => {
-          const data =
-            Platform.OS === 'ios' ? JSON.parse(bikeBleData) : bikeBleData;
-          setLockState(data?.lockState);
+          try {
+            const data =
+              Platform.OS === 'ios' ? JSON.parse(bikeBleData) : bikeBleData;
+            setLockState(data?.lockState);
+          } catch (error) {
+            console.log('parse bikeBleData', error);
+          }
         },
       );
       setListener(_listener);
@@ -137,6 +143,12 @@ const BikeScreen: ScreenProps = ({
                   failureCondition: (data: any) =>
                     data?.bike?.lock_info?.status ===
                     (isLockedFromBack ? BIKE_LOCKED : BIKE_UNLOCKED),
+                  timeoutAction: () => {
+                    dispatch({
+                      type: APP_ACTIONS_SAGA_GET_BIKE_BY_ID,
+                      data: {bikeId},
+                    });
+                  },
                 });
                 dispatch({
                   type: isLockedFromBack

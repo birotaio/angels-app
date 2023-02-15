@@ -30,9 +30,10 @@ export type BikeModalType = {
   isLoadingSelector: (data: any) => boolean;
   successCondition: (data: any) => boolean;
   failureCondition: (data: any) => boolean;
+  timeoutAction: () => void;
 };
 
-const TIMEOUT_TIME = 10000;
+const TIMEOUT_TIME = 5000;
 
 export const BikeModal = ({
   data,
@@ -47,7 +48,7 @@ export const BikeModal = ({
 }) => {
   const isLoadingSelector = useSelector(bikeModalData.isLoadingSelector);
   const [isLoading, setLoading] = useState(true);
-  const [timeouted, setTimeouted] = useState(false);
+  const [closeTimeout, setCloseTimeout] = useState<NodeJS.Timeout | null>(null);
   const success = bikeModalData.successCondition(data);
   // const failure = bikeModalData.failureCondition(data);
   useEffect(() => {
@@ -59,19 +60,25 @@ export const BikeModal = ({
 
   useEffect(() => {
     if (show) {
+      // reset timeout
+      if (closeTimeout) {
+        clearTimeout(closeTimeout);
+        setCloseTimeout(null);
+      }
       setLoading(true);
-      setTimeouted(false);
-      setTimeout(() => {
-        console.log('timeout?', isLoading);
+      const _closeTimeout = setTimeout(() => {
         if (isLoading) {
           setLoading(false);
-          setTimeouted(true);
+        }
+        if (bikeModalData?.timeoutAction) {
+          bikeModalData?.timeoutAction?.();
         }
       }, TIMEOUT_TIME);
+      setCloseTimeout(_closeTimeout);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [show]);
-  // TODO timeout + BikeScreen
+
   return (
     <AnimFadeView
       style={[styles.container, {backgroundColor: colors.GREY_TR}]}
@@ -97,8 +104,6 @@ export const BikeModal = ({
             source={
               isLoading
                 ? lottie.buttonLoader
-                : timeouted
-                ? lottie.fail
                 : success
                 ? lottie.greenCheck
                 : lottie.fail

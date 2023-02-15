@@ -40,7 +40,10 @@ export function* _getBikeById(payload: {data: {bikeId: number}}) {
   if (bikeId) {
     yield put(setAppState({isLoading: true}));
     try {
-      const result: GetBikeBySNResponseType = yield appApi.getBikeBySN(bikeId);
+      const result: GetBikeBySNResponseType = yield call(
+        appApi.getBikeBySN,
+        bikeId,
+      );
       if (result) {
         yield put(
           setAppState({
@@ -86,10 +89,11 @@ export function* _useBleData(payload: {
 }) {
   const {bikeId, bleLockState} = payload?.data;
   const bike: GetBike = yield select(AppSelector.getBike);
+  console.log(`_useBleData : ${bleLockState} ${bike?.lock_info?.status}`);
   if (bleLockState !== 0 && bike?.lock_info?.status !== bleLockState) {
-    console.log(bleLockState, bike?.lock_info?.status);
+    console.log('_useBleData', 'go to setBikeLockBySN');
     try {
-      yield appApi.setBikeLockBySN(bikeId, bleLockState);
+      yield call(appApi.setBikeLockBySN, bikeId, bleLockState);
       yield put({type: APP_ACTIONS_SAGA_GET_BIKE_BY_ID, data: {bikeId}});
     } catch (error) {
       if (axios.isAxiosError(error)) {
