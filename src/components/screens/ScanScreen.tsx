@@ -27,6 +27,7 @@ import MyIcon from '@components/generic/MyIcon';
 import Carousel from 'react-native-snap-carousel';
 import {ScanManualInput} from '@components/camera/ScanManualInput';
 import {useBackButton} from '@utils/hooks/useBack';
+import colors from '@style/colors';
 
 const CarouselItem = ({item}: {item: string}) => (
   <MyText key={item} _subtitle style={textstyle.center} keyTextString={item} />
@@ -165,7 +166,7 @@ const ScanScreen: ScreenProps = ({
                 ]}
                 onPress={button.onPress}>
                 <View style={layoutStyle.aic}>
-                  <MyIcon size={24} icon={button.icon} />
+                  <MyIcon size={24} icon={button.icon} color={colors.BLACK} />
                   <MyText
                     color={themeStyle.textColorInput}
                     keyTextString={button.keyText}
