@@ -23,7 +23,6 @@ export const BikeButton = ({
       negColor
       _title
     />
-
     <MyIcon icon={icon} size={40} color={themeStyle.borderLineColor} />
   </TouchableOpacity>
 );

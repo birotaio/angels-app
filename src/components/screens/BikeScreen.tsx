@@ -45,6 +45,8 @@ const BikeScreen: ScreenProps = ({
   // Display
   const privileges = useSelector(AuthSelector.getAngelBikePrivilege); // todo try selector with params
   const isLockedFromBack = appData?.bike?.lock_info?.status === BIKE_LOCKED;
+  const checkLocked = appData?.bike?.status !== 3; //Le vélo n’est pas in_use
+  const checkUnlocked = appData?.bike?.status !== 4; // Le vélo n’est pas in_pause
   // Modal
   const [showModal, setShowModal] = useState(false);
   const [bikeModalData, setBikeModalData] = useState<BikeModalType | null>(
@@ -99,80 +101,85 @@ const BikeScreen: ScreenProps = ({
   return (
     <MyScreen noPadding style={layoutStyle.flex}>
       <MyStatusBar />
-      <MyView flex p5>
-        <MyText
-          onPress={() => {
-            navigator.pop();
-          }}
-          _color_secondary
-          _title
-          _style_bold
-          style={[styles.text, layoutStyle.mb16]}
-          keyText={'bike-sheet'}
-        />
-        <BikeCard bike={appData?.bike} />
-        <MyView flex />
-        {appData?.bike &&
-          privileges.includes(
+      {appData?.bike && (
+        <MyView flex p5>
+          <MyText
+            onPress={() => {
+              navigator.pop();
+            }}
+            _color_secondary
+            _title
+            _style_bold
+            style={[styles.text, layoutStyle.mb16]}
+            keyText={'bike-sheet'}
+          />
+          <BikeCard bike={appData?.bike} />
+          <MyView flex />
+          {privileges.includes(
             PRIVILEGES_TYPE.ANGELS.privileges.BIKE.permissions.UNLOCK,
-          ) && (
-            <BikeButton
-              keyText={
-                isLockedFromBack ? 'bike-action-unlock' : 'bike-action-lock'
-              }
-              icon={isLockedFromBack ? 'Unlock' : 'Lock'}
-              onPress={() => {
-                setBikeModalData({
-                  description: isLockedFromBack
-                    ? 'bike-unlock-description'
-                    : 'bike-lock-description',
-                  title: isLockedFromBack
-                    ? 'bike-action-unlock'
-                    : 'bike-action-lock',
-                  image: 'BatterySmall',
-                  button1: {
-                    text: 'validate',
-                    action: () => {
-                      setShowModal(false);
+          ) &&
+            ((isLockedFromBack && checkLocked) ||
+              (!isLockedFromBack && checkUnlocked)) && (
+              <BikeButton
+                keyText={
+                  isLockedFromBack ? 'bike-action-unlock' : 'bike-action-lock'
+                }
+                icon={isLockedFromBack ? 'Unlock' : 'Lock'}
+                onPress={() => {
+                  setBikeModalData({
+                    description: isLockedFromBack
+                      ? 'bike-unlock-description'
+                      : 'bike-lock-description',
+                    title: isLockedFromBack
+                      ? 'bike-action-unlock'
+                      : 'bike-action-lock',
+                    image: isLockedFromBack ? 'Unlock' : 'Lock',
+                    button1: {
+                      text: 'validate',
+                      action: () => {
+                        setShowModal(false);
+                      },
                     },
-                  },
-                  isLoadingSelector: AppSelector.getDataProcessed,
-                  successCondition: (data: any) =>
-                    data?.bike?.lock_info?.status ===
-                    (isLockedFromBack ? BIKE_UNLOCKED : BIKE_LOCKED),
-                  failureCondition: (data: any) =>
-                    data?.bike?.lock_info?.status ===
-                    (isLockedFromBack ? BIKE_LOCKED : BIKE_UNLOCKED),
-                  timeoutAction: () => {
-                    dispatch({
-                      type: APP_ACTIONS_SAGA_GET_BIKE_BY_ID,
-                      data: {bikeId},
-                    });
-                  },
-                });
-                dispatch({
-                  type: isLockedFromBack
-                    ? APP_ACTIONS_SAGA_UNLOCK_BIKE
-                    : APP_ACTIONS_SAGA_LOCK_BIKE,
-                });
-                setShowModal(true);
-              }}
-            />
-          )}
-        {appData?.bike &&
-          privileges.includes(
-            PRIVILEGES_TYPE.ANGELS.privileges.BIKE.permissions.UNLOCK,
-          ) && (
-            <BikeButton
-              keyText={'bike-action-change-battery'}
-              icon="BatterySmall"
-              onPress={() => dispatch({type: APP_ACTIONS_SAGA_UNLOCK_BATTERY})}
-            />
-          )}
-        {/*
+                    isLoadingSelector: AppSelector.getDataProcessed,
+                    successCondition: (data: any) =>
+                      data?.bike?.lock_info?.status ===
+                      (isLockedFromBack ? BIKE_UNLOCKED : BIKE_LOCKED),
+                    failureCondition: (data: any) =>
+                      data?.bike?.lock_info?.status ===
+                      (isLockedFromBack ? BIKE_LOCKED : BIKE_UNLOCKED),
+                    timeoutAction: () => {
+                      dispatch({
+                        type: APP_ACTIONS_SAGA_GET_BIKE_BY_ID,
+                        data: {bikeId},
+                      });
+                    },
+                  });
+                  dispatch({
+                    type: isLockedFromBack
+                      ? APP_ACTIONS_SAGA_UNLOCK_BIKE
+                      : APP_ACTIONS_SAGA_LOCK_BIKE,
+                  });
+                  setShowModal(true);
+                }}
+              />
+            )}
+          {isLockedFromBack &&
+            privileges.includes(
+              PRIVILEGES_TYPE.ANGELS.privileges.BIKE.permissions.UNLOCK,
+            ) && (
+              <BikeButton
+                keyText={'bike-action-change-battery'}
+                icon="BatterySmall"
+                onPress={() =>
+                  dispatch({type: APP_ACTIONS_SAGA_UNLOCK_BATTERY})
+                }
+              />
+            )}
+          {/*
         <BikeButton keyText={'bike-action-signal-problem'} icon="Checklist" />
         <BikeButton keyText={'bike-action-pickup'} icon="Pickup" /> */}
-      </MyView>
+        </MyView>
+      )}
       {bikeModalData && (
         <BikeModal
           show={showModal}
