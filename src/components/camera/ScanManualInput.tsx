@@ -8,6 +8,7 @@ import i18n from '@assets/locales';
 import {FAB} from 'react-native-paper';
 import themeStyle from '@style/themeStyle';
 import {NativeModules} from 'react-native';
+import MyView from '@components/generic/MyView';
 
 // ...
 
@@ -27,9 +28,9 @@ const ScanManualInput = ({
       style={[
         layoutStyle.absFill,
         layoutStyle.layerWithOpacity,
-        layoutStyle.jcc,
         layoutStyle.p5,
       ]}>
+      <MyView style={layoutStyle.flex} />
       <MyText
         _title
         _style_bold
@@ -62,6 +63,7 @@ const ScanManualInput = ({
           style={styles.close}
         />
       )}
+      <MyView style={layoutStyle.flex2} />
     </View>
   );
 };

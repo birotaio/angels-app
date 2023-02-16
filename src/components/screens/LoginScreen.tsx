@@ -1,6 +1,7 @@
 import images from '@assets/images';
 import i18n from '@assets/locales';
 import MyForm from '@components/generic/MyForm';
+import MyKeyboardAvoidingView from '@components/generic/MyKeyboardAvoidingView';
 import MyScreen from '@components/generic/MyScreen';
 import MyText from '@components/generic/MyText';
 import MyView from '@components/generic/MyView';
@@ -22,59 +23,61 @@ const LoginScreen: ScreenProps = () => {
   useTracking(LoginScreen.navigationName);
   return (
     <MyScreen background={images.login_bg}>
-      {/* TODO remove press */}
-      <View style={layoutStyle.flex} />
-      <MyView flex p5>
-        <MyForm
-          button={{
-            textColor: themeStyle.textColor,
-            backgroundColor: themeStyle.textNegColor,
-          }}
-          buttonSpaceTop={48}
-          isLoading={useSelector(AuthSelector.isLoading)}
-          fields={[
-            {
-              name: i18n.t('email'),
-              label: 'email',
-              rules: {
-                required: {
-                  value: true,
-                  message: i18n.t('email-required'),
+      <MyKeyboardAvoidingView>
+        {/* TODO remove press */}
+        <View style={{height: (layoutStyle.dim.height * 4) / 10}} />
+        <MyView flex p5>
+          <MyForm
+            button={{
+              textColor: themeStyle.textColor,
+              backgroundColor: themeStyle.textNegColor,
+            }}
+            buttonSpaceTop={48}
+            isLoading={useSelector(AuthSelector.isLoading)}
+            fields={[
+              {
+                name: i18n.t('email'),
+                label: 'email',
+                rules: {
+                  required: {
+                    value: true,
+                    message: i18n.t('email-required'),
+                  },
+                  pattern: {
+                    value: emailFormat,
+                    message: i18n.t('email-required'),
+                  },
                 },
-                pattern: {
-                  value: emailFormat,
-                  message: i18n.t('email-required'),
-                },
-              },
-              inputProps: {
-                keyboardType: 'email-address',
-              },
-            },
-            {
-              name: i18n.t('password'),
-              label: 'password',
-              rules: {
-                required: {
-                  value: true,
-                  message: i18n.t('password-required'),
-                },
-                minLength: {
-                  value: 4,
-                  message: i18n.t('password-required'),
+                inputProps: {
+                  keyboardType: 'email-address',
                 },
               },
-              inputProps: {
-                secureTextEntry: true,
+              {
+                name: i18n.t('password'),
+                label: 'password',
+                rules: {
+                  required: {
+                    value: true,
+                    message: i18n.t('password-required'),
+                  },
+                  minLength: {
+                    value: 4,
+                    message: i18n.t('password-required'),
+                  },
+                },
+                inputProps: {
+                  secureTextEntry: true,
+                },
               },
-            },
-          ]}
-          ctaLabel={i18n.t('login')}
-          handleFormValidation={data =>
-            dispatch({type: AUTH_ACTIONS_SAGA_LOGIN, data})
-          }
-        />
-        <MyText>{getAppVersion()}</MyText>
-      </MyView>
+            ]}
+            ctaLabel={i18n.t('login')}
+            handleFormValidation={data =>
+              dispatch({type: AUTH_ACTIONS_SAGA_LOGIN, data})
+            }
+          />
+        </MyView>
+      </MyKeyboardAvoidingView>
+      <MyText style={layoutStyle.mt12}>{getAppVersion()}</MyText>
     </MyScreen>
   );
 };

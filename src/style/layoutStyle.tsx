@@ -26,6 +26,12 @@ export default StyleSheet.create({
   flex: {
     flex: 1,
   },
+  flex2: {
+    flex: 2,
+  },
+  flex3: {
+    flex: 3,
+  },
   flexWrap: {
     flexWrap: 'wrap',
   },

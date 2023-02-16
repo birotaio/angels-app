@@ -7,13 +7,11 @@ const MyKeyboardAvoidingView = ({
   children: React.ReactElement[];
 }) => (
   <KeyboardAwareScrollView
-    // keyboardDismissMode="on-drag"
-    // keyboardShouldPersistTaps="handled"
-    // contentInsetAdjustmentBehavior="automatic"
+    scrollEnabled={false}
     showsVerticalScrollIndicator={false}
     extraScrollHeight={60}
     enableAutomaticScroll={true}
-    enableResetScrollToCoords={false}>
+    enableResetScrollToCoords={true}>
     {children}
   </KeyboardAwareScrollView>
 );
