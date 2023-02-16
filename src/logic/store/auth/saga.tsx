@@ -1,4 +1,4 @@
-import {takeLatest, put} from 'redux-saga/effects';
+import {takeLatest, put, call} from 'redux-saga/effects';
 
 import {
   authAPI,
@@ -14,6 +14,7 @@ import message from '@utils/message';
 import i18n from '@assets/locales';
 import navigator from '@navigation/navigator';
 import {LoginScreen, MapScreen} from '@components/screens';
+import {ApiSchema} from '@fifteen/sdk';
 
 export const AUTH_ACTIONS_SAGA_CHECK_LOGIN = 'AUTH_ACTIONS_SAGA_CHECK_LOGIN';
 export const AUTH_ACTIONS_SAGA_GET_PRIVILEGE =
@@ -21,10 +22,21 @@ export const AUTH_ACTIONS_SAGA_GET_PRIVILEGE =
 export const AUTH_ACTIONS_SAGA_LOGIN = 'AUTH_ACTIONS_SAGA_LOGIN';
 export const AUTH_ACTIONS_SAGA_LOGOUT = 'AUTH_ACTIONS_SAGA_LOGOUT';
 
+/**
+ * Verify storage token for passthrough login screen
+ **/
+
 export function* _checkLogin() {
   const token: string = yield getToken();
   yield put(setAuthState({isLogged: token ? true : false}));
   if (token) {
+    const responseToken: ApiSchema['auth.RefreshTokenResponse'] = yield call(
+      authAPI.refreshToken,
+    );
+    if (responseToken?.token) {
+      yield setLoginData(responseToken.token);
+    }
+
     yield put({type: AUTH_ACTIONS_SAGA_GET_PRIVILEGE});
     navigator.reset(MapScreen.navigationName);
   } else {
@@ -33,6 +45,13 @@ export function* _checkLogin() {
   NativeSplashScreen.hide();
 }
 
+/**
+ * Login process :
+ * save token, refreshToken, user in local storage
+ * @param email user email
+ * @param password user password
+ *
+ **/
 export function* _login(payload: {data: {email: string; password: string}}) {
   const {email, password} = payload?.data;
 
@@ -42,7 +61,6 @@ export function* _login(payload: {data: {email: string; password: string}}) {
       email,
       password,
     );
-    console.log(data);
 
     if (data?.token) {
       yield setLoginData(data.token, email, data.refreshToken); // save login data in async storage
@@ -61,6 +79,10 @@ export function* _login(payload: {data: {email: string; password: string}}) {
   }
 }
 
+/**
+ * Logout process
+ * @returns void : clear local storage
+ **/
 export function* _logout() {
   yield put(setAuthState({isLoading: true}));
   yield removeLoginData();
@@ -69,6 +91,10 @@ export function* _logout() {
   navigator.reset(LoginScreen.navigationName);
 }
 
+/**
+ * getPrivilege
+ * @returns void : setPrivileges in state.auth.privileges
+ **/
 export function* _getPrivilege() {
   yield put(setAuthState({isLoading: true}));
   try {
