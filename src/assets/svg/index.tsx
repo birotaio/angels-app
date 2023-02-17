@@ -11,6 +11,7 @@ import BatterySmall from './battery_small.svg';
 import Checklist from './checklist.svg';
 import Pickup from './pickup.svg';
 import Station from './station.svg';
+import ScanLayer from './scan_layer.svg';
 export {
   ArrowUp,
   Logo,
@@ -25,4 +26,5 @@ export {
   Checklist,
   BatterySmall,
   Pickup,
+  ScanLayer,
 };

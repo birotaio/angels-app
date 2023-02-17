@@ -2,19 +2,12 @@ import navigator from '@navigation/navigator';
 import useTracking from '@navigation/useTracking';
 import themeStyle from '@style/themeStyle';
 import React, {useEffect, useRef, useState} from 'react';
-import {
-  FlatList,
-  Image,
-  StyleSheet,
-  TouchableOpacity,
-  View,
-} from 'react-native';
+import {FlatList, StyleSheet, TouchableOpacity, View} from 'react-native';
 import {Button, FAB} from 'react-native-paper';
 import {ScreenProps} from '.';
 import {CameraComponent} from '@components/camera/CameraComponent';
 import MyText from '@components/generic/MyText';
 
-import images from '@assets/images';
 import textstyle from '@style/textStyle';
 import layoutStyle from '@style/layoutStyle';
 import MyStatusBar from '@components/generic/MyStatusBar';
@@ -28,6 +21,7 @@ import Carousel from 'react-native-snap-carousel';
 import {ScanManualInput} from '@components/camera/ScanManualInput';
 import {useBackButton} from '@utils/hooks/useBack';
 import colors from '@style/colors';
+import {ScanLayer} from '@assets/svg';
 
 const CarouselItem = ({item}: {item: string}) => (
   <MyText key={item} _subtitle style={textstyle.center} keyTextString={item} />
@@ -110,9 +104,10 @@ const ScanScreen: ScreenProps = ({
             setBikeId(_bikeId);
           }}
         />
-        <Image
-          style={[layoutStyle.flex, layoutStyle.w100]}
-          source={images.scan_layer}
+        <ScanLayer
+          preserveAspectRatio="xMidYMid slice"
+          width={layoutStyle.dim.width}
+          height={layoutStyle.dim.height - 48}
         />
 
         <View style={[layoutStyle.absFill, layoutStyle.aic, layoutStyle.p24]}>
