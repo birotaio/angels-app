@@ -61,7 +61,7 @@ const LoginScreen: ScreenProps = () => {
                     message: i18n.t('password-required'),
                   },
                   minLength: {
-                    value: 4,
+                    value: 1,
                     message: i18n.t('password-required'),
                   },
                 },
