@@ -23,7 +23,13 @@ const setBikeLockBySN = async (serialNumber: number, lockStatus: number) => {
           SerialNumber: serialNumber,
         },
         body: {
-          locked: lockStatus === 1,
+          bike_state_meta: {
+            bike_state_extended: {
+              bike_state: {
+                lock_state: lockStatus,
+              },
+            },
+          },
         },
       },
     );
