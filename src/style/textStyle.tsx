@@ -7,6 +7,7 @@ type TextStyleProp = {
   f22: TextStyle;
   f24: TextStyle;
   f30: TextStyle;
+  f32: TextStyle;
   f40: TextStyle;
   colorPrimary: TextStyle;
   alignStart: TextStyle;
@@ -59,6 +60,9 @@ const textstyle: TextStyleProp = StyleSheet.create({
   },
   f30: {
     fontSize: 30,
+  },
+  f32: {
+    fontSize: 32,
   },
   f40: {
     fontSize: 40,
@@ -130,7 +134,7 @@ const textstyle: TextStyleProp = StyleSheet.create({
     color: themeStyle.accentPrimary,
   },
   _title: {
-    fontFamily: 'ES Build Regular',
+    fontFamily: 'ES Build Bold',
     fontSize: 24,
   },
   _subtitle: {

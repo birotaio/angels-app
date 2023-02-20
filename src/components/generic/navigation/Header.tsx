@@ -1,8 +1,5 @@
 import MyStatusBar from '@components/generic/MyStatusBar';
-import {
-  NativeStackHeaderProps,
-  NativeStackNavigationOptions,
-} from '@react-navigation/native-stack';
+import {NativeStackHeaderProps} from '@react-navigation/native-stack';
 import layoutStyle from '@style/layoutStyle';
 import React from 'react';
 import {TouchableOpacity, View} from 'react-native';
@@ -12,11 +9,8 @@ import {LogoRow} from '@assets/svg';
 import componentStyle from '@style/componentStyle';
 import {useDispatch} from 'react-redux';
 import {AUTH_ACTIONS_SAGA_LOGOUT} from '@logic/store/auth/saga';
-export interface HeaderProps extends NativeStackHeaderProps {
-  options: NativeStackNavigationOptions & {backFn: () => void};
-}
 
-const Header = ({}: HeaderProps): React.ReactElement => {
+const Header: React.FC<NativeStackHeaderProps> = () => {
   const dispatch = useDispatch();
   return (
     <View style={componentStyle.header}>

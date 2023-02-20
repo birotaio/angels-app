@@ -3,7 +3,7 @@
 import * as React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
-import Header from './Header';
+import Header from '../components/generic/navigation/Header';
 import * as screens from '../components/screens';
 import {SplashScreen} from '../components/screens';
 
@@ -17,6 +17,7 @@ const screenKeys = Object.keys(screens) as (
   | 'BikesScreen'
   | 'TestBleScreen'
 )[];
+
 function MainRouter() {
   return (
     <Stack.Navigator
@@ -25,14 +26,17 @@ function MainRouter() {
         header: Header,
         animation: 'fade_from_bottom',
       }}>
-      {screenKeys.map(screenKey => (
-        <Stack.Screen
-          key={screenKey}
-          name={screens[screenKey].navigationName}
-          component={screens[screenKey]}
-          options={screens[screenKey].navigationOptions}
-        />
-      ))}
+      {screenKeys.map(screenKey => {
+        const screen = screens[screenKey];
+        return (
+          <Stack.Screen
+            key={screenKey}
+            name={screen.navigationName}
+            component={screen}
+            options={screen.navigationOptions}
+          />
+        );
+      })}
     </Stack.Navigator>
   );
 }

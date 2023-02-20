@@ -1,12 +1,10 @@
 import useTracking from '@navigation/useTracking';
 import React, {useEffect, useState} from 'react';
-import {EmitterSubscription, Platform, StyleSheet} from 'react-native';
+import {EmitterSubscription, Platform} from 'react-native';
 import {ScreenProps} from '.';
 
 import layoutStyle from '@style/layoutStyle';
 import MyScreen from '@components/generic/MyScreen';
-import MyText from '@components/generic/MyText';
-import MyStatusBar from '@components/generic/MyStatusBar';
 import {BikeCard} from '@components/bikes/BikeCard';
 import {useDispatch, useSelector} from 'react-redux';
 import {
@@ -24,10 +22,11 @@ import {AppSelector} from '@logic/store/app/selector';
 import MyView from '@components/generic/MyView';
 import {BikeButton} from '@components/bikes/BikeButton';
 import {bikeDataListener} from '@utils/blemodule';
-import navigator from '@navigation/navigator';
 import {AuthSelector} from '@logic/store/auth/selector';
 import {PRIVILEGES_TYPE} from '@logic/store/auth/utils';
 import {BikeModal, BikeModalType} from '@components/bikes/BikeModal';
+import PageHeader from '@components/generic/navigation/PageHeader';
+import i18n from '@assets/locales';
 
 const BIKE_LOCKED = 1;
 const BIKE_UNLOCKED = 2;
@@ -100,19 +99,8 @@ const BikeScreen: ScreenProps = ({
 
   return (
     <MyScreen noPadding style={layoutStyle.flex}>
-      <MyStatusBar />
       {appData?.bike && (
         <MyView flex p5>
-          <MyText
-            onPress={() => {
-              navigator.pop();
-            }}
-            _color_secondary
-            _title
-            _style_bold
-            style={[styles.text, layoutStyle.mb16]}
-            keyText={'bike-sheet'}
-          />
           <BikeCard bike={appData?.bike} />
           <MyView flex />
           {privileges.includes(
@@ -194,11 +182,9 @@ const BikeScreen: ScreenProps = ({
 
 BikeScreen.navigationName = 'Bike';
 BikeScreen.navigationOptions = {
-  headerShown: false,
+  header: PageHeader,
+  headerShown: true,
+  title: i18n.t('bike-sheet'),
 };
-
-const styles = StyleSheet.create({
-  text: {},
-});
 
 export {BikeScreen};

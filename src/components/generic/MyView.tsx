@@ -1,3 +1,4 @@
+import colors from '@style/colors';
 import layoutStyle from '@style/layoutStyle';
 import themeStyle from '@style/themeStyle';
 import React from 'react';
@@ -31,6 +32,7 @@ export type MyViewProps = {
   bg1?: boolean;
   bg2?: boolean;
   backgroundAccentPrimary?: boolean;
+  backgroundWhite?: boolean;
 };
 
 const MyView: React.FC<ViewProps & MyViewProps> = ({
@@ -38,6 +40,7 @@ const MyView: React.FC<ViewProps & MyViewProps> = ({
   rowCenter,
   card,
   backgroundAccentPrimary,
+  backgroundWhite,
   style,
   flex,
   flexCenter,
@@ -60,6 +63,7 @@ const MyView: React.FC<ViewProps & MyViewProps> = ({
   return (
     <View
       style={[
+        backgroundWhite && {backgroundColor: colors.WHITE},
         backgroundAccentPrimary && {backgroundColor: themeStyle.accentPrimary},
         row && layoutStyle.row,
         rowCenter && layoutStyle.rowCenter,

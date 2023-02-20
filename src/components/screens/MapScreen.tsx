@@ -5,7 +5,6 @@ import useTracking from '@navigation/useTracking';
 import layoutStyle from '@style/layoutStyle';
 import React, {useEffect, useRef} from 'react';
 import {useDispatch} from 'react-redux';
-import {ScreenProps} from '.';
 
 import geolocation from '@utils/geolocation';
 import MapboxGL from '@react-native-mapbox-gl/maps';
@@ -14,7 +13,7 @@ import {
   APP_ACTIONS_SAGA_SETUP_BLE,
 } from '@logic/store/app/saga';
 import navigator from '@navigation/navigator';
-import {ScanScreen} from '.';
+import {BikeScreen, ScreenProps} from '.';
 
 const MapScreen: ScreenProps = () => {
   const dispatch = useDispatch();
@@ -41,7 +40,7 @@ const MapScreen: ScreenProps = () => {
           })
         }
         onMapSearchPress={() => {
-          navigator.navigate(ScanScreen.navigationName);
+          navigator.navigate(BikeScreen.navigationName, {bikeId: 113919});
         }}
         onScanQrCodePress={() => {
           dispatch({type: APP_ACTIONS_SAGA_CHECK_PERMISSIONS_AND_SCAN});

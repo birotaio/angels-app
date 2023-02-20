@@ -148,6 +148,9 @@ export default StyleSheet.create({
   ml5: {
     marginLeft: '5%',
   },
+  ml24: {
+    marginLeft: 24,
+  },
   ml2p: {
     marginLeft: 2,
   },
@@ -219,6 +222,9 @@ export default StyleSheet.create({
   },
   opacity0: {
     opacity: 0,
+  },
+  bgTransparent: {
+    backgroundColor: 'transparent',
   },
   shadow: {
     shadowColor: '#000',
@@ -302,9 +308,9 @@ export default StyleSheet.create({
     // borderWidth: 2,
   },
   screenCard: {
-    backgroundColor: themeStyle.background,
+    backgroundColor: 'red',
     borderRadius: 12,
-    borderColor: themeStyle.background,
+    borderColor: 'red',
     borderWidth: 1,
   },
   screenCardVerticalSeparator: {

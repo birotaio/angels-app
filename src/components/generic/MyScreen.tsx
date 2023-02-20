@@ -15,7 +15,7 @@ const MyScreen: React.FC<
     MyViewProps & {background?: ImageSourcePropType; showStatusBar?: boolean}
 > = ({children, noPadding, style, background, showStatusBar, ...props}) => {
   return (
-    <MyView style={layoutStyle.flex} {...props}>
+    <MyView backgroundWhite style={layoutStyle.flex} {...props}>
       {background && (
         <Image
           style={[layoutStyle.absFill, layoutStyle.w100, layoutStyle.h100]}
