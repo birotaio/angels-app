@@ -72,7 +72,6 @@ const restart = () => {
 };
 
 const getAppVersion = () => {
-  //return `${DeviceInfo.getVersion()}.${DeviceInfo.getBuildNumber()}`;
   return `v${DeviceInfo.getVersion()}`;
 };
 

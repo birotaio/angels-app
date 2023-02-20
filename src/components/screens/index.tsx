@@ -1,8 +1,10 @@
 import {NativeStackNavigationOptions} from '@react-navigation/native-stack';
+import {DrawerNavigationOptions} from '@react-navigation/drawer';
 
 export type ScreenProps = {
   navigationName: string;
-  navigationOptions?: NativeStackNavigationOptions & {backFn?: () => void};
+  navigationOptions?: DrawerNavigationOptions &
+    NativeStackNavigationOptions & {backFn?: () => void};
 };
 
 export * from './SplashScreen';

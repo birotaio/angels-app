@@ -1,5 +1,5 @@
 import MyStatusBar from '@components/generic/MyStatusBar';
-import {NativeStackHeaderProps} from '@react-navigation/native-stack';
+import {DrawerHeaderProps} from '@react-navigation/drawer';
 import layoutStyle from '@style/layoutStyle';
 import React from 'react';
 import {TouchableOpacity, View} from 'react-native';
@@ -7,11 +7,8 @@ import themeStyle from '@style/themeStyle';
 import MyIcon, {IconSetName} from '@components/generic/MyIcon';
 import {LogoRow} from '@assets/svg';
 import componentStyle from '@style/componentStyle';
-import {useDispatch} from 'react-redux';
-import {AUTH_ACTIONS_SAGA_LOGOUT} from '@logic/store/auth/saga';
 
-const Header: React.FC<NativeStackHeaderProps> = () => {
-  const dispatch = useDispatch();
+const Header: React.FC<DrawerHeaderProps> = ({navigation}) => {
   return (
     <View style={componentStyle.header}>
       <MyStatusBar />
@@ -19,9 +16,11 @@ const Header: React.FC<NativeStackHeaderProps> = () => {
       <View style={layoutStyle.rowCenter}>
         <TouchableOpacity
           style={[layoutStyle.rowCenter, layoutStyle.ml12]}
-          onPress={() => dispatch({type: AUTH_ACTIONS_SAGA_LOGOUT})}>
+          onPress={() => {
+            navigation.toggleDrawer();
+          }}>
           <MyIcon
-            icon="logout"
+            icon="menu"
             size={24}
             color={themeStyle.textColor}
             setName={IconSetName.MaterialIcon}

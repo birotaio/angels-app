@@ -14,6 +14,8 @@
   "update-title": "Mise à jour",
   "update-text": "Une mise à jour a été effectuée, veuiller relancer l'application pour qu'elle soit effective",
 
+  "user-settings": "Paramètres",
+
   "scan-qr-code": "Scannez un QR code",
   "scan-many-bikes": "Scanner plusieurs vélos",
   "scan-multi": "Multi",

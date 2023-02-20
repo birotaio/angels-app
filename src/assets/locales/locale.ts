@@ -13,6 +13,7 @@ export type TranslateKeyProps =
   | 'validate'
   | 'update-title'
   | 'update-text'
+  | 'user-settings'
   | 'scan-qr-code'
   | 'scan-many-bikes'
   | 'scan-multi'

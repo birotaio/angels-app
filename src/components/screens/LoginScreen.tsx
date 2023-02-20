@@ -3,7 +3,6 @@ import i18n from '@assets/locales';
 import MyForm from '@components/generic/MyForm';
 import MyKeyboardAvoidingView from '@components/generic/MyKeyboardAvoidingView';
 import MyScreen from '@components/generic/MyScreen';
-import MyText from '@components/generic/MyText';
 import MyView from '@components/generic/MyView';
 import {AUTH_ACTIONS_SAGA_LOGIN} from '@logic/store/auth/saga';
 import {AuthSelector} from '@logic/store/auth/selector';
@@ -11,7 +10,6 @@ import useTracking from '@navigation/useTracking';
 import layoutStyle from '@style/layoutStyle';
 import themeStyle from '@style/themeStyle';
 import {emailFormat} from '@utils/strings/regex';
-import {getAppVersion} from '@utils/version';
 import React from 'react';
 import {View} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
@@ -77,7 +75,6 @@ const LoginScreen: ScreenProps = () => {
           />
         </MyView>
       </MyKeyboardAvoidingView>
-      <MyText style={layoutStyle.mt12}>{getAppVersion()}</MyText>
     </MyScreen>
   );
 };
