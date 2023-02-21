@@ -26,6 +26,7 @@
   "scan-manuel-sub-text": "Vous le trouverez sur le cadre du vélo, a l'arrière du vélo ou sur le support téléphone",
   "scan-manuel-placeholder": "ex : 100123",
   "scan-need-permission": "Vous devez autorisez le bluetooth ainsi que la localisation pour vous connecter au vélo",
+  "scan-manual-bike-id-6-digits": "Le numéro du vélo doit être de 6 digits",
 
   "bike-sheet": "Fiche vélo",
   "bike-station": "En station",

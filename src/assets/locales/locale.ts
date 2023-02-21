@@ -24,6 +24,7 @@ export type TranslateKeyProps =
   | 'scan-manuel-sub-text'
   | 'scan-manuel-placeholder'
   | 'scan-need-permission'
+  | 'scan-manual-bike-id-6-digits'
   | 'bike-sheet'
   | 'bike-station'
   | 'bike-lock'

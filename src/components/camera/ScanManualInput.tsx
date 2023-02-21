@@ -9,6 +9,7 @@ import {FAB} from 'react-native-paper';
 import themeStyle from '@style/themeStyle';
 import {NativeModules} from 'react-native';
 import MyView from '@components/generic/MyView';
+import message from '@utils/message';
 
 // ...
 
@@ -30,7 +31,14 @@ const ScanManualInput = ({
         layoutStyle.layerWithOpacity,
         layoutStyle.p5,
       ]}>
-      <MyView style={layoutStyle.flex} />
+      <MyView style={layoutStyle.flex}>
+        <FAB
+          onPress={() => onClose?.()}
+          color={themeStyle.textColorInput.toString()}
+          icon="close"
+          style={styles.close}
+        />
+      </MyView>
       <MyText
         _title
         _style_bold
@@ -43,12 +51,17 @@ const ScanManualInput = ({
         keyText={'scan-manuel-sub-text'}
       />
       <MyTextInput
-        onChangeText={text => {
+        onSubmitEditing={e => {
+          const text = e.nativeEvent.text;
           if (text?.length === 6) {
             try {
               const bikeId = parseInt(text, 10);
               onBikeId(bikeId);
-            } catch (e) {}
+            } catch (error) {
+              message.show('scan-manual-bike-id-6-digits');
+            }
+          } else {
+            message.show('scan-manual-bike-id-6-digits');
           }
         }}
         placeholder={i18n.t('scan-manuel-placeholder')}
@@ -70,13 +83,12 @@ const ScanManualInput = ({
 
 const styles = StyleSheet.create({
   close: {
-    ...layoutStyle.absTopLeft,
-    top: StatusBarManager.HEIGHT + 24,
-    left: 24,
     alignSelf: 'flex-end',
     color: themeStyle.textColorInput,
     borderRadius: 16,
     backgroundColor: themeStyle.accentPrimaryLight,
+    ...layoutStyle.absTopRight,
+    top: StatusBarManager.HEIGHT + 4,
   },
 });
 
