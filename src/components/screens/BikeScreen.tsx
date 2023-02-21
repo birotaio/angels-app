@@ -1,8 +1,14 @@
 import useTracking from '@navigation/useTracking';
 import React, {useEffect, useState} from 'react';
-import {EmitterSubscription, Platform} from 'react-native';
-import {ScreenProps} from '.';
+import {
+  EmitterSubscription,
+  Platform,
+  RefreshControl,
+  ScrollView,
+} from 'react-native';
+import {IssueScreen, ScreenProps} from '.';
 
+import navigator from '@navigation/navigator';
 import layoutStyle from '@style/layoutStyle';
 import MyScreen from '@components/generic/MyScreen';
 import {BikeCard} from '@components/bikes/BikeCard';
@@ -166,6 +172,13 @@ const BikeScreen: ScreenProps = ({
           {/*
         <BikeButton keyText={'bike-action-signal-problem'} icon="Checklist" />
         <BikeButton keyText={'bike-action-pickup'} icon="Pickup" /> */}
+          <BikeButton
+            keyText={'bike-action-signal-problem'}
+            icon="Checklist"
+            onPress={() => {
+              navigator.navigate(IssueScreen.navigationName, {bikeId});
+            }}
+          />
         </MyView>
       )}
       {bikeModalData && (

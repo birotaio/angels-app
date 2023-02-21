@@ -19,6 +19,7 @@ const screenKeys = Object.keys(screens) as (
   | 'ScanScreen'
   | 'BikeScreen'
   | 'BikesScreen'
+  | 'IssueScreen'
   | 'TestBleScreen'
 )[];
 

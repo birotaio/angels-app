@@ -13,4 +13,5 @@ export * from './MapScreen';
 export * from './ScanScreen';
 export * from './BikeScreen';
 export * from './BikesScreen';
+export * from './IssueScreen';
 export * from './TestBleScreen';

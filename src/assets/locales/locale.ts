@@ -47,4 +47,14 @@ export type TranslateKeyProps =
   | 'bike-action-signal-problem'
   | 'bike-action-pickup'
   | 'bike-unlock-battery-success'
-  | 'bike-unlock-battery-failure';
+  | 'bike-unlock-battery-failure'
+  | 'issue-title'
+  | 'issue-select'
+  | 'issue-kickstand'
+  | 'issue-chain'
+  | 'issue-brake'
+  | 'issue-pedal'
+  | 'issue-headlight'
+  | 'issue-wheel'
+  | 'issue-saddle'
+  | 'issue-others';

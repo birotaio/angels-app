@@ -12,8 +12,8 @@ import {
   APP_ACTIONS_SAGA_CHECK_PERMISSIONS_AND_SCAN,
   APP_ACTIONS_SAGA_SETUP_BLE,
 } from '@logic/store/app/saga';
-import navigator from '@navigation/navigator';
 import {BikeScreen, ScreenProps} from '.';
+import navigator from '@navigation/navigator';
 
 const MapScreen: ScreenProps = () => {
   const dispatch = useDispatch();

@@ -98,6 +98,7 @@ const textstyle: TextStyleProp = StyleSheet.create({
   },
   textLight: {
     fontSize: 16,
+    fontFamily: 'ES Build Regular',
   },
   textLightItalic: {
     fontSize: 16,
