@@ -10,7 +10,7 @@ const showError = (keyMessage: TranslateKeyProps) =>
     duration: 2500,
     floating: true,
     type: 'danger',
-    position: 'bottom',
+    position: 'top',
   });
 const show = (
   keyMessage: TranslateKeyProps | string,
@@ -23,7 +23,7 @@ const show = (
     duration: 2500,
     floating: true,
     type: type,
-    position: 'bottom',
+    position: 'top',
   });
 
 const showAlert = ({

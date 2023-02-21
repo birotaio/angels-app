@@ -16,6 +16,8 @@ import {codepushUpdate} from '@utils/version';
 import message from '@utils/message';
 import i18n from '@assets/locales';
 import messaging from '@utils/firebase/messaging';
+import {AppModal} from '@components/appModal/AppModal';
+import {StatusBar} from 'react-native';
 const theme: ReactNativePaper.Theme = {
   ...DefaultTheme,
   roundness: 32,
@@ -60,7 +62,13 @@ const App = () => {
         <Provider store={store}>
           <NavigationContainer ref={navigationRef}>
             <MainRouter />
-            <FlashMessage position="top" />
+
+            <FlashMessage
+              style={{marginTop: StatusBar.currentHeight}}
+              position="top"
+            />
+
+            <AppModal />
           </NavigationContainer>
         </Provider>
       </PaperProvider>
