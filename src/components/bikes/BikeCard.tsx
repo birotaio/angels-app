@@ -2,10 +2,11 @@ import React from 'react';
 import MyText from '@components/generic/MyText';
 import layoutStyle from '@style/layoutStyle';
 import MyView from '@components/generic/MyView';
-import {Lock, Power, Station, Unlock, Velo} from '@assets/svg';
+import {Velo} from '@assets/svg';
 import colors from '@style/colors';
 import {ApiSchema} from '@fifteen/sdk';
 import {StyleSheet, View} from 'react-native';
+import {getBikeStatusDisplay} from '@utils/fifteen/bike';
 
 const iconParams = {
   height: 24,
@@ -13,7 +14,8 @@ const iconParams = {
   fill: colors.BLACK,
 };
 export const BikeCard = ({bike}: {bike: ApiSchema['bike.Bike']}) => {
-  const isLocked = bike?.lock_info?.status === 1;
+  const bikeDisplay = getBikeStatusDisplay(bike);
+
   return (
     bike && (
       <View style={styles.card}>
@@ -25,28 +27,28 @@ export const BikeCard = ({bike}: {bike: ApiSchema['bike.Bike']}) => {
         </MyView>
         <MyView flex p24 style={layoutStyle.jsb}>
           <MyView rowCenter>
-            <Station {...iconParams} />
+            <bikeDisplay.statusIcon {...iconParams} />
             <MyText
               style={[layoutStyle.ml12]}
               _subtitle
               negColor
-              keyText="bike-station"
+              keyText={bikeDisplay.status}
             />
           </MyView>
           <MyView rowCenter>
-            {isLocked ? <Lock {...iconParams} /> : <Unlock {...iconParams} />}
+            <bikeDisplay.lockIcon {...iconParams} />
             <MyText
               style={[layoutStyle.ml12]}
               _subtitle
               negColor
-              keyText={isLocked ? 'bike-lock' : 'bike-unlock'}
+              keyText={bikeDisplay?.lockStatus}
             />
           </MyView>
           <MyView rowCenter>
-            <Power {...iconParams} />
-            <MyText style={[layoutStyle.ml12]} _subtitle negColor>{`${
-              bike.battery_community?.state_of_charge ?? 0
-            }%`}</MyText>
+            <bikeDisplay.batteryIcon {...iconParams} />
+            <MyText style={[layoutStyle.ml12]} _subtitle negColor>
+              {bikeDisplay.batteryLevel}
+            </MyText>
           </MyView>
         </MyView>
       </View>
