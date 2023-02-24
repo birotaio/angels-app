@@ -46,6 +46,7 @@ const BikeScreen: ScreenProps = ({
 }) => {
   const dispatch = useDispatch();
   const appData = useSelector(AppSelector.getApp);
+  const isAppLoading = useSelector(AppSelector.getAppIsLoading);
   useTracking(BikeScreen.navigationName);
   // Display
   const privileges = useSelector(AuthSelector.getAngelBikePrivilege); // todo try selector with params
@@ -107,8 +108,20 @@ const BikeScreen: ScreenProps = ({
     <MyScreen noPadding style={layoutStyle.flex}>
       {appData?.bike && (
         <MyView flex p5>
-          <BikeCard bike={appData?.bike} />
-          <MyView flex />
+          <ScrollView
+            refreshControl={
+              <RefreshControl
+                refreshing={isAppLoading}
+                onRefresh={() =>
+                  dispatch({
+                    type: APP_ACTIONS_SAGA_GET_BIKE_BY_ID,
+                    data: {bikeId},
+                  })
+                }
+              />
+            }>
+            <BikeCard bike={appData?.bike} />
+          </ScrollView>
           {privileges.includes(
             PRIVILEGES_TYPE.ANGELS.privileges.BIKE.permissions.UNLOCK,
           ) &&

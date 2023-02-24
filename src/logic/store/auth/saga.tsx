@@ -30,15 +30,18 @@ export function* _checkLogin() {
   const token: string = yield getToken();
   yield put(setAuthState({isLogged: token ? true : false}));
   if (token) {
-    const responseToken: ApiSchema['auth.RefreshTokenResponse'] = yield call(
-      authAPI.refreshToken,
-    );
-    if (responseToken?.token) {
-      yield setLoginData(responseToken.token);
+    try {
+      const responseToken: ApiSchema['auth.RefreshTokenResponse'] = yield call(
+        authAPI.refreshToken,
+      );
+      if (responseToken?.token) {
+        yield setLoginData(responseToken.token);
+      }
+      yield put({type: AUTH_ACTIONS_SAGA_GET_PRIVILEGE});
+      navigator.reset(MapScreen.navigationName);
+    } catch (error) {
+      navigator.reset(LoginScreen.navigationName);
     }
-
-    yield put({type: AUTH_ACTIONS_SAGA_GET_PRIVILEGE});
-    navigator.reset(MapScreen.navigationName);
   } else {
     navigator.reset(LoginScreen.navigationName);
   }
