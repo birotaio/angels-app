@@ -12,6 +12,8 @@ import {DrawerContentComponentProps} from '@react-navigation/drawer';
 import {useDispatch} from 'react-redux';
 import {AUTH_ACTIONS_SAGA_LOGOUT} from '@logic/store/auth/saga';
 import {AppInfos} from '@components/app/AppInfos';
+import AppModalManager from '@components/appModal/AppModalManager';
+import {AppModalLogout} from '@components/appModal/AppModalModels';
 
 const DrawerScreen: React.FC<DrawerContentComponentProps> = ({navigation}) => {
   const dispatch = useDispatch();
@@ -31,8 +33,21 @@ const DrawerScreen: React.FC<DrawerContentComponentProps> = ({navigation}) => {
           icon="Logout"
           keyText="logout"
           onPress={() => {
-            navigation.toggleDrawer();
-            dispatch({type: AUTH_ACTIONS_SAGA_LOGOUT});
+            AppModalManager.show({
+              ...AppModalLogout,
+              button1: {
+                text: 'global_cancel',
+                action: () => AppModalManager.hide(),
+              },
+              button2: {
+                text: 'global_confirm',
+                action: () => {
+                  AppModalManager.hide();
+                  navigation.toggleDrawer();
+                  dispatch({type: AUTH_ACTIONS_SAGA_LOGOUT});
+                },
+              },
+            });
           }}
         />
         <AppInfos />

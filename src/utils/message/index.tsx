@@ -3,11 +3,13 @@ import {TranslateKeyProps} from '@assets/locales/locale';
 import {Alert} from 'react-native';
 import {MessageType, showMessage} from 'react-native-flash-message';
 
+const SHOW_TIME = 5000;
+
 const showError = (keyMessage: TranslateKeyProps) =>
   showMessage({
     message: i18n.t(keyMessage),
     hideOnPress: true,
-    duration: 2500,
+    duration: SHOW_TIME,
     floating: true,
     type: 'danger',
     position: 'top',
@@ -20,7 +22,7 @@ const show = (
   showMessage({
     message: translate ? i18n.t(keyMessage) : keyMessage,
     hideOnPress: true,
-    duration: 2500,
+    duration: SHOW_TIME,
     floating: true,
     type: type,
     position: 'top',

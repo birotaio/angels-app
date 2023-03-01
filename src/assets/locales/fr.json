@@ -1,6 +1,10 @@
 {
+  "global_cancel": "Annuler",
+  "global_confirm": "Confirmer",
+
   "login": "Se connecter",
   "logout": "Se déconnecter",
+  "logout-modal-description": "Etes-vous sûr de vouloir vous déconnecter ?",
   "login-ok": "Bienvenue",
   "login-ko": "Echec de la connexion",
   "login-out-ok": "Déconnexion réussie",

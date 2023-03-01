@@ -51,6 +51,7 @@ const ScanManualInput = ({
         keyText={'scan-manuel-sub-text'}
       />
       <MyTextInput
+        maxLength={6}
         onSubmitEditing={e => {
           const text = e.nativeEvent.text;
           if (text?.length === 6) {

@@ -1,6 +1,9 @@
 export type TranslateKeyProps =
+  | 'global_cancel'
+  | 'global_confirm'
   | 'login'
   | 'logout'
+  | 'logout-modal-description'
   | 'login-ok'
   | 'login-ko'
   | 'login-out-ok'
