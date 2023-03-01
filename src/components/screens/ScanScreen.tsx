@@ -2,7 +2,13 @@ import navigator from '@navigation/navigator';
 import useTracking from '@navigation/useTracking';
 import themeStyle from '@style/themeStyle';
 import React, {useEffect, useRef, useState} from 'react';
-import {FlatList, StyleSheet, TouchableOpacity, View} from 'react-native';
+import {
+  FlatList,
+  StyleSheet,
+  TouchableOpacity,
+  View,
+  Image,
+} from 'react-native';
 import {Button, FAB} from 'react-native-paper';
 import {ScreenProps} from '.';
 import {CameraComponent} from '@components/camera/CameraComponent';
@@ -21,10 +27,40 @@ import Carousel from 'react-native-snap-carousel';
 import {ScanManualInput} from '@components/camera/ScanManualInput';
 import {useBackButton} from '@utils/hooks/useBack';
 import colors from '@style/colors';
-import {ScanLayer} from '@assets/svg';
+import images from '@assets/images';
+import MyView from '@components/generic/MyView';
 
-const CarouselItem = ({item}: {item: string}) => (
-  <MyText key={item} _subtitle style={textstyle.center} keyTextString={item} />
+const CarouselItem = ({
+  selected,
+  item,
+  index,
+  onPress,
+}: {
+  item: string;
+  selected: boolean;
+  index: number;
+  onPress: (i: number) => void;
+}) => (
+  <TouchableOpacity
+    style={[layoutStyle.ph10p, layoutStyle.aic]}
+    onPress={() => onPress(index)}>
+    <MyText
+      key={item}
+      _subtitle
+      style={[
+        textstyle.center,
+        !selected && textstyle._caption,
+        !selected && {color: colors.NEUTRAL_DARK_03},
+      ]}
+      keyTextString={item}
+    />
+    <View
+      style={[
+        styles.circle,
+        !selected && {backgroundColor: colors.NEUTRAL_DARK_03},
+      ]}
+    />
+  </TouchableOpacity>
 );
 
 const ScanScreen: ScreenProps = ({
@@ -104,10 +140,9 @@ const ScanScreen: ScreenProps = ({
             setBikeId(_bikeId);
           }}
         />
-        <ScanLayer
-          preserveAspectRatio="xMidYMid slice"
-          width={layoutStyle.dim.width}
-          height={layoutStyle.dim.height - 48}
+        <Image
+          style={[layoutStyle.flex, layoutStyle.w100]}
+          source={images.scan_layer}
         />
 
         <View style={[layoutStyle.absFill, layoutStyle.aic, layoutStyle.p24]}>
@@ -196,29 +231,29 @@ const ScanScreen: ScreenProps = ({
               />
             </View>
           )}
-          <Carousel
-            ref={carrousel}
-            pagingEnabled
-            showsHorizontalScrollIndicator={false}
-            containerCustomStyle={styles.carousel}
-            data={['scan-auto', 'scan-manuel']}
-            onSnapToItem={slideIndex => {
-              setActiveMode(slideIndex);
-            }}
-            renderItem={CarouselItem}
-            sliderWidth={200}
-            itemWidth={100}
-          />
+          <MyView rowCenter>
+            {['scan-auto', 'scan-manuel'].map((item, index) => (
+              <CarouselItem
+                selected={activeMode === index}
+                key={item}
+                index={index}
+                item={item}
+                onPress={slideIndex => {
+                  setActiveMode(slideIndex);
+                }}
+              />
+            ))}
+          </MyView>
         </View>
       </View>
       {(params?.manualOnly || activeMode === 1) && (
         <ScanManualInput
           manualOnly={showManualOnly}
           onClose={() => {
-            carrousel?.current?.snapToItem(0);
+            setActiveMode(0);
           }}
           onBikeId={_bikeId => {
-            carrousel?.current?.snapToItem(0);
+            setActiveMode(0);
             setBikeId(_bikeId);
           }}
         />
@@ -233,6 +268,13 @@ ScanScreen.navigationOptions = {
 };
 
 const styles = StyleSheet.create({
+  circle: {
+    height: 8,
+    width: 8,
+    backgroundColor: colors.WHITE,
+    borderRadius: 24,
+    marginTop: 4,
+  },
   carousel: {
     maxHeight: 36,
   },

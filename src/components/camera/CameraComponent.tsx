@@ -16,7 +16,7 @@ type CameraComponentType = {
   torch: boolean;
   isActive: boolean;
 };
-
+const DEBOUNCE_TIME = 200;
 const CameraComponent: React.FC<CameraComponentType> = ({
   onBarcode,
   torch,
@@ -33,7 +33,11 @@ const CameraComponent: React.FC<CameraComponentType> = ({
     checkInverted: true,
   });
   const throttled = useRef(
-    _.throttle((_newBarCode: Barcode) => onBarcode(_newBarCode), 2000),
+    _.throttle(
+      (_newBarCode: Barcode) => onBarcode(_newBarCode),
+      DEBOUNCE_TIME,
+      {leading: true, trailing: false},
+    ),
   );
 
   useEffect(() => {
