@@ -3,8 +3,7 @@ import {
   NativeStackNavigationOptions,
 } from '@react-navigation/native-stack';
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
-import MyStatusBar from '../MyStatusBar';
+import {StatusBar, StyleSheet, View} from 'react-native';
 import layoutStyle from '@style/layoutStyle';
 import MyText from '../MyText';
 import colors from '@style/colors';
@@ -18,8 +17,12 @@ export interface HeaderProps extends NativeStackHeaderProps {
 
 const PageHeader: React.FC<NativeStackHeaderProps> = ({options: {title}}) => {
   return (
-    <View style={{backgroundColor: colors.WHITE}}>
-      <MyStatusBar barStyle={'default'} />
+    <View
+      style={{
+        backgroundColor: colors.WHITE,
+        paddingTop: layoutStyle.dim.statusBarHeight,
+      }}>
+      <StatusBar barStyle={'dark-content'} />
       {/* Menu */}
       <View
         style={[layoutStyle.rowCenter, layoutStyle.pv16, layoutStyle.ph10p]}>

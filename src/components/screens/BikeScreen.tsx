@@ -4,13 +4,13 @@ import {
   EmitterSubscription,
   Platform,
   RefreshControl,
+  SafeAreaView,
   ScrollView,
 } from 'react-native';
 import {IssueScreen, ScreenProps} from '.';
 
 import navigator from '@navigation/navigator';
 import layoutStyle from '@style/layoutStyle';
-import MyScreen from '@components/generic/MyScreen';
 import {BikeCard} from '@components/bikes/BikeCard';
 import {useDispatch, useSelector} from 'react-redux';
 import {
@@ -105,7 +105,8 @@ const BikeScreen: ScreenProps = ({
   }, [dispatch, bikeId]);
 
   return (
-    <MyScreen noPadding style={layoutStyle.flex}>
+    <MyView backgroundWhite style={layoutStyle.flex}>
+      <PageHeader options={{title: i18n.t('bike-sheet')}} />
       {appData?.bike && (
         <MyView flex p5>
           <ScrollView
@@ -133,6 +134,12 @@ const BikeScreen: ScreenProps = ({
                 }
                 icon={isLockedFromBack ? 'Unlock' : 'Lock'}
                 onPress={() => {
+                  const action = () =>
+                    dispatch({
+                      type: isLockedFromBack
+                        ? APP_ACTIONS_SAGA_UNLOCK_BIKE
+                        : APP_ACTIONS_SAGA_LOCK_BIKE,
+                    });
                   setBikeModalData({
                     description: isLockedFromBack
                       ? 'bike-unlock-description'
@@ -154,6 +161,7 @@ const BikeScreen: ScreenProps = ({
                     failureCondition: (data: any) =>
                       data?.bike?.lock_info?.status ===
                       (isLockedFromBack ? BIKE_LOCKED : BIKE_UNLOCKED),
+                    action,
                     timeoutAction: () => {
                       dispatch({
                         type: APP_ACTIONS_SAGA_GET_BIKE_BY_ID,
@@ -161,11 +169,7 @@ const BikeScreen: ScreenProps = ({
                       });
                     },
                   });
-                  dispatch({
-                    type: isLockedFromBack
-                      ? APP_ACTIONS_SAGA_UNLOCK_BIKE
-                      : APP_ACTIONS_SAGA_LOCK_BIKE,
-                  });
+                  action();
                   setShowModal(true);
                 }}
               />
@@ -202,14 +206,14 @@ const BikeScreen: ScreenProps = ({
           onClose={() => setShowModal(false)}
         />
       )}
-    </MyScreen>
+      <SafeAreaView />
+    </MyView>
   );
 };
 
 BikeScreen.navigationName = 'Bike';
 BikeScreen.navigationOptions = {
-  header: PageHeader,
-  headerShown: true,
+  headerShown: false,
   title: i18n.t('bike-sheet'),
 };
 

@@ -1,10 +1,15 @@
 import {PixelRatio, StyleSheet} from 'react-native';
-
+import {NativeModules} from 'react-native';
 import {Dimensions} from 'react-native';
 import textstyle from './textStyle';
 import themeStyle from './themeStyle';
 
 const {width, height} = Dimensions.get('window');
+
+// ...
+
+const {StatusBarManager} = NativeModules;
+const STATUS_BAR_HEIGHT = StatusBarManager.HEIGHT;
 export const getSize = (pixels: number) => {
   return ((4 - PixelRatio.get()) * pixels) / 2;
 };
@@ -12,6 +17,7 @@ export default StyleSheet.create({
   dim: {
     width,
     height,
+    statusBarHeight: STATUS_BAR_HEIGHT,
   },
   container: {
     flex: 1,

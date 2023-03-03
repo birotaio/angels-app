@@ -30,10 +30,12 @@ export type BikeModalType = {
   isLoadingSelector: (data: any) => boolean;
   successCondition: (data: any) => boolean;
   failureCondition: (data: any) => boolean;
+
+  action: () => void;
   timeoutAction: () => void;
 };
 
-const TIMEOUT_TIME = 5000;
+const TIMEOUT_TIME = 6000;
 
 export const BikeModal = ({
   data,
@@ -51,6 +53,7 @@ export const BikeModal = ({
   const [closeTimeout, setCloseTimeout] = useState<NodeJS.Timeout | null>(null);
   const success = bikeModalData.successCondition(data);
   // const failure = bikeModalData.failureCondition(data);
+
   useEffect(() => {
     if (isLoading) {
       setLoading(false);
@@ -59,25 +62,32 @@ export const BikeModal = ({
   }, [isLoadingSelector]);
 
   useEffect(() => {
+    if (closeTimeout) {
+      clearTimeout(closeTimeout);
+      setCloseTimeout(null);
+    }
     if (show) {
       // reset timeout
-      if (closeTimeout) {
-        clearTimeout(closeTimeout);
-        setCloseTimeout(null);
-      }
       setLoading(true);
-      const _closeTimeout = setTimeout(() => {
-        if (isLoading) {
-          setLoading(false);
-        }
-        if (bikeModalData?.timeoutAction) {
-          bikeModalData?.timeoutAction?.();
-        }
-      }, TIMEOUT_TIME);
-      setCloseTimeout(_closeTimeout);
+      startRetry(1);
+    } else {
+      bikeModalData?.timeoutAction();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [show]);
+
+  const startRetry = (_retry: number) => {
+    const _closeTimeout = setTimeout(() => {
+      if (_retry < 3) {
+        bikeModalData?.action();
+        startRetry(_retry + 1);
+      } else {
+        bikeModalData?.timeoutAction();
+        setLoading(false);
+      }
+    }, TIMEOUT_TIME);
+    setCloseTimeout(_closeTimeout);
+  };
 
   return (
     <AnimFadeView

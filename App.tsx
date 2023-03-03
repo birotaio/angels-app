@@ -17,7 +17,7 @@ import message from '@utils/message';
 import i18n from '@assets/locales';
 import messaging from '@utils/firebase/messaging';
 import {AppModal} from '@components/appModal/AppModal';
-import {StatusBar} from 'react-native';
+import layoutStyle from '@style/layoutStyle';
 const theme: ReactNativePaper.Theme = {
   ...DefaultTheme,
   roundness: 32,
@@ -64,7 +64,9 @@ const App = () => {
             <MainRouter />
 
             <FlashMessage
-              style={{marginTop: StatusBar.currentHeight}}
+              style={{
+                marginTop: layoutStyle.dim.statusBarHeight + 32,
+              }}
               position="top"
             />
 
