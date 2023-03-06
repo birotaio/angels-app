@@ -1,6 +1,6 @@
 {
   "name": "appname",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": true,
   "scripts": {
     "android": "npx react-native run-android",
@@ -135,5 +135,5 @@
       "node"
     ]
   },
-  "versionCode": "3"
+  "versionCode": "4"
 }
