@@ -36,7 +36,6 @@ import i18n from '@assets/locales';
 
 const BIKE_LOCKED = 1;
 const BIKE_UNLOCKED = 2;
-
 const BikeScreen: ScreenProps = ({
   route: {
     params: {bikeId},
@@ -61,6 +60,7 @@ const BikeScreen: ScreenProps = ({
   // BLE
   const [listener, setListener] = useState<EmitterSubscription | null>(null);
   const [lockState, setLockState] = useState(0);
+  const [connected, setConnected] = useState(false);
 
   useEffect(() => {
     if (lockState) {
@@ -74,13 +74,25 @@ const BikeScreen: ScreenProps = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lockState]);
 
+  useEffect(() => {
+    if (!connected) {
+      tryConnection();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [connected]);
+
+  const tryConnection = () => {
+    console.log('tryConnection');
+    dispatch({type: APP_ACTIONS_SAGA_CONNECT_BIKE, data: {bikeId}});
+  };
+
   // Get bike datas from backend + connect to our bike
   useEffect(() => {
     if (dispatch && bikeId) {
       console.log('dispatch && bikeId');
       dispatch({type: APP_ACTIONS_SAGA_REGISTER_BIKE_DATA});
       dispatch({type: APP_ACTIONS_SAGA_GET_BIKE_BY_ID, data: {bikeId}});
-      dispatch({type: APP_ACTIONS_SAGA_CONNECT_BIKE, data: {bikeId}});
+      // Listen bluetooth
       const _listener = bikeDataListener.addListener(
         'BikeDataEvent',
         (bikeBleData: string) => {
@@ -88,6 +100,7 @@ const BikeScreen: ScreenProps = ({
             const data =
               Platform.OS === 'ios' ? JSON.parse(bikeBleData) : bikeBleData;
             setLockState(data?.lockState);
+            setConnected(data?.connected);
           } catch (error) {
             console.log('parse bikeBleData', error);
           }
