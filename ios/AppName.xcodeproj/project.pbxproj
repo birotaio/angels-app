@@ -62,40 +62,25 @@
 		00E356EE1AD99517003FC87E /* AppNameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppNameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* AppNameTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppNameTests.m; sourceTree = "<group>"; };
-		010282307F844F5CBF67BFB3 /* SF Pro Text Regular.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF Pro Text Regular.otf"; path = "../src/assets/fonts/SF Pro Text Regular.otf"; sourceTree = "<group>"; };
 		05301A63DEC74974A6A00441 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
-		0606E56FBFAE4826926B372C /* SF Pro Text Thin Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF Pro Text Thin Italic.otf"; path = "../src/assets/fonts/SF Pro Text Thin Italic.otf"; sourceTree = "<group>"; };
 		06BB7EFD062A48E89D28F78C /* ES Build Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "ES Build Medium.ttf"; path = "../src/assets/fonts/ES Build Medium.ttf"; sourceTree = "<group>"; };
-		07C0CD1C94074270B1DDF7D9 /* SF Pro Text Medium.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF Pro Text Medium.otf"; path = "../src/assets/fonts/SF Pro Text Medium.otf"; sourceTree = "<group>"; };
-		13747349EFE141F880A745B9 /* SF Pro Text Black.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF Pro Text Black.otf"; path = "../src/assets/fonts/SF Pro Text Black.otf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* AppName.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppName.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = AppName/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = AppName/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = AppName/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = AppName/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = AppName/main.m; sourceTree = "<group>"; };
-		13CF593B0B9A4EAB90D59033 /* SF Pro Text Thin.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF Pro Text Thin.otf"; path = "../src/assets/fonts/SF Pro Text Thin.otf"; sourceTree = "<group>"; };
 		149E5351920C490AAAE3E29F /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		15684ADE4CA94D76A70E97ED /* ES Build Medium Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "ES Build Medium Italic.ttf"; path = "../src/assets/fonts/ES Build Medium Italic.ttf"; sourceTree = "<group>"; };
 		176C97C1C2524B6B86E2BE55 /* ES Build Semi Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "ES Build Semi Bold.ttf"; path = "../src/assets/fonts/ES Build Semi Bold.ttf"; sourceTree = "<group>"; };
 		1D0AE47A65C8663E3B452821 /* Pods-AppName-AppNameTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppName-AppNameTests.release.xcconfig"; path = "Target Support Files/Pods-AppName-AppNameTests/Pods-AppName-AppNameTests.release.xcconfig"; sourceTree = "<group>"; };
-		20BD1362A7D4406395BF72DA /* SF Pro Text Black Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF Pro Text Black Italic.otf"; path = "../src/assets/fonts/SF Pro Text Black Italic.otf"; sourceTree = "<group>"; };
 		2C7460968ABB4899B32F1AFF /* ES Build Regular Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "ES Build Regular Italic.ttf"; path = "../src/assets/fonts/ES Build Regular Italic.ttf"; sourceTree = "<group>"; };
-		2F03553BF7C047818E648048 /* SF Pro Text Heavy.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF Pro Text Heavy.otf"; path = "../src/assets/fonts/SF Pro Text Heavy.otf"; sourceTree = "<group>"; };
 		30C4BF8D83844EDB8B7521FF /* Fontisto.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Fontisto.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Fontisto.ttf"; sourceTree = "<group>"; };
 		34ABED0184B34F5C94DDA275 /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
-		3BA11594470544E7AC01B837 /* Gotham-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-Medium.ttf"; path = "../src/assets/fonts/Gotham-Medium.ttf"; sourceTree = "<group>"; };
-		41885534BA3C464B8A26D91B /* Gotham-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-BoldItalic.ttf"; path = "../src/assets/fonts/Gotham-BoldItalic.ttf"; sourceTree = "<group>"; };
-		4488B8FBE228491B9F1852B7 /* SF Pro Rounded Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF Pro Rounded Regular.ttf"; path = "../src/assets/fonts/SF Pro Rounded Regular.ttf"; sourceTree = "<group>"; };
-		4A10A571BE7A455E9D10AB4B /* Gotham-ThinItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-ThinItalic.ttf"; path = "../src/assets/fonts/Gotham-ThinItalic.ttf"; sourceTree = "<group>"; };
 		52CCF5DF5CEA4EA98D86D31D /* ES Build Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "ES Build Bold.ttf"; path = "../src/assets/fonts/ES Build Bold.ttf"; sourceTree = "<group>"; };
-		582051AA990847FF8E2FECD3 /* SF Pro Text Bold Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF Pro Text Bold Italic.otf"; path = "../src/assets/fonts/SF Pro Text Bold Italic.otf"; sourceTree = "<group>"; };
-		59AECACDE6604E06863B6BF4 /* SF Pro Text Ultralight.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF Pro Text Ultralight.otf"; path = "../src/assets/fonts/SF Pro Text Ultralight.otf"; sourceTree = "<group>"; };
 		62636F70D064425193B1B883 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
 		63FC957071C6434FAF8CFCAE /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
 		6423831EA8574132BED9D8CC /* libPods-AppName.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppName.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6B64C8B88BB14B419BA83629 /* SF Pro Text Light.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF Pro Text Light.otf"; path = "../src/assets/fonts/SF Pro Text Light.otf"; sourceTree = "<group>"; };
-		6C1361F38081488FB5AAD6CD /* Gotham-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-Light.ttf"; path = "../src/assets/fonts/Gotham-Light.ttf"; sourceTree = "<group>"; };
 		6C97AB639B58BBB4B15BBE30 /* Pods-AppName-AppNameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppName-AppNameTests.debug.xcconfig"; path = "Target Support Files/Pods-AppName-AppNameTests/Pods-AppName-AppNameTests.debug.xcconfig"; sourceTree = "<group>"; };
 		780878D98B884F67A43D2387 /* ES Build Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "ES Build Regular.ttf"; path = "../src/assets/fonts/ES Build Regular.ttf"; sourceTree = "<group>"; };
 		7820CA2471974254B5328837 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
@@ -110,35 +95,20 @@
 		7AAA06B729841DE400573D71 /* RCTBleModule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCTBleModule.swift; sourceTree = "<group>"; };
 		7AB2CCC527E9BFB300EE6E02 /* AppCenter-Config.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AppCenter-Config.plist"; sourceTree = "<group>"; };
 		7CD577D75CAB404C8DE32C4D /* ES Build Bold Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "ES Build Bold Italic.ttf"; path = "../src/assets/fonts/ES Build Bold Italic.ttf"; sourceTree = "<group>"; };
-		80FDB881A1094162879E5A9E /* Gotham-BookItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-BookItalic.ttf"; path = "../src/assets/fonts/Gotham-BookItalic.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = AppName/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F2643F2491A4F39A0BD6E44 /* ES Build Semi Bold Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "ES Build Semi Bold Italic.ttf"; path = "../src/assets/fonts/ES Build Semi Bold Italic.ttf"; sourceTree = "<group>"; };
-		8FDDC185EDD240C486FEC41A /* Gotham-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-Bold.ttf"; path = "../src/assets/fonts/Gotham-Bold.ttf"; sourceTree = "<group>"; };
-		90ED21DDBEB843B7BFD5ABA9 /* SF Pro Text Light Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF Pro Text Light Italic.otf"; path = "../src/assets/fonts/SF Pro Text Light Italic.otf"; sourceTree = "<group>"; };
-		92C8D204B93D4FE5847BFF78 /* SF Pro Text Heavy Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF Pro Text Heavy Italic.otf"; path = "../src/assets/fonts/SF Pro Text Heavy Italic.otf"; sourceTree = "<group>"; };
-		9DBC09D0E9A54935A4A9213A /* Gotham-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-MediumItalic.ttf"; path = "../src/assets/fonts/Gotham-MediumItalic.ttf"; sourceTree = "<group>"; };
-		A368468A56C84158813E8CD8 /* SF Pro Text Semibold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF Pro Text Semibold.otf"; path = "../src/assets/fonts/SF Pro Text Semibold.otf"; sourceTree = "<group>"; };
 		A6BC2ACA29944DC887344F28 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
-		A9072862FD3A430B81F24D6E /* SF Pro Text Medium Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF Pro Text Medium Italic.otf"; path = "../src/assets/fonts/SF Pro Text Medium Italic.otf"; sourceTree = "<group>"; };
 		AB5B5255DD16490283345279 /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		ABFE59519B596E51CEFDCCC0 /* libPods-AppName-AppNameTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AppName-AppNameTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B37CD0FB7D4549F192509906 /* SF Pro Text Regular Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF Pro Text Regular Italic.otf"; path = "../src/assets/fonts/SF Pro Text Regular Italic.otf"; sourceTree = "<group>"; };
-		B805985460C54FC5A56D8D25 /* Gotham-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-Black.ttf"; path = "../src/assets/fonts/Gotham-Black.ttf"; sourceTree = "<group>"; };
 		C0A881CF5CF3F2B244570E2A /* Pods-AppName.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppName.debug.xcconfig"; path = "Target Support Files/Pods-AppName/Pods-AppName.debug.xcconfig"; sourceTree = "<group>"; };
 		C11460C5D09044CBB6BA15C0 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
-		CB6BD8A03B6E4179819D2D34 /* Gotham-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-Thin.ttf"; path = "../src/assets/fonts/Gotham-Thin.ttf"; sourceTree = "<group>"; };
 		D00AAFFCFCFDA5787532823F /* Pods-AppName.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppName.release.xcconfig"; path = "Target Support Files/Pods-AppName/Pods-AppName.release.xcconfig"; sourceTree = "<group>"; };
 		D124F52CD2314FEB931D32E1 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
-		D3EB5955FD324243B3692556 /* SF Pro Text Semibold Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF Pro Text Semibold Italic.otf"; path = "../src/assets/fonts/SF Pro Text Semibold Italic.otf"; sourceTree = "<group>"; };
-		D590890492414583AD166B05 /* Gotham-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-LightItalic.ttf"; path = "../src/assets/fonts/Gotham-LightItalic.ttf"; sourceTree = "<group>"; };
 		D924178BC19148B2A92DD644 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
 		DCFB00A9279E400F908DCB54 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
-		E6FDEC67FA7149118ECAC01F /* SF Pro Text Ultralight Italic.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF Pro Text Ultralight Italic.otf"; path = "../src/assets/fonts/SF Pro Text Ultralight Italic.otf"; sourceTree = "<group>"; };
 		E7BDD3A496C1401080898843 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
-		E93A05E7BDC44E31A27CDB3D /* SF Pro Text Bold.otf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "SF Pro Text Bold.otf"; path = "../src/assets/fonts/SF Pro Text Bold.otf"; sourceTree = "<group>"; };
 		E9A4682FB6A54B2D9B463D28 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F291B6DC9E1E495AA30BF79D /* Gotham-Book.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Gotham-Book.ttf"; path = "../src/assets/fonts/Gotham-Book.ttf"; sourceTree = "<group>"; };
 		F3E7CF2F15624A1DB3807D02 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -215,15 +185,6 @@
 		53418A86B3A843BDA9020CDD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				13747349EFE141F880A745B9 /* SF Pro Text Black.otf */,
-				E93A05E7BDC44E31A27CDB3D /* SF Pro Text Bold.otf */,
-				2F03553BF7C047818E648048 /* SF Pro Text Heavy.otf */,
-				6B64C8B88BB14B419BA83629 /* SF Pro Text Light.otf */,
-				07C0CD1C94074270B1DDF7D9 /* SF Pro Text Medium.otf */,
-				010282307F844F5CBF67BFB3 /* SF Pro Text Regular.otf */,
-				A368468A56C84158813E8CD8 /* SF Pro Text Semibold.otf */,
-				13CF593B0B9A4EAB90D59033 /* SF Pro Text Thin.otf */,
-				59AECACDE6604E06863B6BF4 /* SF Pro Text Ultralight.otf */,
 				E7BDD3A496C1401080898843 /* AntDesign.ttf */,
 				34ABED0184B34F5C94DDA275 /* Entypo.ttf */,
 				05301A63DEC74974A6A00441 /* EvilIcons.ttf */,
@@ -240,27 +201,6 @@
 				DCFB00A9279E400F908DCB54 /* Octicons.ttf */,
 				A6BC2ACA29944DC887344F28 /* SimpleLineIcons.ttf */,
 				E9A4682FB6A54B2D9B463D28 /* Zocial.ttf */,
-				20BD1362A7D4406395BF72DA /* SF Pro Text Black Italic.otf */,
-				582051AA990847FF8E2FECD3 /* SF Pro Text Bold Italic.otf */,
-				92C8D204B93D4FE5847BFF78 /* SF Pro Text Heavy Italic.otf */,
-				90ED21DDBEB843B7BFD5ABA9 /* SF Pro Text Light Italic.otf */,
-				A9072862FD3A430B81F24D6E /* SF Pro Text Medium Italic.otf */,
-				B37CD0FB7D4549F192509906 /* SF Pro Text Regular Italic.otf */,
-				D3EB5955FD324243B3692556 /* SF Pro Text Semibold Italic.otf */,
-				0606E56FBFAE4826926B372C /* SF Pro Text Thin Italic.otf */,
-				E6FDEC67FA7149118ECAC01F /* SF Pro Text Ultralight Italic.otf */,
-				B805985460C54FC5A56D8D25 /* Gotham-Black.ttf */,
-				8FDDC185EDD240C486FEC41A /* Gotham-Bold.ttf */,
-				41885534BA3C464B8A26D91B /* Gotham-BoldItalic.ttf */,
-				F291B6DC9E1E495AA30BF79D /* Gotham-Book.ttf */,
-				80FDB881A1094162879E5A9E /* Gotham-BookItalic.ttf */,
-				6C1361F38081488FB5AAD6CD /* Gotham-Light.ttf */,
-				D590890492414583AD166B05 /* Gotham-LightItalic.ttf */,
-				3BA11594470544E7AC01B837 /* Gotham-Medium.ttf */,
-				9DBC09D0E9A54935A4A9213A /* Gotham-MediumItalic.ttf */,
-				CB6BD8A03B6E4179819D2D34 /* Gotham-Thin.ttf */,
-				4A10A571BE7A455E9D10AB4B /* Gotham-ThinItalic.ttf */,
-				4488B8FBE228491B9F1852B7 /* SF Pro Rounded Regular.ttf */,
 				7CD577D75CAB404C8DE32C4D /* ES Build Bold Italic.ttf */,
 				52CCF5DF5CEA4EA98D86D31D /* ES Build Bold.ttf */,
 				15684ADE4CA94D76A70E97ED /* ES Build Medium Italic.ttf */,

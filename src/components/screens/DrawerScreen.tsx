@@ -74,7 +74,7 @@ const DrawerEntry = ({
       color={colors.BLACK}
       setName={IconSetName.MaterialIcon}
     />
-    <MyText style={layoutStyle.ml12} keyText={keyText} negColor />
+    <MyText _body style={layoutStyle.ml12} keyText={keyText} negColor />
   </TouchableOpacity>
 );
 
