@@ -16,7 +16,7 @@ type CameraComponentType = {
   torch: boolean;
   isActive: boolean;
 };
-const DEBOUNCE_TIME = 200;
+const DEBOUNCE_TIME = 1000;
 const CameraComponent: React.FC<CameraComponentType> = ({
   onBarcode,
   torch,
@@ -34,7 +34,9 @@ const CameraComponent: React.FC<CameraComponentType> = ({
   });
   const throttled = useRef(
     _.throttle(
-      (_newBarCode: Barcode) => onBarcode(_newBarCode),
+      (_newBarCode: Barcode) => {
+        onBarcode(_newBarCode);
+      },
       DEBOUNCE_TIME,
       {leading: true, trailing: false},
     ),
@@ -52,7 +54,7 @@ const CameraComponent: React.FC<CameraComponentType> = ({
         torch={torch ? 'on' : 'off'}
         style={layoutStyle.flex}
         frameProcessor={frameProcessor}
-        frameProcessorFps={0.5}
+        frameProcessorFps={10}
         device={device}
         isActive={isActive}
       />
