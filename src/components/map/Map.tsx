@@ -9,6 +9,7 @@ import MapStationLayer from './MapStationLayer';
 import {useSelector} from 'react-redux';
 import {MapSelector} from '@logic/store/map/selector';
 import {Position} from 'geojson';
+import _ from 'lodash';
 
 MapboxGL.setAccessToken(constants.MAPBOX_PK);
 const MAP_CENTER = {
@@ -37,7 +38,7 @@ const Map = forwardRef(
       filter?: string;
       stationActiveId?: number;
       onPress?: () => void;
-      // onMarkerPress?: (s: StationStatusInformation) => void;
+      onMarkerPress?: (s: any) => void;
       onMapStartMove?: () => void;
       onMapEndMove?: () => void;
       showUserLocation?: boolean;
@@ -49,18 +50,18 @@ const Map = forwardRef(
   ) => {
     const cameraRef = useRef<MapboxGL.Camera>();
     const stations = useSelector(MapSelector.getStations);
-    // const onRegionWillChange =
-    //   props.onMapStartMove &&
-    //   _.debounce(props.onMapStartMove, 350, {
-    //     leading: true,
-    //     trailing: false,
-    //   });
-    // const onRegionDidChange =
-    //   props.onMapEndMove &&
-    //   _.debounce(props.onMapEndMove, 350, {
-    //     leading: true,
-    //     trailing: false,
-    //   });
+    const onRegionWillChange =
+      props.onMapStartMove &&
+      _.debounce(props.onMapStartMove, 350, {
+        leading: true,
+        trailing: false,
+      });
+    const onRegionDidChange =
+      props.onMapEndMove &&
+      _.debounce(props.onMapEndMove, 350, {
+        leading: true,
+        trailing: false,
+      });
 
     useImperativeHandle(ref, () => ({
       flyTo(coordinates: Position, duration?: number) {
@@ -71,19 +72,23 @@ const Map = forwardRef(
     const _onMarkerPress = useCallback(
       ({features, coordinates}: OnPressEvent) => {
         // Move to selected location
-        cameraRef.current?.flyTo(
-          [coordinates.longitude, coordinates.latitude],
-          200,
-        );
+        cameraRef?.current?.setCamera({
+          centerCoordinate: [coordinates.longitude, coordinates.latitude],
+          padding: {paddingBottom: layoutStyle.dim.height * 0.5},
+          animationDuration: 250,
+          animationMode: 'easeTo',
+        });
+
         // Search infos about our marker selected
         const pressId = features?.[0]?.properties?.id;
         if (pressId) {
           let stationSelected = stations.features.filter(
             _s => _s.properties.id === pressId,
           )?.[0];
-          console.log('use station_selected', stationSelected);
+          props.onMarkerPress?.(stationSelected);
         }
       },
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       [stations.features],
     );
 
@@ -98,19 +103,18 @@ const Map = forwardRef(
           style={layoutStyle.flex}
           compassEnabled={true}
           compassViewPosition={0}
-          // regionDidChangeDebounceTime={200}
-          // onRegionWillChange={onRegionWillChange}
-          // onRegionDidChange={onRegionDidChange}
-          // scrollEnabled={props.scrollEnabled}
-        >
+          regionDidChangeDebounceTime={200}
+          onRegionWillChange={onRegionWillChange}
+          onRegionDidChange={onRegionDidChange}
+          scrollEnabled={props.scrollEnabled}>
           <MapboxGL.Camera
             ref={cameraRef}
             zoomLevel={10}
             animationMode={'flyTo'}
             animationDuration={200}
             centerCoordinate={MAPCENTER}
-            // maxZoomLevel={22}
-            // minZoomLevel={10}
+            maxZoomLevel={22}
+            minZoomLevel={10}
             // maxBounds={BOUNDS}
           />
           {stations.features?.length ? (
