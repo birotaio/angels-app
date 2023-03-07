@@ -18,8 +18,14 @@ import {AppModalLogout} from '@components/appModal/AppModalModels';
 const DrawerScreen: React.FC<DrawerContentComponentProps> = ({navigation}) => {
   const dispatch = useDispatch();
   return (
-    <MyView flex style={[layoutStyle.jsb]}>
+    <MyView flex style={{}}>
       <MyStatusBar />
+      <MyView
+        style={{height: 60, justifyContent: 'center', paddingLeft: 16}}
+        backgroundAccentPrimary>
+        <MyText _title keyText="menu" />
+      </MyView>
+      <MyView flex />
       <View>
         <DrawerEntry
           icon="Gearing"
