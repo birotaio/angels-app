@@ -192,6 +192,7 @@ const BikeScreen: ScreenProps = ({
               PRIVILEGES_TYPE.ANGELS.privileges.BIKE.permissions.UNLOCK,
             ) && (
               <BikeButton
+                isLoading={appData.isLoading}
                 keyText={'bike-action-change-battery'}
                 icon="BatterySmall"
                 onPress={() =>

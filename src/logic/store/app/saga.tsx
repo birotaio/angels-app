@@ -182,12 +182,14 @@ export function* _lockBike() {
 }
 
 export function* _unlockBattery() {
+  yield put(setAppState({isLoading: true}));
   try {
     yield BleModule.unlockBattery();
     message.show('bike-unlock-battery-success', 'success');
   } catch (e) {
     message.show('bike-unlock-battery-failure', 'danger');
   }
+  yield put(setAppState({isLoading: false}));
 }
 
 export function* _registerBikeDatas() {
