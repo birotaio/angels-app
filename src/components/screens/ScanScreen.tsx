@@ -50,7 +50,7 @@ const CarouselItem = ({
       style={[
         textstyle.center,
         !selected && textstyle._caption,
-        !selected && {color: colors.NEUTRAL_DARK_03},
+        !selected && {color: colors.NEUTRAL_LIGHT_02},
       ]}
       keyTextString={item}
     />
@@ -150,7 +150,7 @@ const ScanScreen: ScreenProps = ({
             layoutStyle.absFill,
             layoutStyle.aic,
             layoutStyle.p24,
-            layoutStyle.pb60,
+            layoutStyle.pb72,
           ]}>
           <FAB
             onPress={() => navigator.pop()}
@@ -252,17 +252,27 @@ const ScanScreen: ScreenProps = ({
         />
       )}
       <SafeAreaView style={styles.toggle}>
-        {['scan-auto', 'scan-manuel'].map((item, index) => (
-          <CarouselItem
-            selected={activeMode === index}
-            key={item}
-            index={index}
-            item={item}
-            onPress={slideIndex => {
-              setActiveMode(slideIndex);
-            }}
+        <View>
+          <Carousel
+            ref={carrousel}
+            onSnapToItem={slideIndex => setActiveMode(slideIndex)}
+            sliderWidth={400}
+            itemWidth={100}
+            data={['scan-auto', 'scan-manuel']}
+            renderItem={({item, index}) => (
+              <CarouselItem
+                selected={activeMode === index}
+                key={item}
+                index={index}
+                item={item}
+                onPress={slideIndex => {
+                  setActiveMode(slideIndex);
+                  carrousel.current?.snapToItem(slideIndex);
+                }}
+              />
+            )}
           />
-        ))}
+        </View>
       </SafeAreaView>
     </View>
   );
@@ -290,6 +300,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     alignSelf: 'center',
+    marginBottom: 16,
   },
   close: {
     // margin: 12,

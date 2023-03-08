@@ -127,6 +127,9 @@ export default StyleSheet.create({
   pb60: {
     paddingBottom: 60,
   },
+  pb72: {
+    paddingBottom: 72,
+  },
   pb5: {
     paddingBottom: '5%',
   },
