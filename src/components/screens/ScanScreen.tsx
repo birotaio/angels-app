@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   View,
   Image,
+  SafeAreaView,
 } from 'react-native';
 import {Button, FAB} from 'react-native-paper';
 import {ScreenProps} from '.';
@@ -28,7 +29,6 @@ import {ScanManualInput} from '@components/camera/ScanManualInput';
 import {useBackButton} from '@utils/hooks/useBack';
 import colors from '@style/colors';
 import images from '@assets/images';
-import MyView from '@components/generic/MyView';
 
 const CarouselItem = ({
   selected,
@@ -145,7 +145,13 @@ const ScanScreen: ScreenProps = ({
           source={images.scan_layer}
         />
 
-        <View style={[layoutStyle.absFill, layoutStyle.aic, layoutStyle.p24]}>
+        <View
+          style={[
+            layoutStyle.absFill,
+            layoutStyle.aic,
+            layoutStyle.p24,
+            layoutStyle.pb60,
+          ]}>
           <FAB
             onPress={() => navigator.pop()}
             color={themeStyle.textColorInput.toString()}
@@ -231,19 +237,6 @@ const ScanScreen: ScreenProps = ({
               />
             </View>
           )}
-          <MyView rowCenter>
-            {['scan-auto', 'scan-manuel'].map((item, index) => (
-              <CarouselItem
-                selected={activeMode === index}
-                key={item}
-                index={index}
-                item={item}
-                onPress={slideIndex => {
-                  setActiveMode(slideIndex);
-                }}
-              />
-            ))}
-          </MyView>
         </View>
       </View>
       {(params?.manualOnly || activeMode === 1) && (
@@ -258,6 +251,19 @@ const ScanScreen: ScreenProps = ({
           }}
         />
       )}
+      <SafeAreaView style={styles.toggle}>
+        {['scan-auto', 'scan-manuel'].map((item, index) => (
+          <CarouselItem
+            selected={activeMode === index}
+            key={item}
+            index={index}
+            item={item}
+            onPress={slideIndex => {
+              setActiveMode(slideIndex);
+            }}
+          />
+        ))}
+      </SafeAreaView>
     </View>
   );
 };
@@ -277,6 +283,13 @@ const styles = StyleSheet.create({
   },
   carousel: {
     maxHeight: 36,
+  },
+  toggle: {
+    position: 'absolute',
+    bottom: 0,
+    flexDirection: 'row',
+    alignItems: 'center',
+    alignSelf: 'center',
   },
   close: {
     // margin: 12,
